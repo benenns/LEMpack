@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1597352560801.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3534700762",
+    "id" : "8F2528CA",
+    "lastKnownWriteTime" : 1597352618,
+    "last_content_update" : 1597352618996,
+    "path" : "~/GitHub/LEMpackTEST/vignettes/ff-analysis.Rmd",
+    "project_path" : "vignettes/ff-analysis.Rmd",
+    "properties" : {
+        "cursorPosition" : "64,159",
+        "scrollLine" : "55"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

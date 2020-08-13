@@ -1,0 +1,67 @@
+---
+title: "5 Analysis"
+# output: rmarkdown::html_vignette
+output:
+  bookdown::html_document2
+pkgdown:
+  as_is: true
+vignette: >
+  %\VignetteIndexEntry{ff-analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+bibliography:
+- book.bib
+- packages.bib  
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+In this section we use the model outcomes data and matrices generated in Section 4.0 to create tables and plots that can be used for interpretation of results. With some adjustments, these tables and plots could be used dissemination and publication.
+
+# 5.0 Produce cost-effectiveness analysis (CEA) results table {-}
+
+ Using *CascadeCEA-Interventions-3-Analysis-CEATable(range).R* we produce a standard CEA table (`cea.table`) comparing the OCIS with the comparator, with 95% confidence intervals. One can specify whether CEA results for a single city or all cities should be produced. Note that no explicit threshold for cost-effectiveness exists in the United States [cite], so we have defined cost effective interventions as those with an ICER below $100 000/QALY. CE Results are written into a .csv file using `write.csv` function. The following is a list of the CEA outcomes that are calculated:
+
+  + Incremental cost (point estimate, lower and upper bound)
+  + Incremental QALYs (point estimate, lower and upper bound)
+  + ICER (point estimate, lower and upper bound)
+  + Percentage cost-effective
+  + Percentage cost-saving
+
+
+# 5.1 Disaggregated cost estimates {-}
+
+In this component we derive and compare the disaggregated cost estimates for each city to identify strategies with the highest net monetary benefit (NMB). 
+
+First we derive the disaggregated cost estimates for each city’s selected OCIS using *CascadeCEA-Interventions-3-Analysis-CostBreakdown.R* found in *R* directory. Following this we determine the comparison strategies (strategies proximal to the OCIS) that we want to consider using the *CascadeCEA-Interventions-3-Analysis-DetermineProximalStrategies.R* script. The number of proximal strategies for comparison can be set, it is currently set to 10. Note that there are two options provided in this script, the first option (default option) determines proximal strategies according to NMB. However, if OCIS is determined as cost-saving but ICER is greater than $100,00 USD compared with comparator, Option 2 must be used.  Option 2 uses the distance to the NMB of the OCIS. When using Option 1, further analyses to estimate proportions of the selected combinations being most cost-effective can be done using *CascadeCEA-Interventions-3-Analysis-PSA-ProportionMostCE.R*. Note that the results generated must be manually pasted into Excel. 
+
+We then create a CEA frontier (also referred to as a “health production function” (HPF)), up to a given willingness-to-pay (WTP) level, by identifying strategies (combinations of interventions) with the highest NMB for each city or all cities. Creation of the HPF requires several steps and may take some time depending on how many strategies are considered, please be patient! Use *CascadeCEA-Interventions-3-Analysis-ProductionFunction.R* script for the following steps. 
+
+First we load the costs and QALY values for all strategies. Then we narrow down the number of strategies by conducting two screenings of all possible strategies - first screening  removes strategies whose QALYs are lower than the least costly strategy, and the second screening removes strategies whose costs are higher than the strategy with highest QALYs. 
+
+[show lines 44-69 of *CascadeCEA-Interventions-3-Analysis-ProductionFunction.R* script]
+
+Following this, we find WTP levels to test so that all strategies on frontier will be captured, this requires testing on either side of all NMB intersections, which are simply all the pairwise ICER comparisons. Lastly, we find the strategy with the maximum NMB at each of the WTP test points (labelled as `indicesOfMax`), this series creates the HPF. Lastly, we generate the cost-effectiveness results/table. [Add more detail about the frontier.matrix and frontier.list ?]
+
+[show line 113-169 of *CascadeCEA-Interventions-3-Analysis-ProductionFunction.R* script]
+
+# 5.2 Plots {-}
+
+To generate a 6 panel graph (one panel for each city) for the PSA ellipses for optimal combination intervention strategies, use *CascadeCEA-Interventions-3-Plot-Ellipse(PSA).R* found in the *R* directory. Figure \ref{fig:PSA-ellipses} provides an example of what is produced using the script
+
+<!-- ![Sample six-panel PSA ellipses figure. \label{fig:PSA-ellipses}](../figs/04_psa_ellipses.png) -->
+
+To generate plots for overall rate of incidence (per 100,000) for each year in each city, and incidence decline use *CascadeCEA-Interventions-3-Plot-NewIncidence.R found in *R* directory. This script first generates rates of incidence, these results are written into a .csv file using `write.csv` function. Then the .csv file is used to generate a line graph, the script currently produces a plot for 2020-2040, it’s X-axis is “Year” and it’s Y-axis is “Annual number of new infections per 100,000”. Both point estimates and 95% CI are provided. 
+
+[would be nice to have a sample figure for incidence graph described ^]
+
+To visualize the health production function generated in component 5.2 use *CascadeCEA-Interventions-3-Plot-ProductionFunction.R* found in the *R* directory. X-axis is “Incremental QALYs (1000s) and Y-axis is “Incremental costs (millions, 2018 US$).  This script automatically produces a 6 panel graph (one panel for each city), such as Figure \ref{fig:05_production_function}
+
+<!-- ![Sample six-panel Health Production Function (HPF) figure. \label{fig:Health Prodcution Function Visualization}](../figs/05_production_function.png)  -->
+
+# References {-}

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1597352438810.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3360562878",
+    "id" : "5ACD546E",
+    "lastKnownWriteTime" : 1597352540,
+    "last_content_update" : 1597352540109,
+    "path" : "~/GitHub/LEMpackTEST/vignettes/ee-run_model.Rmd",
+    "project_path" : "vignettes/ee-run_model.Rmd",
+    "properties" : {
+        "cursorPosition" : "70,0",
+        "scrollLine" : "58"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
