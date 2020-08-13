@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1597357941077.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3483800967",
+    "id" : "5977A65B",
+    "lastKnownWriteTime" : 1597357961,
+    "last_content_update" : 1597357961510,
+    "path" : "~/GitHub/LEMpackTEST/R/CascadeCEA-Model-0-Function-ode.list.offOAT.R",
+    "project_path" : "R/CascadeCEA-Model-0-Function-ode.list.offOAT.R",
+    "properties" : {
+        "cursorPosition" : "31,55",
+        "scrollLine" : "24"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 12,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

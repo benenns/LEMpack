@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1597358500485.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3264013857",
+    "id" : "CE0176D0",
+    "lastKnownWriteTime" : 1597338713,
+    "last_content_update" : 1597338713,
+    "path" : "~/GitHub/LEMpackTEST/R/CascadeCEA-Model-0-Function-ode_model-Combination.R",
+    "project_path" : "R/CascadeCEA-Model-0-Function-ode_model-Combination.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 13,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

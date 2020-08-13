@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • LEMpackTEST</title>
+<title>Specify ODE equations for heterosexuals and MSM — ode.list • LEMpackTEST</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Specify ODE equations for heterosexuals and MSM — ode.list" />
+<meta property="og:description" content="ode.list ADD DETAILS" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -132,72 +133,145 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Specify ODE equations for heterosexuals and MSM</h1>
+    <small class="dont-index">Source: <a href='https://github.com/HERU-LEM/LEMpack/blob/master/R/CascadeCEA-Model-0-Function-ode.list.R'><code>R/CascadeCEA-Model-0-Function-ode.list.R</code></a></small>
+    <div class="hidden name"><code>ode.list.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p><code>ode.list</code> ADD DETAILS</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>ode.list</span>(
+  <span class='no'>x</span>,
+  <span class='no'>beta_o</span>,
+  <span class='no'>beta_s</span>,
+  <span class='no'>gamma</span>,
+  <span class='no'>rho</span>,
+  <span class='no'>ws</span>,
+  <span class='no'>wp</span>,
+  <span class='no'>mu_mat</span>,
+  <span class='no'>mo</span>,
+  <span class='no'>eta</span>,
+  <span class='no'>psi</span>,
+  <span class='no'>psi.p</span>,
+  <span class='no'>theta.ai</span>,
+  <span class='no'>theta.ad</span>,
+  <span class='no'>phi</span>,
+  <span class='no'>v2</span>,
+  <span class='no'>v3</span>,
+  <span class='no'>alpha</span>,
+  <span class='no'>alpha.re</span>,
+  <span class='no'>theta.1</span>,
+  <span class='no'>theta.2</span>,
+  <span class='no'>theta.t12</span>,
+  <span class='no'>theta.t13</span>,
+  <span class='no'>theta.t21</span>,
+  <span class='no'>theta.t23</span>,
+  <span class='no'>theta.t31</span>,
+  <span class='no'>theta.t32</span>,
+  <span class='no'>theta.t1O</span>,
+  <span class='no'>theta.t2O</span>,
+  <span class='no'>theta.t3O</span>,
+  <span class='no'>rho.m</span>
+)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="FoI.html">FoI()</a></code> </p>
-        </td>
-        <td><p>Force of infection equations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model.initial.html">model.initial()</a></code> </p>
-        </td>
-        <td><p>Set initial population</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ode.list.OAT.html">ode.list.OAT()</a></code> </p>
-        </td>
-        <td><p>ODE equations for PWID on OAT</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ode.list.offOAT.html">ode.list.offOAT()</a></code> </p>
-        </td>
-        <td><p>Specify ODE equations for PWID off OAT</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ode.list.html">ode.list()</a></code> </p>
-        </td>
-        <td><p>Specify ODE equations for heterosexuals and MSM</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ode_model.html">ode_model()</a></code> </p>
-        </td>
-        <td><p>Solve ODE equations</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>a vector containing the number of individuals in each HIV state x = c(S1,S2,Sp,Ia,I1,I2,I3,Iap,Ip,Da,D1,D2,D3,T1,T2,T3,O1,O2,O3)</p></td>
+    </tr>
+    <tr>
+      <th>rho</th>
+      <td><p>the entry rate (assume the same for all groups)</p></td>
+    </tr>
+    <tr>
+      <th>mu_mat</th>
+      <td><p>maturation rates (age&gt;65)</p></td>
+    </tr>
+    <tr>
+      <th>mo</th>
+      <td><p>mortality rates for 19 states</p></td>
+    </tr>
+    <tr>
+      <th>eta</th>
+      <td><p>PrEP entry rate</p></td>
+    </tr>
+    <tr>
+      <th>psi</th>
+      <td><p>screening rates for susceptible or infected</p></td>
+    </tr>
+    <tr>
+      <th>psi.p</th>
+      <td><p>screening rates for Iap (acute HIV on PrEP)</p></td>
+    </tr>
+    <tr>
+      <th>theta.ai</th>
+      <td><p>transition rate from acute states (Ia) to chronic state (CD4&gt;=500; I1)</p></td>
+    </tr>
+    <tr>
+      <th>theta.ad</th>
+      <td><p>transition rate from acute states (Da) to chronic state (CD4&gt;=500; D1)</p></td>
+    </tr>
+    <tr>
+      <th>phi</th>
+      <td><p>% infected of people receiving ART once diagnosed</p></td>
+    </tr>
+    <tr>
+      <th>v2, v3</th>
+      <td><p>symptom-based case finding rate for I2 and I3, respectively</p></td>
+    </tr>
+    <tr>
+      <th>alpha</th>
+      <td><p>ART initiation rate for D1,D2, and D3</p></td>
+    </tr>
+    <tr>
+      <th>alpha.re</th>
+      <td><p>ART re-initiation rate for o1,O2, and O3</p></td>
+    </tr>
+    <tr>
+      <th>theta.1</th>
+      <td><p>HIV disease progression rate for those not on ART, from I1/D1 to I2/D2</p></td>
+    </tr>
+    <tr>
+      <th>theta.2</th>
+      <td><p>HIV disease progression rate for those not on ART, from I2/D2 to I3/D3</p></td>
+    </tr>
+    <tr>
+      <th>lambda</th>
+      <td><p>the sufficient contact rate</p></td>
+    </tr>
+    <tr>
+      <th>lambda.p</th>
+      <td><p>the sufficient contact rate for those on PrEP.</p></td>
+    </tr>
+    <tr>
+      <th>1/ws</th>
+      <td><p>average duration uninfected individuals in compartment S remain identified after screening</p></td>
+    </tr>
+    <tr>
+      <th>1/wp</th>
+      <td><p>average duration uninfected individuals in compartment Sp remain on PrEP</p></td>
+    </tr>
+    <tr>
+      <th>theta.t</th>
+      <td><p>transition probabilities for those on ART</p></td>
+    </tr>
+    <tr>
+      <th>theta.o</th>
+      <td><p>ART dropout probability from states T1,T2,T3</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>HIV diagnoses, incidence and deaths</p>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

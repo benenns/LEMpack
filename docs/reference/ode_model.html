@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • LEMpackTEST</title>
+<title>Solve ODE equations — ode_model • LEMpackTEST</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Solve ODE equations — ode_model" />
+<meta property="og:description" content="ode_model ADD DETAILS" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -132,72 +133,50 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Solve ODE equations</h1>
+    <small class="dont-index">Source: <a href='https://github.com/HERU-LEM/LEMpack/blob/master/R/CascadeCEA-Model-0-Function-ode_model-Combination.R'><code>R/CascadeCEA-Model-0-Function-ode_model-Combination.R</code></a></small>
+    <div class="hidden name"><code>ode_model.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p><code>ode_model</code> ADD DETAILS</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>ode_model</span>(<span class='no'>t</span>, <span class='no'>x</span>, <span class='no'>vparameters</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="FoI.html">FoI()</a></code> </p>
-        </td>
-        <td><p>Force of infection equations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="model.initial.html">model.initial()</a></code> </p>
-        </td>
-        <td><p>Set initial population</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ode.list.OAT.html">ode.list.OAT()</a></code> </p>
-        </td>
-        <td><p>ODE equations for PWID on OAT</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ode.list.offOAT.html">ode.list.offOAT()</a></code> </p>
-        </td>
-        <td><p>Specify ODE equations for PWID off OAT</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ode.list.html">ode.list()</a></code> </p>
-        </td>
-        <td><p>Specify ODE equations for heterosexuals and MSM</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="ode_model.html">ode_model()</a></code> </p>
-        </td>
-        <td><p>Solve ODE equations</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>t</th>
+      <td><p>Time period (months)</p></td>
+    </tr>
+    <tr>
+      <th>x</th>
+      <td><p>Index of model states</p></td>
+    </tr>
+    <tr>
+      <th>vparameters</th>
+      <td><p>Model parameter inputs</p>
+<p>Modifications to model time-varying parameters for interventions:</p><ol>
+<li><p>Testing rate (psi)</p></li>
+<li><p>ART initiation (alpha)</p></li>
+<li><p>ART retention (theta)</p></li>
+<li><p>Immediate ART (phi)</p></li>
+<li><p>ART re-initiation (alpha prime)</p></li>
+<li><p>SSP: Number of syringes available (FoI)</p></li>
+<li><p>OAT: Number of individuals receiving OAT (FoI)</p></li>
+<li><p>PrEP: Rate of PrEP initiation (FoI)</p></li>
+<li><p>COVID Analysis related modification</p></li>
+<li><p>Large-scale HIV testing during COVID intervention</p></li>
+</ol></td>
+    </tr>
     </table>
-  </div>
 
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
