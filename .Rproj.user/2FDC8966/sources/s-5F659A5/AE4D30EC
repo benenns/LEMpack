@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1597361239907.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AE4D30EC",
+    "lastKnownWriteTime" : 1597336661,
+    "last_content_update" : 1597336661,
+    "path" : "~/GitHub/LEMpackTEST/R/CascadeCEA-Model-0-Function-model.initial.R",
+    "project_path" : "R/CascadeCEA-Model-0-Function-model.initial.R",
+    "properties" : {
+        "cursorPosition" : "5,44",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
