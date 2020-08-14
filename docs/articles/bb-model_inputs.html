@@ -107,15 +107,14 @@
 <div id="data-read-in" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#data-read-in" class="anchor"></a>1.0 Data read-in</h1>
-<p>As described in our evidence synthesis paper, we populated model parameters for each city by synthesizing evidence from 59 peer-reviewed publications and 24 public health and surveillance reports and executed primary analyses using 11 data sets <span class="citation">(<span class="citeproc-not-found" data-reference-id="EvSynth"><strong>???</strong></span>)</span>. Where data were not available, we conducted extensive model validation and calibration to ensure that uncertain model parameters produced results that matched real-world outcomes. We identified parameters that required city-specific data and stratification by gender, risk group and race/ethnicity a priori and sought out databases for primary analysis to augment our evidence synthesis. We also derive information and values for the free parameters; “free parameters” are key uncertain parameters which are not predefined by the model and lead to the most significant uncertainty in target outcomes. The Morris method [cite] was used to select the most influential parameters for calibration, and the Nelder-Mead algorithm [cite] was used to iteratively calibrate the model to generate 2,000 best-fitting parameter sets. Through this iterative calibration to specific targets/endpoints in each city - the number of diagnosed PLHIV at each year end (stratified by sex, race/ethnicity and risk group), the annual number of new HIV diagnoses (separately for the overall estimate, African/American (Black) population, and MSM), and the annual number of all-cause mortality deaths among PLHIV (separately for the overall estimate, African/American (Black) population, and MSM) , free parameters and their weights are determined. Further details are provided in our published paper[cite]. All of this information is stored in <em>Evidence-Inputs-Master.xlsx</em>, <em>Evidence-Inputs-Master-Ideal.xlsx</em> and <em>cali_par_all.xlsx</em> found in the <em>data</em> directory. To read-in data use the <em>CascadeCEA-Model-1-Module-Data.input.R</em> script.</p>
+<p>As described in our evidence synthesis paper, we populated model parameters for each city by synthesizing evidence from 59 peer-reviewed publications and 24 public health and surveillance reports and executed primary analyses using 11 data sets <span class="citation">(Krebs et al. 2019)</span>. Where data were not available, we conducted extensive model validation and calibration to ensure that uncertain model parameters produced results that matched real-world outcomes. We identified parameters that required city-specific data and stratification by gender, risk group and race/ethnicity a priori and sought out databases for primary analysis to augment our evidence synthesis. We also derive information and values for the free parameters; “free parameters” are key uncertain parameters which are not predefined by the model and lead to the most significant uncertainty in target outcomes. The Morris method <span class="citation">(Morris 1991, @morris2, @morris3)</span> was used to select the most influential parameters for calibration, and the Nelder-Mead algorithm <span class="citation">(Helton and Davis 2003, @neldermead2)</span> was used to iteratively calibrate the model to generate 2,000 best-fitting parameter sets. Through this iterative calibration to specific targets/endpoints in each city - the number of diagnosed PLHIV at each year end (stratified by sex, race/ethnicity and risk group), the annual number of new HIV diagnoses (separately for the overall estimate, African/American (Black) population, and MSM), and the annual number of all-cause mortality deaths among PLHIV (separately for the overall estimate, African/American (Black) population, and MSM) , free parameters and their weights are determined. Further details are provided in our published paper <span class="citation">(Zang et al. 2020)</span>. All of this information is stored in <em>Evidence-Inputs-Master.xlsx</em>, <em>Evidence-Inputs-Master-Ideal.xlsx</em> and <em>cali_par_all.xlsx</em> found in the <em>data</em> directory. To read-in data use the <em>CascadeCEA-Model-1-Module-Data.input.R</em> script.</p>
 </div>
 <div id="create-grouping-indicators" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#create-grouping-indicators" class="anchor"></a>1.1 Create grouping indicators</h1>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-In this component we generate grouping indicators for the 42 population groups; descriptions and R name for each are presented below in Table <a href="#tab:parameters"><strong>??</strong></a>.This function is in the <em>CascadeCEA-Model-0-Group.number.R</em> script in the <em>R</em> directory.</p>
+<p>In this component we generate grouping indicators for the 42 population groups; descriptions and R name for each are presented below in Table 1.This function is in the <em>CascadeCEA-Model-0-Group.number.R</em> script in the <em>R</em> directory.</p>
+<p>Table 1: Description of intial model parameters with their <code>R</code> name and values</p>
 <table class="table">
-<caption>(:parameters) Description of intial model parameters with their <code>R</code> name and values</caption>
 <colgroup>
 <col width="33%">
 <col width="41%">
@@ -342,6 +341,29 @@ In this component we generate grouping indicators for the 42 population groups; 
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references hanging-indent">
+<div id="ref-neldermead1">
+<p>Helton, J. C., and F. J. Davis. 2003. “Latin Hypercube Sampling and the Propagation of Uncertainty in Analyses of Complex Systems.” Journal Article. <em>Reliability Engineering &amp; System Safety</em> 81 (1): 23–69. <a href="https://doi.org/https://doi.org/10.1016/S0951-8320(03)00058-9">https://doi.org/https://doi.org/10.1016/S0951-8320(03)00058-9</a>.</p>
+</div>
+<div id="ref-evsynth">
+<p>Krebs, E., B. Enns, L. Wang, X. Zang, D. Panagiotoglou, C. Del Rio, J. Dombrowski, et al. 2019. “Developing a Dynamic Hiv Transmission Model for 6 U.s. Cities: An Evidence Synthesis.” Journal Article. <em>PLoS One</em> 14 (5): e0217559. <a href="https://doi.org/10.1371/journal.pone.0217559">https://doi.org/10.1371/journal.pone.0217559</a>.</p>
+</div>
+<div id="ref-morris1">
+<p>Morris, Max D. 1991. “Factorial Sampling Plans for Preliminary Computational Experiments.” Journal Article. <em>Technometrics</em> 33 (2): 161–74. <a href="https://doi.org/10.2307/1269043">https://doi.org/10.2307/1269043</a>.</p>
+</div>
+<div id="ref-neldermead2">
+<p>Taylor, D. C., V. Pawar, D. Kruzikas, K. E. Gilmore, A. Pandya, R. Iskandar, and M. C. Weinstein. 2010. “Methods of Model Calibration: Observations from a Mathematical Model of Cervical Cancer.” Journal Article. <em>Pharmacoeconomics</em> 28 (11): 995–1000. <a href="https://doi.org/10.2165/11538660-000000000-00000">https://doi.org/10.2165/11538660-000000000-00000</a>.</p>
+</div>
+<div id="ref-morris2">
+<p>Tian, Y., K. Hassmiller Lich, N. D. Osgood, K. Eom, and D. B. Matchar. 2016. “Linked Sensitivity Analysis, Calibration, and Uncertainty Analysis Using a System Dynamics Model for Stroke Comparative Effectiveness Research.” Journal Article. <em>Med Decis Making</em> 36 (8): 1043–57. <a href="https://doi.org/10.1177/0272989X16643940">https://doi.org/10.1177/0272989X16643940</a>.</p>
+</div>
+<div id="ref-morris3">
+<p>Wu, J., R. Dhingra, M. Gambhir, and J. V. Remais. 2013. “Sensitivity Analysis of Infectious Disease Models: Methods, Advances and Their Application.” Journal Article. <em>J R Soc Interface</em> 10 (86): 20121018. <a href="https://doi.org/10.1098/rsif.2012.1018">https://doi.org/10.1098/rsif.2012.1018</a>.</p>
+</div>
+<div id="ref-calibration">
+<p>Zang, X., E. Krebs, J. E. Min, A. Pandya, B. D. L. Marshall, B. R. Schackman, C. N. Behrends, D. J. Feaster, B. Nosyk, and Localized HIV Modeling Study Group. 2020. “Development and Calibration of a Dynamic Hiv Transmission Model for 6 Us Cities.” Journal Article. <em>Med Decis Making</em> 40 (1): 3–16. <a href="https://doi.org/10.1177/0272989X19889356">https://doi.org/10.1177/0272989X19889356</a>.</p>
+</div>
+</div>
 </div>
   </div>
 
