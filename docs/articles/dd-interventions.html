@@ -109,7 +109,7 @@
 <a href="#generate-possible-intervention-combinations" class="anchor"></a>3.0 Generate possible intervention combinations</h1>
 <p>In this component, we create all possible combinations of the 16 public health interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention <span class="citation">(Project, n.d.)</span> using the R script <em>CascadeCEA-Interventions-0-Function-scale.interventions.combination.R</em>. See Figure 3 below for the list of interventions and their respective categories (<em>Protect, Diagnose, Treat</em>). This figure is also saved in the <em>figs</em> directory. Upon further assessment, we exclude combinations that would not be practically implemented jointly, termed “mutually exclusive combinations”. For example - two HIV testing interventions delivered in primary care.</p>
 <div class="figure">
-<img src="../figs/03_evidence_based_int.png" alt=""><p class="caption">Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. </p>
+<img src="../figs/03_evidence_based_int.png" alt=""><p class="caption">Figure 3.0 Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. </p>
 </div>
 <p>Next, we set intervention parameters using the <em>CascadeCEA-Interventions-0-Function-intervention.model.combination.R</em> script, and then use the <em>CascadeCEA-Interventions-0-Function-scale.interventions.combination.R</em> script to and calculate the scale of delivery inputs at each time step. Both are found in the <em>R</em> directory. Recall that scale refers to the proportion of a target population that is provided with an intervention. For HIV prevention programs, scale of delivery was the annual rate of expanded access, or additional scale-up, estimated using the best-available program-specific evidence. In contrast, for HIV testing and care interventions, scale of delivery was defined as the product of setting specific reach and adoption for each intervention <em>i</em>, target population <em>j</em> and healthcare setting <em>k</em>, where reach is defined as the participation rate in a given intervention, conditional on the probability an individual will access services in setting <em>k</em> and the probability the individual will accept the intervention being delivered.</p>
 <p><span class="math display">\[Scale_{i,j} = reach_{j,k} \times adoption_{i,k}\]</span></p>
@@ -119,7 +119,7 @@
 <h1 class="hasAnchor">
 <a href="#derive-intervention-scale-up" class="anchor"></a>3.1 Derive intervention scale-up</h1>
 <p>In this component we derive the scale of delivery (or scale-up) of interventions, implemented proportionally across groups, for each time step. Some parameters and interventions only had evidence and input data stratified by race and sex (ie. Opt-out testing in ER) while others were stratified by race, sex and risk group (ie.Same-day ART initiation). Table 3.0 specifies how interventions were stratified; note that how an intervention was stratified is a result of the dimensionality provided among best available evidence as detailed in our previous works <span class="citation">(Krebs et al. 2019)</span>. Use <em>CascadeCEA-Interventions-0-Function-set.scale.race.gender.R</em> and <em>CascadeCEA-Interventions-0-Function-set.scale.risk.race.gender.R</em> to derive scale-up for interventions. In these scripts, matrices for scale estimates (with upper and lower bounds) are created; they each have 19 rows (one for each model compartment/state) and 42 columns (one for each population strata).</p>
-<p>Table 3.0: (:int-strat) Stratification of interventions input data</p>
+<p>Table 3.0: Stratification of interventions input data</p>
 <table class="table">
 <thead><tr class="header">
 <th align="left"><strong>Stratified by</strong></th>
@@ -128,7 +128,7 @@
 <tbody>
 <tr class="odd">
 <td align="left">Race, Sex</td>
-<td align="center">####Diagnose</td>
+<td align="center">Diagnose</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -148,7 +148,7 @@
 </tr>
 <tr class="even">
 <td align="left">Race, Sex, Risk Group</td>
-<td align="center">####Protect</td>
+<td align="center">Protect</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -172,7 +172,7 @@
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="center">####Diagnose</td>
+<td align="center">Diagnose</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -184,7 +184,7 @@
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="center">####Treat</td>
+<td align="center">Treat</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
