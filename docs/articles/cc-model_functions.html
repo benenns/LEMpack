@@ -108,8 +108,8 @@
 <div id="force-of-hiv-infection" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#force-of-hiv-infection" class="anchor"></a>2.0 Force of HIV infection</h1>
-<p>In this component, we estimate the Force of Infection (FoI), which is the rate at which susceptible individuals become infected in the population and is a function of many different parameters. A list of FoI parameters are provided in Table <a href="#tab:FoI"><strong>??</strong></a>.</p>
-<p>Table 2.1: (:parameters) Description of FoI parameters with their <code>R</code> names</p>
+<p>In this component, we estimate the Force of Infection (FoI), which is the rate at which susceptible individuals become infected in the population and is a function of many different parameters. A list of FoI parameters are provided in Table 2.1.</p>
+<p>Table 2.1: Description of FoI parameters with their <code>R</code> names</p>
 <table class="table">
 <thead><tr class="header">
 <th align="left"><strong>R name</strong></th>
@@ -187,7 +187,7 @@
 <div id="nonlinear-ordinary-differential-equations-ode-functions" class="section level1" number="1">
 <h1 class="hasAnchor">
 <a href="#nonlinear-ordinary-differential-equations-ode-functions" class="anchor"></a><span class="header-section-number">1</span> 2.1 Nonlinear Ordinary Differential Equations (ODE functions)</h1>
-<p>We constructed a system of nonlinear ordinary differential equations (ODEs) to capture movement between 19 base model states for each of the 42 population groups considered in our model (refer to figures in <em>Introduction</em> section) . The complete model is thus comprised of 798 equations (42 population groups 19 states). A list of ODE parameters are provided in Table <a href="#tab:ODE"><strong>??</strong></a>.</p>
+<p>We constructed a system of nonlinear ordinary differential equations (ODEs) to capture movement between 19 base model states for each of the 42 population groups considered in our model (refer to figures in <em>Introduction</em> section) . The complete model is thus comprised of 798 equations (42 population groups 19 states). A list of ODE parameters are provided in Table 2.2.</p>
 <p>Table 2.2: (:ODE) Description of ODE parameters and their <code>R</code> names</p>
 <table class="table">
 <colgroup>
@@ -204,28 +204,28 @@
 <td align="center"></td>
 </tr>
 <tr class="even">
-<td align="left">————————————————————————————————————————————-:</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
 <td align="left"><code>x</code></td>
 <td align="center">a vector containing the number of individuals in each HIV state</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>lambda</code></td>
 <td align="center">Sufficient contact rate between individuals</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>lambda.p</code></td>
 <td align="center">Sufficient contact rate for individuals on PrEP</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><code>rho</code></td>
 <td align="center">Entry rate (assume the same for all groups)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><code>1/ws</code></td>
 <td align="center">Average duration uninfected individuals in compartment S remain (as identified after screening)</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>1/wp</code></td>
+<td align="center">Average duration uninfected individuals in compartment Sp remain on PrEP</td>
 </tr>
 <tr class="even">
 <td align="left"><code>mu_mat</code></td>
@@ -290,15 +290,7 @@
 <td align="center">PrEP entry rate</td>
 </tr>
 <tr class="odd">
-<td align="left">—————————————————————————————————————————————-</td>
-<td align="center"></td>
-</tr>
-<tr class="even">
 <td align="left"><em>Additional ODE parameters for PWID</em></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="left">:————————————————————————————————————————————-:</td>
 <td align="center"></td>
 </tr>
 <tr class="even">
