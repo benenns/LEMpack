@@ -45,7 +45,7 @@ We also load some secondary model functions which have been created to help prod
 
 # 4.1 Deterministic model run for combinations of interventions {-}
 
-In this component (use *CascadeCEA-Interventions-2-RunModelAndAccum-Combination-Deterministic.R*), we draw on model functions and data loaded in previous sections to run a deterministic model for estimating accumulated costs and epidemiological outcomes of combinations of interventions for each city or all cities. Intervention outcome matrices are produced (`outcome.comb.mx`) [insert more details about the matrices produced, I see 3 - 1:6, 7:32 and 33:44]; a list of outcomes and respective R labels are provided in Table 4.1. Note that we considered a 20-year time horizon (2020–2040) to capture the long-term individual benefits of ART and second-order transmission effects. Both costs and QALYs were reported using a 3% annual discount rate.
+In this component (use *CascadeCEA-Interventions-2-RunModelAndAccum-Combination-Deterministic.R*), we draw on model functions and data loaded in previous sections to run a deterministic model for estimating accumulated costs and epidemiological outcomes of combinations of interventions for each city or all cities. Intervention outcome matrices are produced (`outcome.comb.mx`) [insert more details about the matrices produced, I see 3 matrices - 1:6, 7:32 and 33:44]; a list of outcomes and respective R labels are provided in Table 4.1. Note that we considered a 20-year time horizon (2020–2040) to capture the long-term individual benefits of ART and second-order transmission effects. Both costs and QALYs were reported using a 3% annual discount rate.
 
 Table 4.1: Description of model outcomes with `R` names 
 
