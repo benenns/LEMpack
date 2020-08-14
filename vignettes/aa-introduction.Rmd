@@ -46,6 +46,8 @@ Susceptible individuals start in the health state (denoted by S~x~), and can be 
 
 \vspace{12pt}
 \vspace{12pt}
+\vspace{12pt}
+\vspace{12pt}
 
 ![Figure 2. State-transition diagram of the model.](../figs/01_model_diagram.png) 
 
