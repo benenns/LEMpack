@@ -39,8 +39,8 @@ In each city, the adult population 15–64 is partitioned by sex at birth, HIV r
 
 ![Figure 1. Model strata diagram. \label{fig:model-strata}](../figs/02_model_strata.png)
 
-\newline
-\newline
+\vspace{12pt}
+\vspace{12pt}
 
 ![Figure 2. State-transition diagram of the model.](../figs/01_model_diagram.png) 
 
