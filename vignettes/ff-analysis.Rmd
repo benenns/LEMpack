@@ -58,7 +58,7 @@ To generate a 6 panel graph (one panel for each city) for the PSA ellipses for o
 
 To generate plots for overall rate of incidence (per 100,000) for each year in each city, and incidence decline use *CascadeCEA-Interventions-3-Plot-NewIncidence.R found in *R* directory. This script first generates rates of incidence, these results are written into a .csv file using `write.csv` function. Then the .csv file is used to generate a line graph, the script currently produces a plot for 2020-2040, it’s X-axis is “Year” and it’s Y-axis is “Annual number of new infections per 100,000”. Both point estimates and 95% CI are provided. 
 
-[would be nice to have a sample figure for incidence graph described ^]
+[would be nice to have a sample figure for incidence graph described above inserted here]
 
 To visualize the health production function generated in component 5.2 use *CascadeCEA-Interventions-3-Plot-ProductionFunction.R* found in the *R* directory. X-axis is “Incremental QALYs (1000s) and Y-axis is “Incremental costs (millions, 2018 US$).  This script automatically produces a 6 panel graph (one panel for each city), such as Figure 5.1.
 
