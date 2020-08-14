@@ -217,9 +217,9 @@
 </tbody>
 </table>
 </div>
-<div id="model-outcomes" class="section level1" number="1">
+<div id="model-outcomes" class="section level1 unnumbered">
 <h1 class="hasAnchor">
-<a href="#model-outcomes" class="anchor"></a><span class="header-section-number">1</span> 3.2 Model outcomes</h1>
+<a href="#model-outcomes" class="anchor"></a>3.2 Model outcomes</h1>
 <p>In this component we run several R scripts that set up the production of model outcomes for output to excel. Model projected outcomes such as incremental and total costs (2018 USD) and QALYs gained are produced for each city, for the combinations of interventions, considering implementation and sustainment periods determined in Section 3.1.</p>
 <p>Point estimates, and upper and lower bounds for estimates are first organized in arrays (using <em>CascadeCEA-Interventions-0-Function-accumulate.outcomes.combination.R</em> script). [Add in further details about <code>psi.matrix.temp</code>,<code>art.init.matrix</code> for example “<code>psi.matrix.temp</code> function does X”]. The number of infections for a given year (annual incidence rate) and cumulatively over several time horizons (5, 10, 20 years) are calculated for each city using <em>CascadeCEA-Interventions-0-Function-time.period.infections.R</em>. Both sets of output results (costs and QALYs, and number of infections) can then be exported to excel using the <code>write.excel</code> function as seen in <em>CascadeCEA-Interventions-0-Output-write.excel.R</em> script. [consider adding in a screenshot of what the output results in Excel so users know what to expect?] Lastly, population lists and number of infections for each time step, cost-effectiveness analyses results etc. are calculated and aggregated using the <em>CascadeCEA-Interventions-0-Function-comb.eva.func.R</em> script.</p>
 </div>
