@@ -59,7 +59,7 @@ Our model captures HIV transmission between susceptible and infected individuals
 
 We constructed a system of nonlinear ordinary differential equations (ODEs) to capture movement between 19 base model states for each of the 42 population groups considered in our model (refer to figures in *Introduction* section) . The complete model is thus comprised of 798 equations (42 population groups 19 states). A list of ODE parameters are provided in Table 2.2.
 
-Table 2.2: (\tab:ODE) Description of ODE parameters and their `R` names
+Table 2.2: Description of ODE parameters and their `R` names
 
 | **R name**                           | **Description**                                                                              
 |:-------------------------------------|:---------------------------------------------------------------------------------------------:|
@@ -69,21 +69,21 @@ Table 2.2: (\tab:ODE) Description of ODE parameters and their `R` names
 | `lambda.p`                           | Sufficient contact rate for individuals on PrEP                                                
 | `rho`                                | Entry rate (assume the same for all groups)                                                    
 | `1/ws`                               | Average duration uninfected individuals in compartment S remain (as identified after screening) | 
-|`1/wp`                                | Average duration uninfected individuals in compartment Sp remain on PrEP                        
+|`1/wp`                                | Average duration uninfected individuals in compartment S~p~ remain on PrEP                        
 | `mu_mat`                             | Maturation rates (age>65)                                                                       
 | `mo`                                 | Mortality rates for 19 states                                                                   
 | `psi`                                | Screening rates for susceptible or infected                                                     
-| `psi.p`                              | Screening rates for Iap (acute HIV on PrEP)                                                     
-| `theta.ai`                           | Transition rate from acute states (Ia) to chronic state (CD4>=500; I1)                          
-| `theta.ad`                           | Transition rate from acute states (Da) to chronic state (CD4>=500; D1)                          
+| `psi.p`                              | Screening rates for I~ap~ (acute HIV on PrEP)                                                     
+| `theta.ai`                           | Transition rate from acute states (I~a~) to chronic state (CD4>=500; I~1~)                          
+| `theta.ad`                           | Transition rate from acute states (D~a~) to chronic state (CD4>=500; D~1~)                          
 | `phi`                                | Percent of infected of people receiving ART once diagnosed                                      
-| `v2`,`v3`                            | symptom-based case finding rate for I2 and I3, respectively                                   
-| `alpha`                              | ART initiation rate for D1,D2, and D3                                                           
-| `alpha.re`                           | ART re-initiation rate for o1,O2, and O3                                                        
-| `theta.1`                            | HIV disease progression rate for those not on ART, from I1/D1 to I2/D2                          
-| `theta.2`                            | HIV disease progression rate for those not on ART, from I2/D2 to I3/D3                          
+| `v2`,`v3`                            | symptom-based case finding rate for I~2~ and I~3~, respectively                                   
+| `alpha`                              | ART initiation rate for D~1~,D~2~, and D~3~                                                           
+| `alpha.re`                           | ART re-initiation rate for O~1~,O~2~, and O~3~                                                        
+| `theta.1`                            | HIV disease progression rate for those not on ART, from I~1~/D~1~ to I~2~/D~2~                          
+| `theta.2`                            | HIV disease progression rate for those not on ART, from I~2~/D~2~ to I~3~/D~3~                          
 | `theta.t`                            | transition probabilities for those on ART                                                       
-| `theta.o`                            | ART dropout probability from states T1,T2,T3                                                    
+| `theta.o`                            | ART dropout probability from states T~1~,T~2~,T~3~                                                    
 | `eta`                                | PrEP entry rate                                                                                 
 | *Additional ODE parameters for PWID*                                                                                                  
 | `x.offoat`                           | a vector containing # of individuals off OAT                                                    
