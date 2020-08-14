@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
 
 In this component, we create all possible combinations of the 16 public health interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention [@EBIcompendium] using the R script *CascadeCEA-Interventions-0-Function-scale.interventions.combination.R*. See Figure 3 below for the list of interventions and their respective categories (*Protect, Diagnose, Treat*). This figure is also saved in the *figs* directory. Upon further assessment, we exclude combinations that would not be practically implemented jointly, termed “mutually exclusive combinations”. For example - two HIV testing interventions delivered in primary care. 
 
-![Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. \label{fig:selected evidence based interventions}](../figs/03_evidence_based_int.png)  
+![Figure 3.0 Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. \label{fig:selected evidence based interventions}](../figs/03_evidence_based_int.png)  
 
 \vspace{12pt}
 
@@ -39,25 +39,25 @@ Lastly, to set indicators of modifying parameters in ODE model  we use the funct
 
 In this component we derive the scale of delivery (or scale-up) of interventions, implemented proportionally across groups, for each time step. Some parameters and interventions only had evidence and input data stratified by race and sex (ie. Opt-out testing in ER) while others were stratified by race, sex and risk group (ie.Same-day ART initiation). Table 3.0 specifies how interventions were stratified; note that how an intervention was stratified is a result of the dimensionality provided among best available evidence as detailed in our previous works [@evsynth]. Use *CascadeCEA-Interventions-0-Function-set.scale.race.gender.R* and *CascadeCEA-Interventions-0-Function-set.scale.risk.race.gender.R* to derive scale-up for interventions. In these scripts, matrices for scale estimates (with upper and lower bounds) are created; they each have 19 rows (one for each model compartment/state) and 42 columns (one for each population strata).
 
-Table 3.0: (\tab:int-strat) Stratification of interventions input data
+Table 3.0: Stratification of interventions input data
 
 | **Stratified by**     | **Interventions**                             
 |:----------------------|:---------------------------------------------:|
-| Race, Sex             | ####Diagnose             
+| Race, Sex             | Diagnose             
 |                       |   * Opt-out testing in ER               
 |                       |   * Opt-out testing in primary care          
 |                       |   * Nurse initiated rapid testing            
 |                       |   * Emr testing offer reminder              
-| Race, Sex, Risk Group | ####Protect                          
+| Race, Sex, Risk Group | Protect                          
 |                       |   * Syringe Service Program (SSP)             
 |                       |   * Medication for opioid use disorder (MOUD) with buprenorphine     
 |                       |   * Medication for opioid use disorder (MOUD) with methadone           
 |                       |   * Targeted PrEP for high-risk MSM and MWID   
 |                       |                                             
-|                       | ####Diagnose                    
+|                       | Diagnose                    
 |                       |   * MOUD integrated rapid testing            
 |                       |                                               
-|                       | ####Treat            
+|                       | Treat            
 |                       |   * Individual case management for ART initiation initiation                               
 |                       |   * Individual care coordination for ART retention   
 |                       |   * Individual care coordination for ART retention, targeted                       
