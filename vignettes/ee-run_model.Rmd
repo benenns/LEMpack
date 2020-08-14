@@ -84,6 +84,6 @@ This component estimates accumulated costs and epidemiological outcomes for a *s
 
 # 4.4 Probabilistic sensitivity analysis (PSA) for single interventions {-}
 
-In this component we perform PSA on the deterministic model run in component 4.4 to evaluate the extent of parameter uncertainty for a single intervention.  Intervention outcome matrices are produced (`outcome.int.SA.mx`), outcomes and respective labels in R are provided in Table \@ref(tab:det-model-outcomes). Use *CascadeCEA-Interventions-2-RunModelAndAccum-SingleIntervention-PSA.R* found in the *R* directory. 
+In this component we perform PSA on the deterministic model run in component 4.4 to evaluate the extent of parameter uncertainty for a single intervention.  Intervention outcome matrices are produced (`outcome.int.SA.mx`), outcomes and respective labels in R are provided in Table 4.1. Use *CascadeCEA-Interventions-2-RunModelAndAccum-SingleIntervention-PSA.R* found in the *R* directory. 
 
 # References {-}
