@@ -32,7 +32,7 @@ knitr::write_bib(c(
 
 # The LEM model {-}
 
-In this R package, we provide the code and input data for running our dynamic, compartmental HIV transmission model that replicates the city-level HIV micro epidemic for six US cities: Atlanta; Baltimore; Los Angeles (LA); Miami (Dade County); New York City (NYC); and Seattle (King County) [@core]. We simulate a population of individuals susceptible to HIV through the course of infection (if ever), diagnosis, treatment with antiretroviral therapy (ART), and ART dropout over a time horizon of 20 years [@interventions, @calibration].
+In this R package, we provide the code and input data for running our dynamic, compartmental HIV transmission model that replicates the city-level HIV micro epidemic for six US cities: Atlanta; Baltimore; Los Angeles (LA); Miami (Dade County); New York City (NYC); and Seattle (King County) [@core]. We simulate a population of individuals susceptible to HIV through the course of infection (if ever), diagnosis, treatment with antiretroviral therapy (ART), and ART dropout over a time horizon of 20 years [@interventions; @calibration].
 
 
 In each city, the adult population 15–64 is partitioned by sex at birth, HIV risk group [MSM, people who inject drugs (PWID), MSM who inject drugs (MWID) and heterosexuals (HET)], race/ethnicity (black/African American, Hispanic/ Latinx and non-Hispanic white/others) and sexual risk behavior level (high-risk vs. low-risk). Susceptible (HIV-uninfected) individuals could be screened for HIV prior to HIV infections, and high-risk MSM (including MSM-PWID) could access pre-exposure prophylaxis (PrEP). Individuals within each of these 42 groups (See Figure 1) progress through several health states outlined in Figure 2 \ref{fig:01_model_diagram.png}. 
@@ -44,10 +44,12 @@ Susceptible individuals start in the health state (denoted by S~x~), and can be 
 
 ![Figure 1. Model strata diagram. \label{fig:model-strata}](../figs/02_model_strata.png)
 
-\vspace{12pt}
-\vspace{12pt}
-\vspace{12pt}
-\vspace{12pt}
+
+
+
+
+
+
 
 ![Figure 2. State-transition diagram of the model.](../figs/01_model_diagram.png) 
 
