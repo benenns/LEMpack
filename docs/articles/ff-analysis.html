@@ -108,7 +108,7 @@
 <div id="produce-cost-effectiveness-analysis-cea-results-table" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#produce-cost-effectiveness-analysis-cea-results-table" class="anchor"></a>5.0 Produce cost-effectiveness analysis (CEA) results table</h1>
-<p>Using <em>CascadeCEA-Interventions-3-Analysis-CEATable(range).R</em> we produce a standard CEA table (<code>cea.table</code>) comparing the OCIS with the comparator, with 95% confidence intervals. One can specify whether CEA results for a single city or all cities should be produced. Note that no explicit threshold for cost-effectiveness exists in the United States <span class="citation">(<span class="citeproc-not-found" data-reference-id="CEthreshold"><strong>???</strong></span>)</span>, we have defined cost effective interventions as those with an ICER below $100 000/QALY. CE Results are written into a .csv file using <code>write.csv</code> function. The following is a list of the CEA outcomes that are calculated:</p>
+<p>Using <em>CascadeCEA-Interventions-3-Analysis-CEATable(range).R</em> we produce a standard CEA table (<code>cea.table</code>) comparing the OCIS with the comparator, with 95% confidence intervals. One can specify whether CEA results for a single city or all cities should be produced. Note that no explicit threshold for cost-effectiveness exists in the United States <span class="citation">(Woods et al. 2016)</span>, we have defined cost effective interventions as those with an ICER below $100 000/QALY. CE Results are written into a .csv file using <code>write.csv</code> function. The following is a list of the CEA outcomes that are calculated:</p>
 <ul>
 <li>Incremental cost (point estimate, lower and upper bound)</li>
 <li>Incremental QALYs (point estimate, lower and upper bound)</li>
@@ -136,7 +136,7 @@
 <img src="../figs/04_psa_ellipses.png" alt=""><p class="caption">Figure 5.0 Sample six-panel PSA ellipses figure. </p>
 </div>
 <p>To generate plots for overall rate of incidence (per 100,000) for each year in each city, and incidence decline use <em>CascadeCEA-Interventions-3-Plot-NewIncidence.R found in </em>R* directory. This script first generates rates of incidence, these results are written into a .csv file using <code>write.csv</code> function. Then the .csv file is used to generate a line graph, the script currently produces a plot for 2020-2040, it’s X-axis is “Year” and it’s Y-axis is “Annual number of new infections per 100,000”. Both point estimates and 95% CI are provided.</p>
-<p>[would be nice to have a sample figure for incidence graph described ^]</p>
+<p>[would be nice to have a sample figure for incidence graph described above inserted here]</p>
 <p>To visualize the health production function generated in component 5.2 use <em>CascadeCEA-Interventions-3-Plot-ProductionFunction.R</em> found in the <em>R</em> directory. X-axis is “Incremental QALYs (1000s) and Y-axis is “Incremental costs (millions, 2018 US$). This script automatically produces a 6 panel graph (one panel for each city), such as Figure 5.1.</p>
 <div class="figure">
 <img src="../figs/05_production_function.png" alt=""><p class="caption">Figure 5.1 Sample six-panel Health Production Function (HPF) figure. </p>
@@ -145,6 +145,11 @@
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references hanging-indent">
+<div id="ref-CEthreshold">
+<p>Woods, Beth, Paul Revill, Mark Sculpher, and Karl Claxton. 2016. “Country-Level Cost-Effectiveness Thresholds: Initial Estimates and the Need for Further Research.” Journal Article. <em>Value in Health</em> 19 (8): 929–35. <a href="https://doi.org/https://doi.org/10.1016/j.jval.2016.02.017">https://doi.org/https://doi.org/10.1016/j.jval.2016.02.017</a>.</p>
+</div>
+</div>
 </div>
   </div>
 
