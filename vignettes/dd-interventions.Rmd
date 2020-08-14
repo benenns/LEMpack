@@ -41,21 +41,25 @@ Table 3.0: (\tab:int-strat) Stratification of interventions input data
 
 | **Stratified by**     | **Interventions**                             
 |:----------------------|:---------------------------------------------:|
-| Race, Sex             | Diagnose                                  
+| Race, Sex             | Diagnose             
+
 |                       |   * Opt-out testing in ER                   
 |                       |   * Opt-out testing in primary care           
 |                       |   * Nurse initiated rapid testing             
 |                       |   * Emr testing offer reminder                
-| Race, Sex, Risk Group | Protect                                   
+| Race, Sex, Risk Group | Protect                          
+
 |                       |   * Syringe Service Program (SSP)             
 |                       |   * Medication for opioid use disorder (MOUD) with buprenorphine        
 |                       |   * Medication for opioid use disorder (MOUD) with methadone           
 |                       |   * Targeted PrEP for high-risk MSM and MWID      
 |                       |                                             
-|                       | Diagnose                                  
+|                       | Diagnose                    
+
 |                       |   * MOUD integrated rapid testing             
 |                       |                                               
-|                       | Treat                                     
+|                       | Treat            
+
 |                       |   * Individual case management for ART initiation      
 |                       |     initiation                                
 |                       |   * Individual care coordination for ART retention     
