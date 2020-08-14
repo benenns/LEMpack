@@ -109,7 +109,7 @@
 <a href="#generate-possible-intervention-combinations" class="anchor"></a>3.0 Generate possible intervention combinations</h1>
 <p>In this component, we create all possible combinations of the 16 public health interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention <span class="citation">(Project, n.d.)</span> using the R script <em>CascadeCEA-Interventions-0-Function-scale.interventions.combination.R</em>. See Figure 3 below for the list of interventions and their respective categories (<em>Protect, Diagnose, Treat</em>). This figure is also saved in the <em>figs</em> directory. Upon further assessment, we exclude combinations that would not be practically implemented jointly, termed “mutually exclusive combinations”. For example - two HIV testing interventions delivered in primary care.</p>
 <div class="figure">
-<img src="../figs/03_evidence_based_int.png" alt=""><p class="caption">Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. \label{fig:selected evidence based interventions</p>
+<img src="../figs/03_evidence_based_int.png" alt=""><p class="caption">Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. </p>
 </div>
 <p>Next, we set intervention parameters using the <em>CascadeCEA-Interventions-0-Function-intervention.model.combination.R</em> script, and then use the <em>CascadeCEA-Interventions-0-Function-scale.interventions.combination.R</em> script to and calculate the scale of delivery inputs at each time step. Both are found in the <em>R</em> directory. Recall that scale refers to the proportion of a target population that is provided with an intervention. For HIV prevention programs, scale of delivery was the annual rate of expanded access, or additional scale-up, estimated using the best-available program-specific evidence. In contrast, for HIV testing and care interventions, scale of delivery was defined as the product of setting specific reach and adoption for each intervention <em>i</em>, target population <em>j</em> and healthcare setting <em>k</em>, where reach is defined as the participation rate in a given intervention, conditional on the probability an individual will access services in setting <em>k</em> and the probability the individual will accept the intervention being delivered.</p>
 <p><span class="math display">\[Scale_{i,j} = reach_{j,k} \times adoption_{i,k}\]</span></p>
@@ -125,33 +125,97 @@
 <th align="left"><strong>Stratified by</strong></th>
 <th align="center"><strong>Interventions</strong></th>
 </tr></thead>
-<tbody><tr class="odd">
+<tbody>
+<tr class="odd">
 <td align="left">Race, Sex</td>
 <td align="center">Diagnose</td>
-</tr></tbody>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">* Opt-out testing in ER *</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">* Opt-out testing in primary care *</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">* Nurse initiated rapid testing*</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">* Emr testing offer reminder *</td>
+</tr>
+<tr class="even">
+<td align="left">Race, Sex, Risk Group</td>
+<td align="center">Protect</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">* Syringe Service Program (SSP) *</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">* Medication for opioid use disorder (MOUD) with buprenorphine*</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">* Medication for opioid use disorder (MOUD) with methadone*</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">* Targeted PrEP for high-risk MSM and MWID*</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">Diagnose</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">* MOUD integrated rapid testing *</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">Treat</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">* Individual case management for ART initiation initiation *</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">* Individual care coordination for ART retention *</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">* Individual care coordination for ART retention, targeted *</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">* EMR alert for suboptimal ART engagement*</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">* Rapid/Same-day ART initiation*</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">* ART Re-engagement - Enhanced personal contact*</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="center">* ART Re-linkage program *</td>
+</tr>
+</tbody>
 </table>
-<div class="line-block">                      | * Opt-out testing in ER<br>
-                      | * Opt-out testing in primary care<br>
-                      | * Nurse initiated rapid testing<br>
-                      | * Emr testing offer reminder<br>
-Race, Sex, Risk Group | Protect</div>
-<div class="line-block">                      | * Syringe Service Program (SSP)<br>
-                      | * Medication for opioid use disorder (MOUD) with buprenorphine<br>
-                      | * Medication for opioid use disorder (MOUD) with methadone<br>
-                      | * Targeted PrEP for high-risk MSM and MWID<br>
-                      |<br>
-                      | Diagnose</div>
-<div class="line-block">                      | * MOUD integrated rapid testing<br>
-                      |<br>
-                      | Treat</div>
-<div class="line-block">                      | * Individual case management for ART initiation<br>
-                      | initiation<br>
-                      | * Individual care coordination for ART retention<br>
-                      | * Individual care coordination for ART retention, targeted<br>
-                      | * EMR alert for suboptimal ART engagement<br>
-                      | * Rapid/Same-day ART initiation<br>
-                      | * ART Re-engagement - Enhanced personal contact<br>
-                      | * ART Re-linkage program</div>
 </div>
 <div id="model-outcomes" class="section level1" number="1">
 <h1 class="hasAnchor">
