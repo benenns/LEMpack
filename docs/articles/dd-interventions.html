@@ -107,8 +107,10 @@
 <div id="generate-possible-intervention-combinations" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#generate-possible-intervention-combinations" class="anchor"></a>3.0 Generate possible intervention combinations</h1>
-<p>In this component, we create all possible combinations of the 16 public health interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention [cite] using the R script <em>CascadeCEA-Interventions-0-Function-scale.interventions.combination.R</em>. See Figure 3 <a href="#fig:03-Evidence-basedint"><strong>??</strong></a> below for the list of interventions and their respective categories (<em>Protect, Diagnose, Treat</em>). This figure is also saved in the <em>figs</em> directory. Upon further assessment, we exclude combinations that would not be practically implemented jointly, termed “mutually exclusive combinations”. For example - two HIV testing interventions delivered in primary care.</p>
-<!-- ![Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. \label{fig:selected evidence based interventions](../figs/03_evidence_based_int.png)  -->
+<p>In this component, we create all possible combinations of the 16 public health interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention <span class="citation">(Project, n.d.)</span> using the R script <em>CascadeCEA-Interventions-0-Function-scale.interventions.combination.R</em>. See Figure 3 below for the list of interventions and their respective categories (<em>Protect, Diagnose, Treat</em>). This figure is also saved in the <em>figs</em> directory. Upon further assessment, we exclude combinations that would not be practically implemented jointly, termed “mutually exclusive combinations”. For example - two HIV testing interventions delivered in primary care.</p>
+<div class="figure">
+<img src="../figs/03_evidence_based_int.png" alt=""><p class="caption">Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. \label{fig:selected evidence based interventions</p>
+</div>
 <p>Next, we set intervention parameters using the <em>CascadeCEA-Interventions-0-Function-intervention.model.combination.R</em> script, and then use the <em>CascadeCEA-Interventions-0-Function-scale.interventions.combination.R</em> script to and calculate the scale of delivery inputs at each time step. Both are found in the <em>R</em> directory. Recall that scale refers to the proportion of a target population that is provided with an intervention. For HIV prevention programs, scale of delivery was the annual rate of expanded access, or additional scale-up, estimated using the best-available program-specific evidence. In contrast, for HIV testing and care interventions, scale of delivery was defined as the product of setting specific reach and adoption for each intervention <em>i</em>, target population <em>j</em> and healthcare setting <em>k</em>, where reach is defined as the participation rate in a given intervention, conditional on the probability an individual will access services in setting <em>k</em> and the probability the individual will accept the intervention being delivered.</p>
 <p><span class="math display">\[Scale_{i,j} = reach_{j,k} \times adoption_{i,k}\]</span></p>
 <p>Lastly, to set indicators of modifying parameters in ODE model we use the function in <em>CascadeCEA-Interventions-0-Function-true.false.interventions.combination.R</em>.</p>
@@ -116,7 +118,7 @@
 <div id="derive-intervention-scale-up" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#derive-intervention-scale-up" class="anchor"></a>3.1 Derive intervention scale-up</h1>
-<p>In this component we derive the scale of delivery (or scale-up) of interventions, implemented proportionally across groups, for each time step. Some parameters and interventions only had evidence and input data stratified by race and sex (ie. Opt-out testing in ER) while others were stratified by race, sex and risk group (ie.Same-day ART initiation). Table <a href="#tab:int-strat"><strong>??</strong></a> below specifies how interventions were stratified; note that how an intervention was stratified is a result of the dimensionality provided among best available evidence as detailed in our previous works [cite evidence synthesis paper]. Use <em>CascadeCEA-Interventions-0-Function-set.scale.race.gender.R</em> and <em>CascadeCEA-Interventions-0-Function-set.scale.risk.race.gender.R</em> to derive scale-up for interventions. In these scripts, matrices for scale estimates (with upper and lower bounds) are created; they each have 19 rows (one for each model compartment/state) and 42 columns (one for each population strata).</p>
+<p>In this component we derive the scale of delivery (or scale-up) of interventions, implemented proportionally across groups, for each time step. Some parameters and interventions only had evidence and input data stratified by race and sex (ie. Opt-out testing in ER) while others were stratified by race, sex and risk group (ie.Same-day ART initiation). Table 3.0 specifies how interventions were stratified; note that how an intervention was stratified is a result of the dimensionality provided among best available evidence as detailed in our previous works <span class="citation">(Krebs et al. 2019)</span>. Use <em>CascadeCEA-Interventions-0-Function-set.scale.race.gender.R</em> and <em>CascadeCEA-Interventions-0-Function-set.scale.risk.race.gender.R</em> to derive scale-up for interventions. In these scripts, matrices for scale estimates (with upper and lower bounds) are created; they each have 19 rows (one for each model compartment/state) and 42 columns (one for each population strata).</p>
 <p>Table 3.0: (:int-strat) Stratification of interventions input data</p>
 <table class="table">
 <thead><tr class="header">
@@ -130,55 +132,39 @@
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="center">+ Opt-out testing in ER</td>
+<td align="center">* Opt-out testing in ER</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="center">+ Opt-out testing in primary care</td>
+<td align="center">* Opt-out testing in primary care</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="center">+ Nurse initiated rapid testing</td>
+<td align="center">* Nurse initiated rapid testing</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="center">+ Emr testing offer reminder</td>
+<td align="center">* Emr testing offer reminder</td>
 </tr>
 <tr class="even">
-<td align="left">:———————————————————————-</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
 <td align="left">Race, Sex, Risk Group</td>
 <td align="center">Protect</td>
 </tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center">* Syringe Service Program (SSP)</td>
+</tr>
 <tr class="even">
 <td align="left"></td>
-<td align="center">+ Syringe Service Program (SSP)</td>
+<td align="center">* Medication for opioid use disorder (MOUD) with buprenorphine</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="center">+ Medication for opioid use disorder</td>
-</tr>
-<tr class="even">
-<td align="left">(MOUD) with buprenorphine</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="center">+ Medication for opioid use disorder</td>
+<td align="center">* Medication for opioid use disorder (MOUD) with methadone</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="center">(MOUD) with methadone</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="center">+ Targeted PrEP for high-risk MSM and</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="center">MWID</td>
+<td align="center">* Targeted PrEP for high-risk MSM and MWID</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -190,7 +176,7 @@
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="center">+ MOUD integrated rapid testing</td>
+<td align="center">* MOUD integrated rapid testing</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
@@ -202,7 +188,7 @@
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="center">+ Individual case management for ART</td>
+<td align="center">* Individual case management for ART initiation</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
@@ -210,35 +196,27 @@
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="center">+ Individual care coordination for ART</td>
+<td align="center">* Individual care coordination for ART retention</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="center">retention</td>
+<td align="center">* Individual care coordination for ART retention, targeted</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="center">+ Individual care coordination for ART</td>
+<td align="center">* EMR alert for suboptimal ART engagement</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="center">retention, targeted</td>
+<td align="center">* Rapid/Same-day ART initiation</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="center">+ EMR alert for suboptimal ART engagement</td>
+<td align="center">* ART Re-engagement - Enhanced personal contact</td>
 </tr>
 <tr class="odd">
 <td align="left"></td>
-<td align="center">+ Rapid/Same-day ART initiation</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="center">+ ART Re-engagement - Enhanced personal contact</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="center">+ ART Re-linkage program</td>
+<td align="center">* ART Re-linkage program</td>
 </tr>
 </tbody>
 </table>
@@ -252,6 +230,14 @@
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references hanging-indent">
+<div id="ref-evsynth">
+<p>Krebs, E., B. Enns, L. Wang, X. Zang, D. Panagiotoglou, C. Del Rio, J. Dombrowski, et al. 2019. “Developing a Dynamic Hiv Transmission Model for 6 U.s. Cities: An Evidence Synthesis.” Journal Article. <em>PLoS One</em> 14 (5): e0217559. <a href="https://doi.org/10.1371/journal.pone.0217559">https://doi.org/10.1371/journal.pone.0217559</a>.</p>
+</div>
+<div id="ref-EBIcompendium">
+<p>Project, HIV/AIDS Prevention Research Synthesis. n.d. “Compendium of Evidence-Based Interventions and Best Practices for Hiv Prevention.” Report. <em>Centers for Disease Control and Prevention</em>. <a href="https://www.cdc.gov/hiv/research/interventionresearch/compendium/index.html">https://www.cdc.gov/hiv/research/interventionresearch/compendium/index.html</a>.</p>
+</div>
+</div>
 </div>
   </div>
 
