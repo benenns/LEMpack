@@ -82,6 +82,6 @@ In this component, we set values for model paramaters with multiple dimensions u
 
 # 1.4 Assign free parameter values {-}
 
-In this component, values for the free parameters are derived, calibrated and updated using *CascadeCEA-Model-0-Parameter.update.R* in the *R* directory.  Note that this component (1.4 Assign free parameter values) only needs to be done once - only when running the model for the first time. 
+In this component, values for the free parameters are derived, calibrated and updated using *CascadeCEA-Model-0-Parameter.update.R* in the *R* directory.  Note that this component (1.4 Assign free parameter values) only needs to be done once - when running the model for the first time. 
 
 # References {-}
