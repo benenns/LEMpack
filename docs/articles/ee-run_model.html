@@ -108,8 +108,8 @@
 <div id="load-model-functions" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#load-model-functions" class="anchor"></a>4.0 Load model functions</h1>
-<p>In this component we run several R scripts to load the model functions necessary for deterministic model runs and probabilistic sensitivity analyses (PSA). First we load our baseline workspace using <em>CascadeCEA-Interventions-1-LoadBaselineWorkspace.R</em> found in the <em>R</em> directory. This involves loading the needed R packages from libraries, and setting base model values (ie. interventions and CEA parameters, set time period, time steps, discount rate etc.). Some key base model values and what they are currently set to are provided in Table <a href="#tab:base-model-values"><strong>??</strong></a>.</p>
-<p>Table 4.0: (:base-model-values) Sample base model parameters with their R name and value</p>
+<p>In this component we run several R scripts to load the model functions necessary for deterministic model runs and probabilistic sensitivity analyses (PSA). First we load our baseline workspace using <em>CascadeCEA-Interventions-1-LoadBaselineWorkspace.R</em> found in the <em>R</em> directory. This involves loading the needed R packages from libraries, and setting base model values (ie. interventions and CEA parameters, set time period, time steps, discount rate etc.). Some key base model values and what they are currently set to are provided in Table 4.0.</p>
+<p>Table 4.0: Sample base model parameters with their R name and value</p>
 <table class="table">
 <thead><tr class="header">
 <th align="left"><strong>Description</strong></th>
@@ -150,8 +150,8 @@
 <div id="deterministic-model-run-for-combinations-of-interventions" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#deterministic-model-run-for-combinations-of-interventions" class="anchor"></a>4.1 Deterministic model run for combinations of interventions</h1>
-<p>In this component (use <em>CascadeCEA-Interventions-2-RunModelAndAccum-Combination-Deterministic.R</em>), we draw on model functions and data loaded in previous sections to run a deterministic model for estimating accumulated costs and epidemiological outcomes of combinations of interventions for each city or all cities. Intervention outcome matrices are produced (<code>outcome.comb.mx</code>) [insert more details about the matrices produced, I see 3 - 1:6, 7:32 and 33:44]; a list of outcomes and respective R labels are provided <a href="#tab:det-model-outcomes"><strong>??</strong></a> . Note that we considered a 20-year time horizon (2020–2040) to capture the long-term individual benefits of ART and second-order transmission effects. Both costs and QALYs were reported using a 3% annual discount rate.</p>
-<p>Table 4.1: (:det-model-outcomes) Description of model outcomes with <code>R</code> names</p>
+<p>In this component (use <em>CascadeCEA-Interventions-2-RunModelAndAccum-Combination-Deterministic.R</em>), we draw on model functions and data loaded in previous sections to run a deterministic model for estimating accumulated costs and epidemiological outcomes of combinations of interventions for each city or all cities. Intervention outcome matrices are produced (<code>outcome.comb.mx</code>) [insert more details about the matrices produced, I see 3 matrices - 1:6, 7:32 and 33:44]; a list of outcomes and respective R labels are provided in Table 4.1. Note that we considered a 20-year time horizon (2020–2040) to capture the long-term individual benefits of ART and second-order transmission effects. Both costs and QALYs were reported using a 3% annual discount rate.</p>
+<p>Table 4.1: Description of model outcomes with <code>R</code> names</p>
 <table class="table">
 <colgroup>
 <col width="20%">
@@ -240,23 +240,28 @@
 <div id="probabilistic-sensitivity-analysis-psa-for-combinations" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#probabilistic-sensitivity-analysis-psa-for-combinations" class="anchor"></a>4.2 Probabilistic sensitivity analysis (PSA) for combinations</h1>
-<p>In this component we perform PSA on the deterministic model run done in component 4.2 to evaluate the extent of parameter uncertainty for each intervention. For each city, we used the 2000 best-fitting calibrated parameter sets from 10,000 calibration runs, sampling all non-calibrated parameters simultaneously from distributions that were previously developed for each model parameter [cite]. Intervention outcome matrices are produced (<code>outcome.comb.SA.mx</code>), outcomes and respective labels in R are provided in Table <a href="#tab:det-model-outcomes"><strong>??</strong></a>.</p>
+<p>In this component we perform PSA on the deterministic model run done in component 4.2 to evaluate the extent of parameter uncertainty for each intervention. For each city, we used the 2000 best-fitting calibrated parameter sets from 10,000 calibration runs, sampling all non-calibrated parameters simultaneously from distributions that were previously developed for each model parameter <span class="citation">(Krebs et al. 2019)</span>. Intervention outcome matrices are produced (<code>outcome.comb.SA.mx</code>), outcomes and respective labels in R are provided in Table 4.1.</p>
 <p>To run PSA on the optimal combination of implementation strategy (OCIS) use <em>CascadeCEA-Interventions-2-RunModelAndAccum-Combination-PSA-OCIS.R</em> which can be found in the <em>R</em> directory.</p>
 <p>To run PSA on the combinations proximal to the OCIS use <em>CascadeCEA-Interventions-2-RunModelAndAccum-Combination-PSA-Proximal.R</em> which can also be found in the <em>R</em> directory.</p>
 </div>
 <div id="deterministic-model-run-for-single-interventions" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#deterministic-model-run-for-single-interventions" class="anchor"></a>4.3 Deterministic model run for single interventions</h1>
-<p>This component estimates accumulated costs and epidemiological outcomes for a <em>single</em> intervention rather than a combination of interventions (use <em>CascadeCEA-Interventions-2-RunModelAndAccum-SingleIntervention-Deterministic.R</em>). This component is similar to component 4.2 in the sense that we draw on model functions and data loaded in Sections 1-3. Intervention outcome matrices are produced (<code>outcome.int.mx”</code>) [insert more details about the matrices produced, I see 3 - 1:6, 7:32 and 33:44]; outcomes and respective R labels are found in Table <a href="#tab:det-model-outcomes"><strong>??</strong></a>. Once again, one can choose to generate outputs for a single city or all cities.</p>
+<p>This component estimates accumulated costs and epidemiological outcomes for a <em>single</em> intervention rather than a combination of interventions (use <em>CascadeCEA-Interventions-2-RunModelAndAccum-SingleIntervention-Deterministic.R</em>). This component is similar to component 4.2 in the sense that we draw on model functions and data loaded in Sections 1-3. Intervention outcome matrices are produced (<code>outcome.int.mx”</code>) [insert more details about the matrices produced, I see 3 - 1:6, 7:32 and 33:44]; outcomes and respective R labels are found in Table 4.1. Once again, one can choose to generate outputs for a single city or all cities.</p>
 </div>
 <div id="probabilistic-sensitivity-analysis-psa-for-single-interventions" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#probabilistic-sensitivity-analysis-psa-for-single-interventions" class="anchor"></a>4.4 Probabilistic sensitivity analysis (PSA) for single interventions</h1>
-<p>In this component we perform PSA on the deterministic model run in component 4.4 to evaluate the extent of parameter uncertainty for a single intervention. Intervention outcome matrices are produced (<code>outcome.int.SA.mx</code>), outcomes and respective labels in R are provided in Table <a href="#tab:det-model-outcomes"><strong>??</strong></a>. Use <em>CascadeCEA-Interventions-2-RunModelAndAccum-SingleIntervention-PSA.R</em> found in the <em>R</em> directory.</p>
+<p>In this component we perform PSA on the deterministic model run in component 4.4 to evaluate the extent of parameter uncertainty for a single intervention. Intervention outcome matrices are produced (<code>outcome.int.SA.mx</code>), outcomes and respective labels in R are provided in Table 4.1. Use <em>CascadeCEA-Interventions-2-RunModelAndAccum-SingleIntervention-PSA.R</em> found in the <em>R</em> directory.</p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references hanging-indent">
+<div id="ref-evsynth">
+<p>Krebs, E., B. Enns, L. Wang, X. Zang, D. Panagiotoglou, C. Del Rio, J. Dombrowski, et al. 2019. “Developing a Dynamic Hiv Transmission Model for 6 U.s. Cities: An Evidence Synthesis.” Journal Article. <em>PLoS One</em> 14 (5): e0217559. <a href="https://doi.org/10.1371/journal.pone.0217559">https://doi.org/10.1371/journal.pone.0217559</a>.</p>
+</div>
+</div>
 </div>
   </div>
 

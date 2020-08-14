@@ -25,7 +25,7 @@ In this section we use the model outcomes data and matrices generated in Section
 
 # 5.0 Produce cost-effectiveness analysis (CEA) results table {-}
 
- Using *CascadeCEA-Interventions-3-Analysis-CEATable(range).R* we produce a standard CEA table (`cea.table`) comparing the OCIS with the comparator, with 95% confidence intervals. One can specify whether CEA results for a single city or all cities should be produced. Note that no explicit threshold for cost-effectiveness exists in the United States [cite], so we have defined cost effective interventions as those with an ICER below $100 000/QALY. CE Results are written into a .csv file using `write.csv` function. The following is a list of the CEA outcomes that are calculated:
+ Using *CascadeCEA-Interventions-3-Analysis-CEATable(range).R* we produce a standard CEA table (`cea.table`) comparing the OCIS with the comparator, with 95% confidence intervals. One can specify whether CEA results for a single city or all cities should be produced. Note that no explicit threshold for cost-effectiveness exists in the United States [@CEthreshold], we have defined cost effective interventions as those with an ICER below $100 000/QALY. CE Results are written into a .csv file using `write.csv` function. The following is a list of the CEA outcomes that are calculated:
 
   + Incremental cost (point estimate, lower and upper bound)
   + Incremental QALYs (point estimate, lower and upper bound)
@@ -52,16 +52,16 @@ Following this, we find WTP levels to test so that all strategies on frontier wi
 
 # 5.2 Plots {-}
 
-To generate a 6 panel graph (one panel for each city) for the PSA ellipses for optimal combination intervention strategies, use *CascadeCEA-Interventions-3-Plot-Ellipse(PSA).R* found in the *R* directory. Figure \ref{fig:PSA-ellipses} provides an example of what is produced using the script
+To generate a 6 panel graph (one panel for each city) for the PSA ellipses for optimal combination intervention strategies, use *CascadeCEA-Interventions-3-Plot-Ellipse(PSA).R* found in the *R* directory. Figure 5.0 provides an example of what is produced using the script.
 
-<!-- ![Sample six-panel PSA ellipses figure. \label{fig:PSA-ellipses}](../figs/04_psa_ellipses.png) -->
+![Figure 5.0 Sample six-panel PSA ellipses figure. \label{fig:PSA-ellipses}](../figs/04_psa_ellipses.png) 
 
 To generate plots for overall rate of incidence (per 100,000) for each year in each city, and incidence decline use *CascadeCEA-Interventions-3-Plot-NewIncidence.R found in *R* directory. This script first generates rates of incidence, these results are written into a .csv file using `write.csv` function. Then the .csv file is used to generate a line graph, the script currently produces a plot for 2020-2040, it’s X-axis is “Year” and it’s Y-axis is “Annual number of new infections per 100,000”. Both point estimates and 95% CI are provided. 
 
-[would be nice to have a sample figure for incidence graph described ^]
+[would be nice to have a sample figure for incidence graph described above inserted here]
 
-To visualize the health production function generated in component 5.2 use *CascadeCEA-Interventions-3-Plot-ProductionFunction.R* found in the *R* directory. X-axis is “Incremental QALYs (1000s) and Y-axis is “Incremental costs (millions, 2018 US$).  This script automatically produces a 6 panel graph (one panel for each city), such as Figure \ref{fig:05_production_function}
+To visualize the health production function generated in component 5.2 use *CascadeCEA-Interventions-3-Plot-ProductionFunction.R* found in the *R* directory. X-axis is “Incremental QALYs (1000s) and Y-axis is “Incremental costs (millions, 2018 US$).  This script automatically produces a 6 panel graph (one panel for each city), such as Figure 5.1.
 
-<!-- ![Sample six-panel Health Production Function (HPF) figure. \label{fig:Health Prodcution Function Visualization}](../figs/05_production_function.png)  -->
+![Figure 5.1 Sample six-panel Health Production Function (HPF) figure. \label{fig:Health Prodcution Function Visualization}](../figs/05_production_function.png) 
 
 # References {-}
