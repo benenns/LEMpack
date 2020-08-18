@@ -96,13 +96,52 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
+
 <div id="lempack-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#lempack-" class="anchor"></a>LEMpack <img src="figs/logo.jpg" align="right" height="139">
+<a href="#lempack-" class="anchor"></a>LEMpack <img src="reference/figures/logo.jpg" align="right" height="139">
 </h1></div>
-<!-- <img src="docs/figs/under_const.jpeg" align="center" alt="" width="360" /> -->
-<p><a href="https://github.com/HERU-LEM/LEMpack"><code>LEMpack</code></a> is an R package with necessary code and data to run a dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle.</p>
-<p><a href="https://github.com/HERU-LEM/LEMpack"><code>LEMpack</code></a> the development of the LEM model is detailed in the following manuscripts:</p>
+<p><a href="https://github.com/HERU-LEM/LEMpack"><code>LEMpack</code></a> contains all necessary code and data to run our dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle.</p>
+</div>
+<div id="preliminaries" class="section level1">
+<h1 class="hasAnchor">
+<a href="#preliminaries" class="anchor"></a>Preliminaries</h1>
+<ul>
+<li>Install <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a>
+</li>
+<li>Install <code>devtools</code> to install model functions in <code>LEMpack</code>
+</li>
+</ul>
+<!-- --><div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># Install development version from GitHub</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co"># devtools::install_github("HERU-LEM/LEMpack")</span></span></code></pre></div>
+<ul>
+<li>
+<a href="https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository">Clone github repository</a>
+<ul>
+<li>Cloning this github repository will give users access to all necessary code and data to run the model and conduct the analysis</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="usage-and-installation" class="section level1">
+<h1 class="hasAnchor">
+<a href="#usage-and-installation" class="anchor"></a>Usage and installation</h1>
+<ol>
+<li>Download and install model functions from <a href="https://github.com">GitHub</a> with:</li>
+</ol>
+<!-- --><div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"HERU-LEM/LEMpack"</span>)</span></code></pre></div>
+<ol>
+<li>Run R code modules</li>
+</ol>
+<!-- --><ol>
+<li>Model setup <a href="https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup">github link</a>
+</li>
+<li>Run model and generate outputs <a href="https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model">github link</a>
+</li>
+<li>Analysis <a href="https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis">github link</a>
+</li>
+</ol>
+<p>The evidence synthesis process and development of the LEM model is detailed in the following manuscripts:</p>
 <ul>
 <li><p>Krebs, E., Enns, B., Wang, L., Zang, X., Panagiotoglou, D., Del Rio, C., Dombrowski, J., Feaster, D. J., Golden, M., Granich, R., Marshall, B., Mehta, S. H., Metsch, L., Schackman, B. R., Strathdee, S. A., Nosyk, B., &amp; localized HIV modeling study group (2019). <a href="https://dx.plos.org/10.1371/journal.pone.0217559">“Developing a dynamic HIV transmission model for 6 U.S. cities: An evidence synthesis”</a>. PloS one, 14(5), e0217559. <a href="https://doi.org/10.1371/journal.pone.0217559" class="uri">https://doi.org/10.1371/journal.pone.0217559</a></p></li>
 <li><p>Zang, X., Krebs, E., Min, J. E., Pandya, A., Marshall, B., Schackman, B. R., Behrends, C. N., Feaster, D. J., Nosyk, B., &amp; Localized HIV Modeling Study Group (2020). <a href="https://journals.sagepub.com/doi/10.1177/0272989X19889356">“Development and Calibration of a Dynamic HIV Transmission Model for 6 US Cities”</a>. Medical decision making : an international journal of the Society for Medical Decision Making, 40(1), 3–16. <a href="https://doi.org/10.1177/0272989X19889356" class="uri">https://doi.org/10.1177/0272989X19889356</a></p></li>
@@ -110,6 +149,7 @@
 <li><p>Nosyk, B., Zang, X., Krebs, E., Enns, B., Min, J. E., Behrends, C. N., Del Rio, C., Dombrowski, J. C., Feaster, D. J., Golden, M., Marshall, B., Mehta, S. H., Metsch, L. R., Pandya, A., Schackman, B. R., Shoptaw, S., Strathdee, S. A., &amp; Localized HIV Modeling Study Group (2020). <a href="https://www.thelancet.com/journals/lanhiv/article/PIIS2352-3018(20)30033-3/fulltext">“Ending the HIV epidemic in the USA: an economic modelling study in six cities”</a>. The lancet. HIV, 7(7), e491–e503. <a href="https://doi.org/10.1016/S2352-3018(20)30033-3" class="uri">https://doi.org/10.1016/S2352-3018(20)30033-3</a></p></li>
 </ul>
 </div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

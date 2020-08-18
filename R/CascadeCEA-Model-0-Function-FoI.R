@@ -42,21 +42,21 @@ FoI = function(y, no, uoC, ns, usC, eO,eS, sigmaFM, sigmaMF, sigmaM, tau, eff.pr
     sum((1-e) * y[ind, ] * n[ind, ] * uC[ind, ])
   }
 
-  #'Mixing matrix
-  #'
-  #' \code{mixMatrix} calculates assortative sexual mixing matrix
-  #'
-  #' @param ind DESCRIPTION
-  #' @param ind.low DESCRIPTION
-  #' @param ass.e Assortativity coefficient
-  #' @param n Number of contacts
-  #' @param uC DESCRIPTION
-  #' @param indM DESCRIPTION
-  #' @param indF DESCRIPTION
-  #'
-  #' @return
-  #' Complete mixing matrix
-  #' @export
+#'Mixing matrix
+#'
+#' \code{mixMatrix} calculates assortative sexual mixing matrix
+#'
+#' @param ind DESCRIPTION
+#' @param ind.low DESCRIPTION
+#' @param ass.e Assortativity coefficient
+#' @param n Number of contacts
+#' @param uC DESCRIPTION
+#' @param indM DESCRIPTION
+#' @param indF DESCRIPTION
+#'
+#' @return
+#' Complete mixing matrix
+#' @export
 
   mixMatrix = function(ind, ind.low, ass.e, n, uC, indM = F, indF = F){
     if (indM == T){

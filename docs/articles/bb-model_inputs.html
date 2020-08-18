@@ -91,7 +91,7 @@
 
       
 
-      </header><script src="bb-model_inputs_files/header-attrs-2.3/header-attrs.js"></script><div class="row">
+      </header><script src="bb-model_inputs_files/header-attrs-2.3.3/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>1 Model Inputs</h1>
@@ -327,7 +327,7 @@
 <div id="populate-cells-for-model-instantiation" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#populate-cells-for-model-instantiation" class="anchor"></a>1.2 Populate cells for model instantiation</h1>
-<p>In this component, we calculate initial cell sizes for all 42 population strata and 19 model states/compartments using <em>CascadeCEA-Model-0-Function-model.initial.R</em> in the <em>R</em> directory.</p>
+<p>In this component, we calculate initial cell sizes for all 42 population strata and 19 model states/compartments using the <code>model_initial</code> function.</p>
 </div>
 <div id="parameterization" class="section level1 unnumbered">
 <h1 class="hasAnchor">
@@ -337,7 +337,7 @@
 <div id="assign-free-parameter-values" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#assign-free-parameter-values" class="anchor"></a>1.4 Assign free parameter values</h1>
-<p>In this component, values for the free parameters are derived, calibrated and updated using <em>CascadeCEA-Model-0-Parameter.update.R</em> in the <em>R</em> directory. Note that this component (1.4 Assign free parameter values) only needs to be done once - only when running the model for the first time.</p>
+<p>In this component, values for the free parameters are derived, calibrated and updated using <em>CascadeCEA-Model-0-Parameter.update.R</em> in the <em>R</em> directory. Note that this component (1.4 Assign free parameter values) only needs to be done once - when running the model for the first time.</p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
