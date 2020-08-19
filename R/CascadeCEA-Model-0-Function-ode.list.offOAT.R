@@ -1,6 +1,6 @@
 #' Specify ODE equations for PWID off OAT
 #'
-#' \code{ode.list.offOAT} ADD DETAILS
+#' \code{ode.list.offOAT} Calculate the change of population in cells of PWID population but off OAT by the ODE model
 #'
 #' @param x a vector containing the number of individuals off OAT x = c(S1,S2,Sp,Ia,I1,I2,I3,Iap,Ip,Da,D1,D2,D3,T1,T2,T3,O1,O2,O3)
 #' @param x.oat a vector containing the number of individuals on OAT
