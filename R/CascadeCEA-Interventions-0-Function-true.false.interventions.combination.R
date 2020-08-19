@@ -1,6 +1,6 @@
 #' Interventions
 #'
-#' \code{true.false.interventions.combination} Specify possible combinations of interventions
+#' \code{true.false.interventions.combination} Set up indicators of intervention modifications.
 #'
 #' @param current.int selected intervention
 #'
