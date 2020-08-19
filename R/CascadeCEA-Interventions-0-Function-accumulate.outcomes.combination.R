@@ -3,9 +3,9 @@
 #' \code{accum.outcomes.combination} Costs & QALYs calculations for each model period
 #'
 #' @param input.parameters model inputs
-#' @param pop.in starting populations
+#' @param pop.in populations in each compartment over all evaluation time
 #' @param current.int selected intervention
-#' @param sums.only logical to only output results for full time period (default = TRUE)
+#' @param sums.only logical to only output the total of results for full time period (default = TRUE)
 #'
 #' @return
 #' List with total and period-stratified outcomes (disaggregated costs, QALYs)
