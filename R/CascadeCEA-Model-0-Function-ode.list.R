@@ -1,6 +1,6 @@
 #' Specify ODE equations for heterosexuals and MSM
 #'
-#' \code{ode.list} ADD DETAILS
+#' \code{ode.list} Calculate the change of population in cells of heterosexual and male homosexual population by the ODE model. 
 #'
 #' @param x a vector containing the number of individuals in each HIV state x = c(S1,S2,Sp,Ia,I1,I2,I3,Iap,Ip,Da,D1,D2,D3,T1,T2,T3,O1,O2,O3)
 #' @param lambda the sufficient contact rate
