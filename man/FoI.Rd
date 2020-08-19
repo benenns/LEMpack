@@ -61,19 +61,19 @@ FoI(
 
 \item{outputs}{matrix of dim c(n.gp,2) with row of each group. second column for PrEP}
 
-\item{ind}{DESCRIPTION}
+\item{ind}{index for groups of people to be mixed in function mixMatrix}
 
-\item{ind.low}{DESCRIPTION}
+\item{ind.low}{index for groups of people at low risk of HIV transmission}
 
 \item{ass.e}{Assortativity coefficient}
 
 \item{n}{Number of contacts}
 
-\item{uC}{DESCRIPTION}
+\item{uC}{condom use matrix}
 
-\item{indM}{DESCRIPTION}
+\item{indM}{indicator of male partner}
 
-\item{indF}{DESCRIPTION}
+\item{indF}{indicator of female partner}
 }
 \value{
 Sufficient contact rate (sum of transmission via needle sharing, opposite and sex same contacts)
