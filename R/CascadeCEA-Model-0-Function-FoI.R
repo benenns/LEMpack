@@ -46,13 +46,13 @@ FoI = function(y, no, uoC, ns, usC, eO,eS, sigmaFM, sigmaMF, sigmaM, tau, eff.pr
 #'
 #' \code{mixMatrix} calculates assortative sexual mixing matrix
 #'
-#' @param ind DESCRIPTION
-#' @param ind.low DESCRIPTION
+#' @param ind index for groups of people to be mixed 
+#' @param ind.low index for groups of people at low risk of HIV transmission
 #' @param ass.e Assortativity coefficient
 #' @param n Number of contacts
-#' @param uC DESCRIPTION
-#' @param indM DESCRIPTION
-#' @param indF DESCRIPTION
+#' @param uC condom use matrix
+#' @param indM indicator of male partner
+#' @param indF indicator of female partner
 #'
 #' @return
 #' Complete mixing matrix
