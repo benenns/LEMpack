@@ -16,55 +16,14 @@
 #' 6. SSP: Number of syringes available (FoI)
 #' 7. OAT: Number of individuals receiving OAT (FoI)
 #' 8. PrEP: Rate of PrEP initiation (FoI)
-#' 9. COVID Analysis related modification
-#' 10. Large-scale HIV testing during COVID intervention
+
 
 ode_model = function (t, x, vparameters){
 
   inputs <- vparameters
   list2env(inputs, environment())
 
-  ############################
-  # Modification 9.
-  params.hold <- list(d=d, noG=noG, nsG=nsG, prep.total=prep.total, v.ssp=v.ssp, nOAT.m=nOAT.m,
-                      psi.m=psi.m, alpha1=alpha1, alpha2=alpha2, alpha3=alpha3,
-                      T1_O=T1_O, T2_O=T2_O, T3_O=T3_O, O_T=O_T)
 
-  if (exists("COVID")){
-    if (COVID == TRUE){
-    if ((t >= 99) & (t <= 110)){
-      #Modification of Behaviour
-      d <- d - behaviour.change * d
-      noG <- noG - behaviour.change * noG
-      nsG <- nsG - behaviour.change * nsG
-
-      #Modification of PrEP
-      prep.total <- prep.total  - param.reduction.rate * prep.total * scenario["PrEP"]
-
-      #Modification of SSP
-      v.ssp <- v.ssp - param.reduction.rate * v.ssp * scenario["SSP"]
-
-      #Modification of MOUD
-      nOAT.m[4,] <- nOAT.m[4,]  - param.reduction.rate * nOAT.m[4,] * scenario["MOUD"]
-
-      #Modification of HIV testing
-      psi.m[4,] <- psi.m[4,] - param.reduction.rate * psi.m[4,] * scenario["HIV testing"]
-
-      #Modification of ART parameters
-      alpha1 <- alpha1 - param.reduction.rate * alpha1 * scenario["ART"]
-      alpha2 <- alpha2 - param.reduction.rate * alpha2 * scenario["ART"]
-      alpha3 <- alpha3 - param.reduction.rate * alpha3 * scenario["ART"]
-
-      T1_O <- T1_O + param.reduction.rate * T1_O * scenario["ART"]
-      T2_O <- T2_O + param.reduction.rate * T2_O * scenario["ART"]
-      T3_O <- T3_O + param.reduction.rate * T3_O * scenario["ART"]
-
-      O_T <- O_T - param.reduction.rate * O_T * scenario["ART"]
-      } else{
-        list2env(params.hold, environment())
-      }
-  }
-  }
   #############################
   n.gp = length(names.gp)
 
@@ -277,12 +236,7 @@ ode_model = function (t, x, vparameters){
   #}else if (t >= 96 & t < 108) {
   #  eta[msm.h] = rep(prep.coverage[5,]/(1-prep.coverage[5,]) * wp, 3)
 
-  #PrEP Expansion -  a 50% coverage by race/ethnic group among high-risk MSM
-  if (intervention.prep.modif==TRUE & t > int.start & t <= int.end) {
-      prep.entry <- prep.coverage[4,]
-      prep.entry[prep.entry < int.level] <- int.level
-      eta[msm.h] <- rep(prep.entry / (1 - prep.entry) * wp, 3)
-  }
+
   #####
 
     if (anyNA(eta)) warning(sprintf("Current time period = \"%s\". \n", t))
@@ -299,15 +253,6 @@ ode_model = function (t, x, vparameters){
   if (t>=12 & t<24) psi = psi.m[2, ]
   if (t>=24 & t<36) psi = psi.m[3, ]
   if (t>=36)        psi = psi.m[4, ]
-  ############################
-  # Modification 10.
-  if (any(current.int == "Large-scale testing during COVID") & (t>=102) & (t<=110)){
-    if (testing.level.reach==0.25) {psi.increase <- 0.0180}
-    if (testing.level.reach==0.5) {psi.increase <- 0.04}
-    if (testing.level.reach==0.75) {psi.increase <- 0.0682}
-    if (testing.level.reach==0.9) {psi.increase <- 0.0899}
-    psi = psi + rep(psi.increase, 42)
-  }
   ############################
 
   # out is the population difference between the time t and t+1
@@ -524,77 +469,6 @@ ode_model = function (t, x, vparameters){
     out[ ,4:19] = out[ ,4:19] + dif
   }
 
-  #adjust the population size of corresponding compartment at the end of each time step to maintain designated proportions in the given health state
-  if (move.pop.adj == TRUE & t >= move.start & t <= move.end){
-  current.pop.m <- y2 + out[ ,1:19]
-  y18 <- matrix(0, nrow = 18, ncol = 19)
-  for (i in 1:18){
-    ind = which(rname %in% names18[i])
-    y18[i, ] <- colSums(current.pop.m[ind, ])
-  }
-  prop.diag <- rowSums(y18[ , 4:9]) / rowSums(y18[ , 4:19])
-  tar.level <- rep(I.PLHIV.adj.level,length(names18))
-  if (sum(prop.diag > tar.level) > 0){
-    for (ll in which(prop.diag > tar.level)){
-      adj.prop <- (prop.diag[ll] - tar.level[ll]) * sum(y18[ ll, 4:19]) / sum(y18[ ll, 4:9])
-      ind = which(rname %in% names18[ll])
-      current.pop.m.hold <- current.pop.m
-      #adj.population <- current.pop.m[ind,4:9] * adj.prop
-      #colnames(adj.population) <- colnames(current.pop.m)[4:9]
-      current.pop.m[ind,4:9] <- current.pop.m[ind,4:9] - current.pop.m.hold[ind,4:9] * adj.prop #adj.population
-      # Ia, Iap to Da
-      current.pop.m[ind,10] <- current.pop.m[ind,10] + rowSums(current.pop.m.hold[ind, c(4, 8)] * adj.prop)#rowSums(adj.population[,c("Ia","Iap")])
-      # Ip, I1 to D1
-      current.pop.m[ind,11] <- current.pop.m[ind,11] + rowSums(current.pop.m.hold[ind, c(5, 9)] * adj.prop)#rowSums(adj.population[,c("Ip","I1")])
-      # I2 to D2
-      current.pop.m[ind,12] <- current.pop.m[ind,12] + current.pop.m.hold[ind, 6] * adj.prop#adj.population[,"I2"]
-      # I3 to D3
-      current.pop.m[ind,13] <- current.pop.m[ind,13] + current.pop.m.hold[ind, 7] * adj.prop #adj.population[,"I3"]
-    }
-  }
-
-  prop.care <- rowSums(y18[ , 10:13]) / rowSums(y18[ , 10:19])
-  tar.level <- rep(D.PLHIV.adj.level,length(names18))
-  if (sum(prop.care > tar.level) > 0){
-    for (ll in which(prop.care > tar.level)){
-      adj.prop <- (prop.care[ll] - tar.level[ll]) * sum(y18[ ll, 10:19]) / sum(y18[ ll, 10:13])
-      ind = which(rname %in% names18[ll])
-      current.pop.m.hold <- current.pop.m
-      #colnames(adj.population) <- colnames(current.pop.m)[10:13]
-      #adj.population <- current.pop.m[ind,10:13] * adj.prop
-      current.pop.m[ind,10:13] <- current.pop.m[ind,10:13] - current.pop.m.hold[ind,10:13] * adj.prop
-      # Da, D1 to T1
-      current.pop.m[ind,14] <- current.pop.m[ind,14] +  rowSums(current.pop.m.hold[ind, c(10, 11)] * adj.prop)
-      # D2 to T2
-      current.pop.m[ind,15] <- current.pop.m[ind,15] + current.pop.m.hold[ind, 12] * adj.prop
-      # D3 to T3
-      current.pop.m[ind,16] <- current.pop.m[ind,16] + current.pop.m.hold[ind, 13] * adj.prop
-    }
-  }
-
-  prop.onART <- rowSums(y18[ , 14:16]) / rowSums(y18[ , 10:19])
-  tar.level <- rep(ART.PLHIV.adj.level,length(names18))
-  if (sum(prop.onART < tar.level) > 0){
-    for (ll in which(prop.onART < tar.level)){
-      adj.prop <- (tar.level[ll] - prop.onART[ll]) * sum(y18[ ll, 10:19]) / sum(y18[ ll, 17:19])
-      if (adj.prop > 1){
-        adj.prop <- 1
-      }
-      ind = which(rname %in% names18[ll])
-      current.pop.m.hold <- current.pop.m
-      #adj.population <- current.pop.m[ind,17:19] * adj.prop
-      #colnames(adj.population) <- colnames(current.pop.m)[17:19]
-      current.pop.m[ind,17:19] <- current.pop.m[ind,17:19] - current.pop.m.hold[ind,17:19] * adj.prop
-      # O1 to T1
-      current.pop.m[ind,14] <- current.pop.m[ind,14] + current.pop.m.hold[ind, 17] * adj.prop
-      # O2 to T2
-      current.pop.m[ind,15] <- current.pop.m[ind,15] + current.pop.m.hold[ind, 18] * adj.prop
-      # O3 to T3
-      current.pop.m[ind,16] <- current.pop.m[ind,16] + current.pop.m.hold[ind, 19] * adj.prop
-    }
-  }
-  out[ ,1:19] <- current.pop.m - y2
-  }
   list(as.vector(t(out)))
   #})
 }
