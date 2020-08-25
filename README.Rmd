@@ -20,8 +20,7 @@ knitr::opts_chunk$set(
 - Install [RStudio](https://www.rstudio.com/products/rstudio/download/)
 - Install `devtools` to install model functions in `LEMpack`
 ```{r, eval=FALSE}
-# Install development version from GitHub
-# devtools::install_github("HERU-LEM/LEMpack")
+install.packages("devtools")
 ```
 - [Clone github repository](https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository)
   - Cloning this github repository will give users access to all necessary code and data to run the model and conduct the analysis
@@ -34,10 +33,23 @@ knitr::opts_chunk$set(
 devtools::install_github("HERU-LEM/LEMpack")
 ```
 
-2. Run R code modules
+2. Load library:
+
+```{r, eval=FALSE}
+library(LEMpack)
+```
+
+
+3. Run R code modules
   a. Model setup [github link](https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup)
+  
+  
   b. Run model and generate outputs [github link](https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model)
+  
+  
   c. Analysis [github link](https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis)
+
+# Background Material
 
 The evidence synthesis process and development of the LEM model is detailed in the following manuscripts:
 
