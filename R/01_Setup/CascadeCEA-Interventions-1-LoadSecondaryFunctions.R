@@ -1,11 +1,4 @@
-#' Load secondary model functions
-#'
-#' @param file.init String with the location and name of the file with initial set of parameters
-#' @param
-#'
-#' @return
-#' This module [ADD DETAIL]
-#' @export
+# Load secondary model scripts
 
 source("Scripts/CascadeCEA-Interventions-0-Function-cea.icer.R")
 source("Scripts/CascadeCEA-Interventions-0-Function-service.calc.R")

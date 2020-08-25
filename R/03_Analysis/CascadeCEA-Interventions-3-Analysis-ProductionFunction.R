@@ -2,34 +2,35 @@
 ####### PART 1: constructing the health production function ########
 ####################################################################
 # Name: getFrontier.R
-# Goal: Find the CEA frontier, up to a given WTP level, by 
+# Goal: Find the CEA frontier, up to a given WTP level, by
 #       identifying strategies with the highest NMB
 # Reference: An Efficient, Noniterative Method of Identifying the Cost-Effectiveness Frontier, Sze-chuan Suen, Jeremy D. Goldhaber-Fiebert
 # Modifier: Xiao Zang
 # Latest update: Feb 20, 2020
-# Notes: 
-#    ~User can specify the maximum willingness-to-pay level to 
+# Notes:
+#    ~User can specify the maximum willingness-to-pay level to
 #      consider (maxWTP).  Can be Inf for infinity.
 #
 #    ~QALY-reducing strategies will be on the frontier if they save
-#      enough money (script assumes maximum willingness to save money 
+#      enough money (script assumes maximum willingness to save money
 #      per QALY lost is equivalent to maximum willingness to pay per QALY
 #      gained). If the user does not wish to consider such policies as
-#      being on the frontier, do not include strategies with negative 
+#      being on the frontier, do not include strategies with negative
 #      QALYs in the input csv file.
 #
 #    ~Script does not use the one-line code cited in the text
 #      as the max function is slow. This implementation is
 #      faster and methodologically does the same thing.
 #
-#    ~May take a few minutes if thousands of strategies and 
+#    ~May take a few minutes if thousands of strategies and
 #       processing resources are low.  Please be patient.
 
 
 rm(list=ls())
 library(rstudioapi)
 library(tictoc)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(LEMpackHIV)
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 all.cities <- c("ATL", "BAL", "LA", "MIA", "NYC", "SEA")
 maxWTP <- 200000        # any positive value or Inf
 
@@ -77,7 +78,7 @@ for (i in 1:numStrat) {
   indexStrat[,qalyCol]  <- indexStrat[,qalyCol]*CEmat[i,qalyCol]
   delCostQalys          <- CEmat - indexStrat
   ICERmat[,i]           <- delCostQalys[,costsCol] / delCostQalys[,qalyCol]
-}  
+}
 
 ICERvec <- numeric(numStrat*numStrat/2 - numStrat)
 for (ij in 1:(numStrat-1)){
@@ -136,7 +137,7 @@ if (any(frontier.matrix$costs.total.sum < 0)){
     ocis       <- frontier.matrix$Strategy.ind[nrow(frontier.matrix)]
     comparator <- frontier.matrix$Strategy.ind[nrow(frontier.matrix) - 1]
   } else{
-    frontier.matrix$ICER[(NCS+1):nrow(frontier.matrix)] <- 
+    frontier.matrix$ICER[(NCS+1):nrow(frontier.matrix)] <-
       diff(frontier.matrix$costs.total.sum[NCS:nrow(frontier.matrix)]) / diff(frontier.matrix$QALYs.sum[NCS:nrow(frontier.matrix)])
     icer <- as.numeric(frontier.matrix$ICER[(NCS+1):nrow(frontier.matrix)])  #ICER for non cost-saving strategies
     if (all(icer >= CEthreshold)){
@@ -172,7 +173,7 @@ write.xlsx(frontier.matrix, file = paste0("Outputs/Production Function Table/Pro
 #####################################################################################
 ####### PART 3: Print the included interventions in the selected combination ########
 #####################################################################################
-source("CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 print(interventions[combination.list[[ocis]]])
 print(interventions[combination.list[[comparator]]])
 for (i in 1:length(frontier)){

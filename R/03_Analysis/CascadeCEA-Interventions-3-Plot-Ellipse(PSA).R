@@ -9,8 +9,9 @@ library(Hmisc)
 library(maptools)
 library(ggplot2)
 library(SIBER)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-source("CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+library(LEMpackHIV)
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 CITY.name <- c("(A) Atlanta", " (B) Baltimore", "(C) Los Angeles", "(D) Miami", "(E) New York City", "(F) Seattle")
 combination.list <- readRDS("Combination/Combination.list.rds")
@@ -361,7 +362,7 @@ plot_ellipse6 <- ggplot(data = data.frame(frontier.matrix), aes(x=costs.total.su
 
 ####Combine all 6 plots####
 library(cowplot)
-p <- plot_grid(plot_ellipse1, plot_ellipse2, plot_ellipse3, plot_ellipse4, plot_ellipse5, plot_ellipse6, ncol = 2, 
+p <- plot_grid(plot_ellipse1, plot_ellipse2, plot_ellipse3, plot_ellipse4, plot_ellipse5, plot_ellipse6, ncol = 2,
                align = 'v', axis = 'l') # aligning vertically along the left axis
 
 p

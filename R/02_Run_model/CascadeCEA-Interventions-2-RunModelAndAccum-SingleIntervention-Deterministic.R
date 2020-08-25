@@ -1,23 +1,16 @@
-#' Run deterministic model for single interventions
-#'
-#' @param file.init String with the location and name of the file with initial set of parameters
-#' @param
-#'
-#' This module allows users to run deterministic and PSA for optimal combination implementation strategy at documented scale
-#' PREREQUISITE: run documented and determine the production function first
-#'
-#' @return
-#' Disaggregated costs, QALYS, HIV infections
-#' @export
+# Run deterministic model for single interventions
+# This module allows users to run deterministic and PSA for optimal combination implementation strategy at documented scale
+# PREREQUISITE: run documented and determine the production function first
 
 #############################################################################
 # 1. SET directpry and workspace
 #############################################################################
 rm(list=ls())
 library(rstudioapi)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(LEMpackHIV)
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-source("CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("R/01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -29,13 +22,13 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-source("ModelCoreModules/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+source("R/01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 ## LOAD analysis scenario
 case = "DM"  # DM for deterministic, SA for sensitivity analysis
 
 ## LOAD all input parameters and comparators
-source("CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("R/01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 total.int <- length(interventions)-1
 outcome.int.mx <- matrix(0, nrow = total.int, ncol = 44)    ##Initialize intervention outcome matrix (to save results)

@@ -6,8 +6,9 @@
 ############################################################################################
 rm(list=ls())
 library(rstudioapi)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-source("CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+library(LEMpackHIV)
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 ## SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -56,7 +57,7 @@ ocis.outcome            <- readRDS(paste0("Combination/Outcome-Combination-", CI
 ocis.outcome.mx         <- ocis.outcome[ , c("QALYs.sum", "costs.total.sum")]
 ocis.outcome.mx[ , 1]   <- ocis.outcome.mx[ , 1] - ref.matrix[ ,1]
 ocis.outcome.mx[ , 2]   <- ocis.outcome.mx[ , 2] - ref.matrix[ ,2]
-PSA.comparison.mx[ , 1] <- ocis.outcome.mx[ , 1] * CEthreshold - ocis.outcome.mx[ , 2] 
+PSA.comparison.mx[ , 1] <- ocis.outcome.mx[ , 1] * CEthreshold - ocis.outcome.mx[ , 2]
 
 colnames(PSA.comparison.mx) <- c("OCIS", "Comparator", as.character(PSA.comb.ind))
 

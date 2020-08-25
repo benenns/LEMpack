@@ -23,30 +23,30 @@ combination.list <- readRDS("Combination/Combination.list.rds")
 all.cities       <- c("ATL", "BAL", "LA", "MIA", "NYC", "SEA")
 city.name.list   <- c("Atlanta", "Baltimore", "Los Angeles", "Miami", "New York City", "Seattle")
 n.sample         <- 2000
-source("Scripts/CascadeCEA-Interventions-0-Function-incidence.derivation.R")
+#source("Scripts/CascadeCEA-Interventions-0-Function-incidence.derivation.R")
 
 for (ww in 1:6){
   CITY      <- all.cities[ww]
   CITY.name <- city.name.list[ww]
   ocis      <- readRDS(paste0("Combination/ProductionFunction-Frontier-", CITY, ".rds"))$ocis
-  
+
   case      <- "Status Quo"
-  incidence <- incidence.derivation(CITY = CITY, case = case, ocis = ocis) 
+  incidence <- incidence.derivation(CITY = CITY, case = case, ocis = ocis)
   ggplotdata$PE[ggplotdata$City     == CITY.name & ggplotdata$Scenario == case] <- incidence$pe
   ggplotdata$Median[ggplotdata$City == CITY.name & ggplotdata$Scenario == case] <- incidence$median
   ggplotdata$Lower[ggplotdata$City  == CITY.name & ggplotdata$Scenario == case] <- incidence$lower
   ggplotdata$Upper[ggplotdata$City  == CITY.name & ggplotdata$Scenario == case] <- incidence$upper
-  
+
   case      <- "Documented"
-  incidence <- incidence.derivation(CITY = CITY, case = case, ocis = ocis) 
+  incidence <- incidence.derivation(CITY = CITY, case = case, ocis = ocis)
   ggplotdata$PE[ggplotdata$City     == CITY.name & ggplotdata$Scenario == case] <- incidence$pe
   ggplotdata$Median[ggplotdata$City == CITY.name & ggplotdata$Scenario == case] <- incidence$median
   ggplotdata$Lower[ggplotdata$City  == CITY.name & ggplotdata$Scenario == case] <- incidence$lower
   ggplotdata$Upper[ggplotdata$City  == CITY.name & ggplotdata$Scenario == case] <- incidence$upper
   reduction.matrix.documented[CITY.name, ] <- incidence$reduction
-  
+
   case      <- "Ideal"
-  incidence <- incidence.derivation(CITY = CITY, case = case, ocis = ocis) 
+  incidence <- incidence.derivation(CITY = CITY, case = case, ocis = ocis)
   ggplotdata$PE[ggplotdata$City     == CITY.name & ggplotdata$Scenario == case] <- incidence$pe
   ggplotdata$Median[ggplotdata$City == CITY.name & ggplotdata$Scenario == case] <- incidence$median
   ggplotdata$Lower[ggplotdata$City  == CITY.name & ggplotdata$Scenario == case] <- incidence$lower

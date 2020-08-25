@@ -1,23 +1,16 @@
-#' Run PSA for proximal strategies to OCIS
-#'
-#' @param file.init String with the location and name of the file with initial set of parameters
-#' @param
-#'
-#' This module allows users to run deterministic and PSA for optimal combination implementation strategy at documented scale
-#' PREREQUISITE: run documented and determine the production function first
-#'
-#' @return
-#' Disaggregated costs, QALYS, HIV infections
-#' @export
+# Run PSA for proximal strategies to OCIS
+# This module allows users to run deterministic and PSA for optimal combination implementation strategy at documented scale
+# PREREQUISITE: run documented and determine the production function first
 
 #############################################################################
 # 1. SET directpry and workspace
 #############################################################################
 rm(list=ls())
 library(rstudioapi)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(LEMpackHIV)
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-source("CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("R/01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -29,7 +22,7 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-source("ModelCoreModules/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+source("R/01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 ## LOAD analysis scenario
 case         <- "SA"  # DM for deterministic, SA for sensitivity analysis
@@ -38,7 +31,7 @@ param.sets   <- 2000
 proximal.ind <- as.numeric(readRDS(paste0("Combination/PSA-ProximalStrategies-", CITY, ".rds")))
 
 ## LOAD all input parameters and comparators
-source("CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("R/01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 ## Executing PSA analyses
 for (ss in 1:length(proximal.ind)){

@@ -1,6 +1,6 @@
 #' Interventions
 #'
-#' \code{scale.interventions.combination} Function for running
+#' \code{scale.interventions.combination} Function for setting up intervention combinations
 #'
 #' @param current.int selected intervention
 #' @param tf.comb logical vector for possible intervention combinations

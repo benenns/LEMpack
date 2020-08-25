@@ -1,9 +1,3 @@
-#' Set parameter names
-#'
-#' @return
-#' This module creates names for model inputs and outputs
-#' @export
-
 export.int.model.names <- c("names.gp", "temp.int", "all.params", "Discounting",
                             "rname", "calpar.info", "calib_mul", "calpar",
                             "par_info", "vlist", "pwid.gn.fun", "names.pwid",

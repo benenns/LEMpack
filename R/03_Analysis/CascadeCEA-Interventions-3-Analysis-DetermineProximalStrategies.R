@@ -2,12 +2,13 @@
 ## Cascade CEA Model - Combination Interventions
 ## Determine the proximal stratgies for PSA analyses to estimate proportions being most CE
 ## ATTENTION: TWO OPTIONS TO CHOOSE FROM, Option 2 tackles potential issue with CS stratgies,
-##            should be consistent to the module: 
+##            should be consistent to the module:
 ## Last updated: Feb 20, 2020
 ############################################################################################
 rm(list=ls())
 library(rstudioapi)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(LEMpackHIV)
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 all.cities <- c("ATL", "BAL", "LA", "MIA", "NYC", "SEA")
 
 ## SELECT city ##
@@ -60,7 +61,7 @@ saveRDS(PSA.sts[ , "index"], paste0("Combination/PSA-ProximalStrategies-", CITY,
 #############################################################################
 ####### Print the included interventions in the proximal combination ########
 #############################################################################
-source("CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 proximal <- PSA.sts[ , "index"]
 for (i in 1:length(frontier)){
   print(paste0("####COMBINATION-", proximal[i], ":"))

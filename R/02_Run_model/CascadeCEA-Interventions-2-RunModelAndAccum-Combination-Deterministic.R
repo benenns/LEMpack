@@ -1,13 +1,7 @@
-#' Run model and accumulate outcomes (deterministic)
-#'
-#' @param file.init String with the location and name of the file with initial set of parameters
-#' @param
-#'
-#' @return
-#' This module allows for city selection, loads list of intervention combinations, loads ordinary differential equation functions,
-#' analysis scenario (deterministic or sensitivity analysis), and loads input parameters and comparators.
-#' It also provides code for running parallel estimations.
-#' @export
+# Run model and accumulate outcomes (deterministic)
+# This module allows for city selection, loads list of intervention combinations, loads ordinary differential equation functions,
+# analysis scenario (deterministic or sensitivity analysis), and loads input parameters and comparators.
+# It also provides code for running parallel estimations.
 
 #############################################################################
 # 1. SET directory and workspace
@@ -15,9 +9,10 @@
 
 rm(list=ls())
 library(rstudioapi)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(LEMpackHIV)
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-source("CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -29,13 +24,13 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-source("ModelCoreModules/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+#source("ModelCoreModules/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 ## LOAD analysis scenario
 case = "DM"  # DM for deterministic, SA for sensitivity analysis
 
 ## LOAD all input parameters and comparators
-source("CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("R/01_Setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 total.comb <- length(combination.list)
 

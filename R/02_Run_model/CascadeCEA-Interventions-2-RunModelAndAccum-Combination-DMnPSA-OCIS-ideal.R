@@ -1,14 +1,6 @@
-#' Run model and accumulate outcomes (deterministic and PSA, for optimal combination implmentation strategy identifed at documented scale)
-#'
-#' @param file.init String with the location and name of the file with initial set of parameters
-#' @param
-#'
-#' This module allows users to run deterministic and PSA for optimal combination implementation strategy at documented scale
-#' PREREQUISITE: run documented and determine the production function first
-#'
-#' @return
-#' Disaggregated costs, QALYS, HIV infections
-#' @export
+# Run model and accumulate outcomes (deterministic and PSA, for optimal combination implmentation strategy identifed at documented scale)
+# This module allows users to run deterministic and PSA for optimal combination implementation strategy at documented scale
+# PREREQUISITE: run documented and determine the production function first
 
 #############################################################################
 # 1. SET directory and workspace
@@ -16,9 +8,10 @@
 
 rm(list=ls())
 library(rstudioapi)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(LEMpackHIV)
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-source("CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("R/01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -30,7 +23,7 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-source("ModelCoreModules/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+source("R/01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 #Load OCIS, if unavailable, execute Part 2 of: "CascadeCEA-Interventions-3-Analysis-ProductionFunction.R"
 ocis        <- readRDS(paste0("Combination/ProductionFunction-Frontier-", CITY, ".rds"))$ocis
@@ -44,7 +37,7 @@ case  = "DM"  # DM for deterministic, SA for sensitivity analysis
 int.scale = "ideal"  # This variable exists only for ideal scale
 
 ## LOAD all input parameters and comparators
-source("CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("R/01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 
 ## RUN the deterministic model
@@ -71,7 +64,7 @@ int.scale = "ideal"  # This variable exists only for ideal scale
 param.sets  <- 2000
 
 ## LOAD all input parameters and comparators
-source("CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("R/01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 ## Executing PSA analyses
 outcome.ideal.SA.mx <- matrix(0, nrow = param.sets, ncol = 44)

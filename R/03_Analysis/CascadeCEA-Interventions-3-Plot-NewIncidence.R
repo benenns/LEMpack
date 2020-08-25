@@ -7,8 +7,9 @@ rm(list=ls())
 library(rstudioapi)
 library(ggplot2)
 library(reshape2)
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-source("CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+library(LEMpackHIV)
+#setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 # CITY <- select.list(all.cities, multiple = FALSE,
@@ -55,9 +56,9 @@ plot_out <- ggplot(data = ggplotdata, aes(x=Year, y = value, color = factor(vari
   scale_size_manual(values = c(rep(1, which(frontier == ocis)), 2, rep(1, (length(frontier) - which(frontier == ocis))))) +
   scale_x_continuous(breaks = c(2016, 2020, 2025, 2030, 2035, 2040)) +
   ylim(0, max(ggplotdata$value)*1.2) +
-  geom_vline(xintercept = 2020, linetype = "dashed", color = "grey", size = 0.7) + 
-  geom_vline(xintercept = 2025, linetype = "dashed", color = "grey", size = 0.7) + 
-  geom_vline(xintercept = 2030, linetype = "dashed", color = "grey", size = 0.7) + 
+  geom_vline(xintercept = 2020, linetype = "dashed", color = "grey", size = 0.7) +
+  geom_vline(xintercept = 2025, linetype = "dashed", color = "grey", size = 0.7) +
+  geom_vline(xintercept = 2030, linetype = "dashed", color = "grey", size = 0.7) +
   labs(y="Number of new HIV infections", x="Year", col = "Strategy", alpha = "Strategy") +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"), axis.title=element_text(size=11), axis.text = element_text(size=10), title=element_text(size=11), legend.text = element_text(size=9), legend.key = element_rect(fill = "transparent", colour = "transparent"))
 

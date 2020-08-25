@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 # Preliminaries
 - Install [RStudio](https://www.rstudio.com/products/rstudio/download/)
-- Install `devtools` to install model functions in `LEMpack`
+- Install `devtools`
 ```{r, eval=FALSE}
 install.packages("devtools")
 ```
@@ -27,18 +27,15 @@ install.packages("devtools")
 
 # Usage and installation 
 
-1. Download and install model functions from [GitHub](https://github.com) with:
+1. Open R Studio and load project file:
+
+- Double-click "LEMpackHIV/LEMpackHIV.Rproj"
+
+2. Download and install LEMpackHIV package from [GitHub](https://github.com) with:
 
 ```{r, eval=FALSE}
-devtools::install_github("HERU-LEM/LEMpack")
+devtools::install_github("HERU-LEM/LEMpackHIV")
 ```
-
-2. Load library:
-
-```{r, eval=FALSE}
-library(LEMpack)
-```
-
 
 3. Run R code modules
   a. Model setup [github link](https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup)

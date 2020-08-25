@@ -56,4 +56,4 @@ for (l in 1:length(names)){
     }}
 }
 
-source("ModelCoreModules/CascadeCEA-Model-0-Parameterization.R")
+source("R/01_Setup/CascadeCEA-Model-0-Parameterization.R")

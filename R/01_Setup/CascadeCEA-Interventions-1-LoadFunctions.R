@@ -1,12 +1,6 @@
-#' Load model functions
-#'
-#' @param XX Description
-#' @param XX Description
-#'
-#' @return
-#' This module calls all main model functions
-#' @export
-
+##############################################
+# REMOVE: Redundant when installing LEMpackHIV
+##############################################
 source("Scripts/CascadeCEA-Interventions-0-Function-intervention.model.combination.R")
 # source("Scripts/CascadeCEA-Interventions-0-Function-intervention.model.sa.R")
 source("Scripts/CascadeCEA-Interventions-0-Function-scale.interventions.combination.R")

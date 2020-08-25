@@ -24,15 +24,7 @@ list.excl[[2]]  <- c(2, 4)    # Opt-out (PC) & Nurse-initiated testing
 list.excl[[3]]  <- c(7, 9)    # ART retention & ART EMR reminder
 list.excl[[4]]  <- c(1, 3)    # Opt-out (ER) & EMR testing
 
-#' Create a function to detect whether the mutually exclusive interventions are combined
-#'
-#' \code{%contain%} Check for mutually exclusive combinations
-#'
-#' @param values [add detail]
-#' @param x [add detail]
-#' @return
-#' Returns X
-#' @export
+
 "%contain%" <- function(values,x) {
   tx <- table(x)
   tv <- table(values)

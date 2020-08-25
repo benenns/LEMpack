@@ -1,12 +1,3 @@
-#' Load baseline model workspace
-#'
-#' @param file.init String with the location and name of the file with initial set of parameters
-#' @param
-#'
-#' @return
-#' Values for baseline model workspace
-#' @export
-
 library(openxlsx)
 library(abind)
 library(ggplot2)
@@ -18,6 +9,7 @@ library(zoo)
 library(tictoc)
 library(rmarkdown)
 library(stringr)
+library(LEMpackHIV)
 
 # ## Required only when using plotly for graphs
 # library(plotly)
@@ -31,10 +23,10 @@ doFuture::registerDoFuture()
 cores <- detectCores()
 future::plan(cluster, workers = cores[1]-2)  ##number of cores, default: (PCcores - 2)
 
-source("CascadeCEA-Interventions-1-LoadFunctions.R")
+# source("CascadeCEA-Interventions-1-LoadFunctions.R") library(LEMpackHIV) loads all model functions
 
 ## GET EXPORT VECTOR OF NAMES FOR RUNNING PARALLEL
-source("CascadeCEA-Interventions-1-ParNamesExportIntModel.R")
+source("R/01_Setup/CascadeCEA-Interventions-1-ParNamesExportIntModel.R")
 
 ## GET INTERVENTIONS AND CEA PARAMETERS
 interventions <- c("Opt-out testing (ER)", "Opt-out testing (PC)",
