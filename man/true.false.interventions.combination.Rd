@@ -14,5 +14,5 @@ true.false.interventions.combination(current.int)
 Value of logical vectors for intervention modeling
 }
 \description{
-\code{true.false.interventions.combination} Specify possible combinations of interventions
+\code{true.false.interventions.combination} Set up indicators of intervention modifications.
 }

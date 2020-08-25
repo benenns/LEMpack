@@ -18,5 +18,5 @@
 Value of logical vectors for intervention modeling
 }
 \description{
-\code{scale.interventions.combination} Function for running
+\code{scale.interventions.combination} Function for setting up intervention combinations
 }

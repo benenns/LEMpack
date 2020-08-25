@@ -4,22 +4,21 @@
 LEMpack <img src='man/figures/logo.jpg' align="right" height="139" />
 =====================================================================
 
-[`LEMpack`](https://github.com/HERU-LEM/LEMpack) contains all necessary
-code and data to run our dynamic compartmental simulation model for the
-localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami,
-NYC, Seattle.
+[`LEMpack`](https://github.com/HERU-LEM/LEMpackHIV) package and github
+repository contains all model functions, code modules and data to run
+our dynamic compartmental simulation model for the localized HIV
+microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle.
 
 Preliminaries
 =============
 
 -   Install
     [RStudio](https://www.rstudio.com/products/rstudio/download/)
--   Install `devtools` to install model functions in `LEMpack`
+-   Install `devtools`
 
 <!-- -->
 
-    # Install development version from GitHub
-    # devtools::install_github("HERU-LEM/LEMpack")
+    install.packages("devtools")
 
 -   [Clone github
     repository](https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository)
@@ -30,26 +29,41 @@ Preliminaries
 Usage and installation
 ======================
 
-1.  Download and install model functions from
+1.  Open R Studio and load project file:
+
+-   Load file: *LEMpackHIV/LEMpackHIV.Rproj*
+
+1.  Download and install LEMpackHIV package from
     [GitHub](https://github.com) with:
 
 <!-- -->
 
-    devtools::install_github("HERU-LEM/LEMpack")
+    devtools::install_github("HERU-LEM/LEMpackHIV")
 
-1.  Run R code modules
+R code modules
+--------------
 
-<!-- -->
+1.  [Model
+    setup](https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup) -
+    Contains R scripts for core modules. These scripts are called by
+    code in *R/02\_Run\_model* and *R/03\_Analysis*
 
-1.  Model setup [github
-    link](https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup)
-2.  Run model and generate outputs [github
-    link](https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model)
-3.  Analysis [github
-    link](https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis)
+2.  [Run model and generate
+    outputs](https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model) -
+    These scripts are used to run the model and produce outputs for
+    single interventions and combinations, as well as deterministics and
+    PSA runs.
 
-The evidence synthesis process and development of the LEM model is
-detailed in the following manuscripts:
+3.  [Analysis](https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis) -
+    These scripts use raw model outputs from *R/02\_Run\_model* into the
+    primary analyses: CEA, incidence, cost breakdown, OCIS, production
+    functions, and plots.
+
+Background Material
+===================
+
+For more detail on the evidence synthesis and model development, please
+see the following manuscripts:
 
 -   Krebs, E., Enns, B., Wang, L., Zang, X., Panagiotoglou, D., Del Rio,
     C., Dombrowski, J., Feaster, D. J., Golden, M., Granich, R.,

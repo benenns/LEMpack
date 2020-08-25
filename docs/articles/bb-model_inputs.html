@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1 Model Inputs • LEMpackTEST</title>
+<title>1 Model Inputs • LEMpackHIV</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="1 Model Inputs">
-<meta property="og:description" content="LEMpackTEST">
+<meta property="og:description" content="LEMpackHIV">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -30,7 +30,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">LEMpackTEST</a>
+        <a class="navbar-link" href="../index.html">LEMpackHIV</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
@@ -76,7 +76,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/HERU-LEM/LEMpack/">
+  <a href="https://github.com/HERU-LEM/LEMpackHIV/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -97,7 +97,7 @@
       <h1 data-toc-skip>1 Model Inputs</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/HERU-LEM/LEMpack/blob/master/vignettes/bb-model_inputs.Rmd"><code>vignettes/bb-model_inputs.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/HERU-LEM/LEMpackHIV/blob/master/vignettes/bb-model_inputs.Rmd"><code>vignettes/bb-model_inputs.Rmd</code></a></small>
       <div class="hidden name"><code>bb-model_inputs.Rmd</code></div>
 
     </div>
@@ -107,8 +107,8 @@
 <div id="data-read-in" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#data-read-in" class="anchor"></a>1.0 Data read-in</h1>
-<p>As described in our evidence synthesis paper, we populated model parameters for each city by synthesizing evidence from 59 peer-reviewed publications and 24 public health and surveillance reports and executed primary analyses using 11 data sets <span class="citation">(Krebs et al. 2019)</span>. Where data were not available, we conducted extensive model validation and calibration to ensure that uncertain model parameters produced results that matched real-world outcomes. We identified parameters that required city-specific data and stratification by gender, risk group and race/ethnicity a priori and sought out databases for primary analysis to augment our evidence synthesis. We also derive information and values for the free parameters; “free parameters” are key uncertain parameters which are not predefined by the model and lead to the most significant uncertainty in target outcomes. The Morris method <span class="citation">(Morris 1991; Tian et al. 2016; Wu et al. 2013)</span> was used to select the most influential parameters for calibration, and the Nelder-Mead algorithm <span class="citation">(Helton and Davis 2003; Taylor et al. 2010)</span> was used to iteratively calibrate the model to generate 2,000 best-fitting parameter sets.</p>
-<p>Through this iterative calibration to specific targets/endpoints in each city - the number of diagnosed PLHIV at each year end (stratified by sex, race/ethnicity and risk group), the annual number of new HIV diagnoses (separately for the overall estimate, African/American (Black) population, and MSM), and the annual number of all-cause mortality deaths among PLHIV (separately for the overall estimate, African/American (Black) population, and MSM) , free parameters and their weights are determined. Further details are provided in our published paper <span class="citation">(Zang et al. 2020)</span>. All of this information is stored in <em>Evidence-Inputs-Master.xlsx</em>, <em>Evidence-Inputs-Master-Ideal.xlsx</em> and <em>cali_par_all.xlsx</em> found in the <em>data</em> directory. To read-in data, use the <em>CascadeCEA-Model-1-Module-Data.input.R</em> script.</p>
+<p>As described in our evidence synthesis paper, we populated model parameters for each city by synthesizing evidence from 59 peer-reviewed publications and 24 public health and surveillance reports and executed primary analyses using 11 data sets <span class="citation">(Krebs et al. 2019)</span>. Where data were not available, we conducted extensive model validation and calibration to ensure that uncertain model parameters produced results that matched real-world outcomes. We identified parameters that required city-specific data and stratification by gender, risk group and race/ethnicity a priori and sought out databases for primary analysis to augment our evidence synthesis. We also derived information and values for the free parameters; “free parameters” are key uncertain parameters which are not predefined by the model and lead to the most significant uncertainty in target outcomes. The Morris method <span class="citation">(Morris 1991; Tian et al. 2016; Wu et al. 2013)</span> was used to select the most influential parameters for calibration, and the Nelder-Mead algorithm <span class="citation">(Helton and Davis 2003; Taylor et al. 2010)</span> was used to iteratively calibrate the model to generate 2,000 best-fitting parameter sets.</p>
+<p>Through this iterative calibration to specific targets/endpoints in each city - the number of diagnosed PLHIV at each year end (stratified by sex, race/ethnicity and risk group), the annual number of new HIV diagnoses (separately for the overall estimate, African/American (Black) population, and MSM), and the annual number of all-cause mortality deaths among PLHIV (separately for the overall estimate, African/American (Black) population, and MSM), free parameters and their weights were determined. Further details are provided in our published calibration manuscript <span class="citation">(Zang et al. 2020)</span>. All of this information is stored in <em>Evidence-Inputs-Master.xlsx</em>, <em>Evidence-Inputs-Master-Ideal.xlsx</em> and <em>cali_par_all.xlsx</em> found in the <em>Data Files</em> directory, and read-in using the <em>CascadeCEA-Model-1-Module-Data.input.R</em> script.</p>
 </div>
 <div id="create-grouping-indicators" class="section level1 unnumbered">
 <h1 class="hasAnchor">

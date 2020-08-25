@@ -96,5 +96,5 @@ ode.list.offOAT(
 HIV diagnoses, incidence and deaths for PWID off OAT
 }
 \description{
-\code{ode.list.offOAT} ADD DETAILS
+\code{ode.list.offOAT} Calculate the change of population in cells of PWID population but off OAT by the ODE model
 }

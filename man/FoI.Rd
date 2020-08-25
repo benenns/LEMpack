@@ -61,7 +61,7 @@ FoI(
 
 \item{outputs}{matrix of dim c(n.gp,2) with row of each group. second column for PrEP}
 
-\item{ind}{index for groups of people to be mixed in function mixMatrix}
+\item{ind}{index for groups of people to be mixed}
 
 \item{ind.low}{index for groups of people at low risk of HIV transmission}
 

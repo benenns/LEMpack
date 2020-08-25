@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Localized Economic HIV Model • LEMpackTEST</title>
+<title>Localized Economic HIV Model • LEMpackHIV</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -33,7 +33,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">LEMpackTEST</a>
+        <a class="navbar-link" href="index.html">LEMpackHIV</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
@@ -79,7 +79,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/HERU-LEM/LEMpack/">
+  <a href="https://github.com/HERU-LEM/LEMpackHIV/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -101,7 +101,7 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#lempack-" class="anchor"></a>LEMpack <img src="reference/figures/logo.jpg" align="right" height="139">
 </h1></div>
-<p><a href="https://github.com/HERU-LEM/LEMpack"><code>LEMpack</code></a> contains all necessary code and data to run our dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle.</p>
+<p><a href="https://github.com/HERU-LEM/LEMpackHIV"><code>LEMpack</code></a> package and github repository contains all model functions, code modules and data to run our dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle.</p>
 </div>
 <div id="preliminaries" class="section level1">
 <h1 class="hasAnchor">
@@ -109,11 +109,10 @@
 <ul>
 <li>Install <a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a>
 </li>
-<li>Install <code>devtools</code> to install model functions in <code>LEMpack</code>
+<li>Install <code>devtools</code>
 </li>
 </ul>
-<!-- --><div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="co"># Install development version from GitHub</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="co"># devtools::install_github("HERU-LEM/LEMpack")</span></span></code></pre></div>
+<!-- --><div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="kw">install.packages</span>(<span class="st">"devtools"</span>)</span></code></pre></div>
 <ul>
 <li>
 <a href="https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository">Clone github repository</a>
@@ -127,21 +126,30 @@
 <h1 class="hasAnchor">
 <a href="#usage-and-installation" class="anchor"></a>Usage and installation</h1>
 <ol>
-<li>Download and install model functions from <a href="https://github.com">GitHub</a> with:</li>
+<li>Open R Studio and load project file:</li>
 </ol>
-<!-- --><div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"HERU-LEM/LEMpack"</span>)</span></code></pre></div>
+<ul>
+<li>Load file: <em>LEMpackHIV/LEMpackHIV.Rproj</em>
+</li>
+</ul>
 <ol>
-<li>Run R code modules</li>
+<li>Download and install LEMpackHIV package from <a href="https://github.com">GitHub</a> with:</li>
 </ol>
-<!-- --><ol>
-<li>Model setup <a href="https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup">github link</a>
-</li>
-<li>Run model and generate outputs <a href="https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model">github link</a>
-</li>
-<li>Analysis <a href="https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis">github link</a>
-</li>
+<!-- --><div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"HERU-LEM/LEMpackHIV"</span>)</span></code></pre></div>
+<div id="r-code-modules" class="section level2">
+<h2 class="hasAnchor">
+<a href="#r-code-modules" class="anchor"></a>R code modules</h2>
+<ol>
+<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup">Model setup</a> - Contains R scripts for core modules. These scripts are called by code in <em>R/02_Run_model</em> and <em>R/03_Analysis</em></p></li>
+<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model">Run model and generate outputs</a> - These scripts are used to run the model and produce outputs for single interventions and combinations, as well as deterministics and PSA runs.</p></li>
+<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis">Analysis</a> - These scripts use raw model outputs from <em>R/02_Run_model</em> into the primary analyses: CEA, incidence, cost breakdown, OCIS, production functions, and plots.</p></li>
 </ol>
-<p>The evidence synthesis process and development of the LEM model is detailed in the following manuscripts:</p>
+</div>
+</div>
+<div id="background-material" class="section level1">
+<h1 class="hasAnchor">
+<a href="#background-material" class="anchor"></a>Background Material</h1>
+<p>For more detail on the evidence synthesis and model development, please see the following manuscripts:</p>
 <ul>
 <li><p>Krebs, E., Enns, B., Wang, L., Zang, X., Panagiotoglou, D., Del Rio, C., Dombrowski, J., Feaster, D. J., Golden, M., Granich, R., Marshall, B., Mehta, S. H., Metsch, L., Schackman, B. R., Strathdee, S. A., Nosyk, B., &amp; localized HIV modeling study group (2019). <a href="https://dx.plos.org/10.1371/journal.pone.0217559">“Developing a dynamic HIV transmission model for 6 U.S. cities: An evidence synthesis”</a>. PloS one, 14(5), e0217559. <a href="https://doi.org/10.1371/journal.pone.0217559" class="uri">https://doi.org/10.1371/journal.pone.0217559</a></p></li>
 <li><p>Zang, X., Krebs, E., Min, J. E., Pandya, A., Marshall, B., Schackman, B. R., Behrends, C. N., Feaster, D. J., Nosyk, B., &amp; Localized HIV Modeling Study Group (2020). <a href="https://journals.sagepub.com/doi/10.1177/0272989X19889356">“Development and Calibration of a Dynamic HIV Transmission Model for 6 US Cities”</a>. Medical decision making : an international journal of the Society for Medical Decision Making, 40(1), 3–16. <a href="https://doi.org/10.1177/0272989X19889356" class="uri">https://doi.org/10.1177/0272989X19889356</a></p></li>
@@ -156,9 +164,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/HERU-LEM/LEMpack/">https://​github.com/​HERU-LEM/​LEMpack/​</a>
+<li>Browse source code at <br><a href="https://github.com/HERU-LEM/LEMpackHIV/">https://​github.com/​HERU-LEM/​LEMpackHIV/​</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/HERU-LEM/LEMpack/issues">https://​github.com/​HERU-LEM/​LEMpack/​issues</a>
+<li>Report a bug at <br><a href="https://github.com/HERU-LEM/LEMpackHIV/issues">https://​github.com/​HERU-LEM/​LEMpackHIV/​issues</a>
 </li>
 </ul>
 </div>

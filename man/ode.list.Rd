@@ -85,5 +85,5 @@ ode.list(
 HIV diagnoses, incidence and deaths
 }
 \description{
-\code{ode.list} ADD DETAILS
+\code{ode.list} Calculate the change of population in cells of heterosexual and male homosexual population by the ODE model.
 }

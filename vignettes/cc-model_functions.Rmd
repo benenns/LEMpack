@@ -27,7 +27,9 @@ knitr::opts_chunk$set(
 
 This section describes the basic functions of the dynamic, compartmental HIV transmission model. For further details, see [@calibration;@interventions].
 
+
 # 2.0 Force of HIV infection {-}
+
 
 In this component, we estimate the Force of Infection (FoI), which is the rate at which susceptible individuals become infected in the population and is a function of many different parameters. A list of FoI parameters are provided in Table 2.1.
 
@@ -55,7 +57,9 @@ Table 2.1: Description of FoI parameters with their `R` names
 
 Our model captures HIV transmission between susceptible and infected individuals via heterosexual contact, homosexual contact and needle-sharing. The effects of sexual mixing patterns (assortative and proportional partnership mixing) and sexual risk behavior (ie. condom use, number of partners) are also accounted for. Consistent with prior studies, we allowed men who have sex with men (MSM) to potentially have heterosexual contact with women. To calculate FoI, we determine a mixing matrix and calculate the mixing probability between subgroups. That is to say, the transmission between susceptible and infected individuals is represented as a matrix which considers the sufficient contact rate between members of susceptible compartments and members of infected compartments.  Groups represent opposite sexes and are defined by race/ethnicity and sexual risk level (high or low). To avoid over-mixing between high- and low-risk populations (which may cause an overestimation of heterosexual transmission), the mixing probability between high-and low-risk individuals is restricted to 1% (proportionately) of partnerships formed. 
 
+
 # 2.1 Nonlinear Ordinary Differential Equations (ODE functions) {-}
+
 
 We constructed a system of nonlinear ordinary differential equations (ODEs) to capture movement between 19 base model states for each of the 42 population groups considered in our model (refer to figures in *Introduction* section) . The complete model is thus comprised of 798 equations (42 population groups 19 states). A list of ODE parameters are provided in Table 2.2.
 
@@ -91,6 +95,6 @@ Table 2.2: Description of ODE parameters and their `R` names
 | `oat.q`                              | OAT dropout rate                                                                                
 
 
-Note that opioid agonist treatment (OAT) was only available to all PWID and MSM-PWID. As such, the model ODE equations are grouped for MSM and Heterosexual HIV risk groups (non-PWID), PWID and MSM-PWID receiving OAT, and PWID and MSM-PWID non receiving OAT; corresponding R scripts are `ode.list`, `ode.list.OAT`, and `ode.list.offOAT` respectively, found in `LEMpack` and the *R* directory. 
+Note that opioid agonist treatment (OAT) was only available to all PWID and MSM-PWID. As such, the model ODE equations are grouped for MSM and Heterosexual HIV risk groups (non-PWID), PWID and MSM-PWID receiving OAT, and PWID and MSM-PWID non receiving OAT; corresponding R scripts are `ode.list`, `ode.list.OAT`, and `ode.list.offOAT` respectively, found in `LEMpackHIV` and the *R* directory. 
 
 # References {-}

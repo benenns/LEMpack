@@ -15,11 +15,11 @@ accum.outcomes.combination(
 \arguments{
 \item{input.parameters}{model inputs}
 
-\item{pop.in}{starting populations}
+\item{pop.in}{populations in each compartment over all evaluation time}
 
 \item{current.int}{selected intervention}
 
-\item{sums.only}{logical to only output results for full time period (default = TRUE)}
+\item{sums.only}{logical to only output the total of results for full time period (default = TRUE)}
 }
 \value{
 List with total and period-stratified outcomes (disaggregated costs, QALYs)

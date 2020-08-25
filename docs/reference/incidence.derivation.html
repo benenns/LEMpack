@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Interventions — set.scale.risk.race.gender • LEMpackHIV</title>
+<title>Incidence Derivation — incidence.derivation • LEMpackHIV</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Interventions — set.scale.risk.race.gender" />
-<meta property="og:description" content="set.scale.risk.race.gender Function for applying race/gender/risk-specific intervention scale estimates" />
+<meta property="og:title" content="Incidence Derivation — incidence.derivation" />
+<meta property="og:description" content="incidence.derivation Derive incidence data for ggplot" />
 
 
 
@@ -135,37 +135,37 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Interventions</h1>
-    <small class="dont-index">Source: <a href='https://github.com/HERU-LEM/LEMpackHIV/blob/master/R/CascadeCEA-Interventions-0-Function-set.scale.risk.race.gender.R'><code>R/CascadeCEA-Interventions-0-Function-set.scale.risk.race.gender.R</code></a></small>
-    <div class="hidden name"><code>set.scale.risk.race.gender.Rd</code></div>
+    <h1>Incidence Derivation</h1>
+    <small class="dont-index">Source: <a href='https://github.com/HERU-LEM/LEMpackHIV/blob/master/R/CascadeCEA-Interventions-0-Function-incidence.derivation.R'><code>R/CascadeCEA-Interventions-0-Function-incidence.derivation.R</code></a></small>
+    <div class="hidden name"><code>incidence.derivation.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>set.scale.risk.race.gender</code> Function for applying race/gender/risk-specific intervention scale estimates</p>
+    <p><code>incidence.derivation</code> Derive incidence data for ggplot</p>
     </div>
 
-    <pre class="usage"><span class='fu'>set.scale.risk.race.gender</span>(<span class='no'>this.int</span>, <span class='no'>this.scale</span>, <span class='no'>these.states</span>)</pre>
+    <pre class="usage"><span class='fu'>incidence.derivation</span>(<span class='no'>CITY</span>, <span class='no'>case</span>, <span class='no'>ocis</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>this.int</th>
-      <td><p>selected intervention</p></td>
+      <th>CITY</th>
+      <td><p>City name</p></td>
     </tr>
     <tr>
-      <th>this.scale</th>
-      <td><p>stratified scale</p></td>
+      <th>case</th>
+      <td><p>Implementation scenario</p></td>
     </tr>
     <tr>
-      <th>these.states</th>
-      <td><p>affected model states</p></td>
+      <th>ocis</th>
+      <td></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Value of logical vectors for intervention modeling</p>
+    <p>List with disaggregated incidence outcomes</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -24,8 +24,6 @@ Modifications to model time-varying parameters for interventions:
 \item SSP: Number of syringes available (FoI)
 \item OAT: Number of individuals receiving OAT (FoI)
 \item PrEP: Rate of PrEP initiation (FoI)
-\item COVID Analysis related modification
-\item Large-scale HIV testing during COVID intervention
 }}
 }
 \description{

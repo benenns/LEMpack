@@ -21,9 +21,11 @@ knitr::opts_chunk$set(
 )
 ```
 
+
 # 3.0 Generate possible intervention combinations {-}
 
-In this component, we create all possible combinations of the 16 public health interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention [@EBIcompendium] using the R script *CascadeCEA-Interventions-0-Function-scale.interventions.combination.R*. See Figure 3 below for the list of interventions and their respective categories (*Protect, Diagnose, Treat*). This figure is also saved in the *figs* directory. We excluded combinations that would not be practically implemented jointly, termed “mutually exclusive combinations” (e.g. two HIV testing interventions delivered in primary care).
+
+In this section, we describe the method for creating all possible combinations of the 16 public health interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention [@EBIcompendium] using the R script *CascadeCEA-Interventions-0-Function-scale.interventions.combination.R*. See Figure 3 below for the list of interventions and their respective categories (*Protect, Diagnose, Treat*). We excluded combinations that would not be practically implemented jointly, termed “mutually exclusive combinations” (e.g. two HIV testing interventions delivered in primary care).
 
 ![Figure 3.0 Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. \label{fig:selected evidence based interventions}](../figs/03_evidence_based_int.png)  
 
@@ -35,7 +37,9 @@ $$Scale_{i,j} = reach_{j,k} \times adoption_{i,k}$$
 
 Lastly, to set indicators of modifying parameters in ODE model we use the function in *CascadeCEA-Interventions-0-Function-true.false.interventions.combination.R*.
 
+
 # 3.1 Derive intervention scale-up {-}
+
 
 In this component we derive the scale of delivery (or scale-up) of interventions, implemented proportionally across groups, for each time step. Some parameters and interventions only had evidence and input data stratified by race and sex (i.e. opt-out testing in ER) while others were stratified by race, sex and risk group (i.e. same-day ART initiation). Table 3.0 specifies how interventions were stratified; note that how an intervention was stratified is a result of the dimensionality provided among best available evidence as detailed in our previous manuscript [@evsynth]. Use `set.scale.race.gender` and `set.scale.risk.race.gender` to derive scale-up for interventions. In these scripts, matrices for scale estimates (with upper and lower bounds) are created; they each have 19 rows (one for each model compartment/state) and 42 columns (one for each population strata).
 
@@ -69,8 +73,10 @@ Table 3.0: Stratification of interventions input data
 
 # 3.2 Model outcomes {-}
 
+
 In this component we run several R scripts that set up the production of model outcomes for output to excel. Model projected outcomes such as incremental and total costs (2018 USD) and QALYs gained are produced for each city, for the combinations of interventions, considering implementation and sustainment periods determined in Section 3.1.
 
-Point estimates, and upper and lower bounds for estimates are first organized in arrays (using *CascadeCEA-Interventions-0-Function-accumulate.outcomes.combination.R* script). [Add in further details about `psi.matrix.temp`,`art.init.matrix` for example "`psi.matrix.temp` function does X"]. The number of infections for a given year (annual incidence rate) and cumulatively over several time horizons (5, 10, 20 years) are calculated for each city using *CascadeCEA-Interventions-0-Function-time.period.infections.R*. Both sets of output results (costs and QALYs, and number of infections) can then be exported to excel using the `write.excel` function as seen in *CascadeCEA-Interventions-0-Output-write.excel.R* script. [consider adding in a screenshot of what the output results in Excel so users know what to expect?] Lastly, population lists and number of infections for each time step, cost-effectiveness analyses results etc. are calculated and aggregated using the *CascadeCEA-Interventions-0-Function-comb.eva.func.R* script. 
+Point estimates, and upper and lower bounds for estimates are first organized in arrays using `accumulate.outcomes.combination`. The number of infections for a given year (annual incidence rate) and cumulatively over several time horizons (5, 10, 20 years) are calculated for each city using `time.period.infections`. Both sets of output results (costs and QALYs, and number of infections) can then be exported to excel using the `write.excel` function as seen in *CascadeCEA-Interventions-0-Output-write.excel.R* script. [consider adding in a screenshot of what the output results in Excel so users know what to expect?] Lastly, population lists and number of infections for each time step, cost-effectiveness analyses results etc. are calculated and aggregated using the 'comb.eva.func.R` script. 
+
 
 # References {-}
