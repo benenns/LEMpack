@@ -26,7 +26,7 @@ future::plan(cluster, workers = cores[1]-2)  ##number of cores, default: (PCcore
 # source("CascadeCEA-Interventions-1-LoadFunctions.R") library(LEMpackHIV) loads all model functions
 
 ## GET EXPORT VECTOR OF NAMES FOR RUNNING PARALLEL
-source("R/01_Setup/CascadeCEA-Interventions-1-ParNamesExportIntModel.R")
+source("01_Setup/CascadeCEA-Interventions-1-ParNamesExportIntModel.R")
 
 ## GET INTERVENTIONS AND CEA PARAMETERS
 interventions <- c("Opt-out testing (ER)", "Opt-out testing (PC)",

@@ -8,7 +8,7 @@ rm(list=ls())
 library(rstudioapi)
 library(LEMpackHIV)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 cea.table           <- matrix(0, ncol = 11, nrow = 6)
 colnames(cea.table) <- c("IncrementalCost_pe", "IncrementalCost_low", "IncrementalCost_up",

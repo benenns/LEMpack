@@ -11,7 +11,7 @@ library(ggplot2)
 library(SIBER)
 library(LEMpackHIV)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 CITY.name <- c("(A) Atlanta", " (B) Baltimore", "(C) Los Angeles", "(D) Miami", "(E) New York City", "(F) Seattle")
 combination.list <- readRDS("Combination/Combination.list.rds")

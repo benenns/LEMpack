@@ -1,13 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-LEMpack <img src='man/figures/logo.jpg' align="right" height="139" />
-=====================================================================
+LEMpackHIV <img src='man/figures/logo.jpg' align="right" height="139" />
+========================================================================
 
-[`LEMpack`](https://github.com/HERU-LEM/LEMpackHIV) package and github
-repository contains all model functions, code modules and data to run
-our dynamic compartmental simulation model for the localized HIV
-microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle.
+[`LEMpackHIV`](https://github.com/HERU-LEM/LEMpackHIV) package and
+github repository contains all model functions, code modules and input
+data to run our dynamic compartmental simulation model for the localized
+HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC,
+Seattle.
 
 Preliminaries
 =============
@@ -22,18 +23,17 @@ Preliminaries
 
 -   [Clone github
     repository](https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository)
-    -   Cloning this github repository will give users access to all
-        necessary code and data to run the model and conduct the
-        analysis
+    -   Cloning [this](https://github.com/HERU-LEM/LEMpackHIV) github
+        repository will give users access to all necessary code and data
+        to run the model and conduct the analysis.
 
 Usage and installation
 ======================
 
-1.  Open R Studio and load project file:
+1.  Open R Studio and load project file `LEMpackHIV.Rproj` from the main
+    folder of the cloned github repository.
 
--   Load file: *LEMpackHIV/LEMpackHIV.Rproj*
-
-1.  Download and install LEMpackHIV package from
+2.  Download and install LEMpackHIV package from
     [GitHub](https://github.com) with:
 
 <!-- -->
@@ -45,25 +45,33 @@ R code modules
 
 1.  [Model
     setup](https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup) -
-    Contains R scripts for core modules. These scripts are called by
-    code in *R/02\_Run\_model* and *R/03\_Analysis*
+    Contains R scripts for core modules. Users can modify these files as
+    necessary (e.g. adjusting analysis time-horizon, intervention
+    sustainment period, discount rate etc.), but do not need to run
+    these scripts, as they will be called by modules in the next two
+    steps.
 
 2.  [Run model and generate
     outputs](https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model) -
-    These scripts are used to run the model and produce outputs for
-    single interventions and combinations, as well as deterministics and
-    PSA runs.
+    These scripts are used to run the model and produce raw outputs
+    (costs, QALYs, HIV incidence) for single interventions and
+    combinations (deterministic and PSA), which will be used in
+    *R/03\_Analysis*.
 
 3.  [Analysis](https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis) -
-    These scripts use raw model outputs from *R/02\_Run\_model* into the
-    primary analyses: CEA, incidence, cost breakdown, OCIS, production
-    functions, and plots.
+    These scripts use raw model outputs from *R/02\_Run\_model* to
+    conduct the primary analyses: cost-effectiveness analysis (CEA), HIV
+    incidence reduction between different scenarios and status-quo,
+    disaggregated cost breakdown by component (implementation, medical
+    care, PrEP, ART, MOUD), determining optimal combination
+    implementation strategy (OCIS), generating health production
+    functions, and other visualizations of results.
 
 Background Material
 ===================
 
-For more detail on the evidence synthesis and model development, please
-see the following manuscripts:
+For more detail on the evidence synthesis, model development, and
+analysis, please see the following manuscripts:
 
 -   Krebs, E., Enns, B., Wang, L., Zang, X., Panagiotoglou, D., Del Rio,
     C., Dombrowski, J., Feaster, D. J., Golden, M., Granich, R.,

@@ -10,7 +10,7 @@ library(rstudioapi)
 library(LEMpackHIV)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-source("R/01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -29,7 +29,7 @@ case = "SA"  # DM for deterministic, SA for sensitivity analysis
 param.sets <- 2000
 
 ## LOAD all input parameters and comparators
-source("R/01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 ## Executing PSA analyses
 

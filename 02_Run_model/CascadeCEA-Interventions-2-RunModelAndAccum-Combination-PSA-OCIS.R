@@ -1,4 +1,4 @@
-# Run PSA for comparator strategies for OCIS
+# Run PSA for OCIS
 # This module allows users to run deterministic and PSA for optimal combination implementation strategy at documented scale
 # PREREQUISITE: run documented and determine the production function first
 
@@ -10,7 +10,7 @@ library(rstudioapi)
 library(LEMpackHIV)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-source("R/01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -22,22 +22,21 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-source("R/01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+source("01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 ## LOAD analysis scenario
 case = "SA"  # DM for deterministic, SA for sensitivity analysis
-param.sets   <- 2000
-#Load comparator, if unavailable, execute Part 2 of: "CascadeCEA-Interventions-3-Analysis-ProductionFunction.R"
-comparator   <- readRDS(paste0("Combination/ProductionFunction-Frontier-", CITY, ".rds"))$comparator
-current.int  <- interventions[combination.list[[comparator]]]
+param.sets  <- 2000
+#Load OCIS, if unavailable, execute Part 2 of: "CascadeCEA-Interventions-3-Analysis-ProductionFunction.R"
+ocis        <- readRDS(paste0("Combination/ProductionFunction-Frontier-", CITY, ".rds"))$ocis
+current.int <- interventions[combination.list[[ocis]]]
 
 ## LOAD all input parameters and comparators
-source("R/01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 ## Executing PSA analyses
 outcome.comb.SA.mx <- matrix(0, nrow = param.sets, ncol = 44)
 
-tic("PSA run")
 for (cc in 1:param.sets){
   print(paste0("Running PSA for parameter set: ", cc))
 
@@ -58,5 +57,4 @@ colnames(outcome.comb.SA.mx)[33:44] <- c("QALYs.sum", "costs.total.sum", "costs.
                                          "costs.oat.sum", "costs.prep.sum", "costs.prep.tests.sum", "costs.test.sum", "int.costs.sum",
                                          "int.impl.costs.sum", "int.sust.costs.sum")
 
-saveRDS(outcome.comb.SA.mx,   paste0("Combination/Outcome-Combination-", CITY, "-PSA-", comparator,"(Comparator).rds"))
-toc()
+saveRDS(outcome.comb.SA.mx,   paste0("Combination/Outcome-Combination-", CITY, "-PSA-", ocis,"(OCIS).rds"))

@@ -8,9 +8,9 @@ rm(list=ls())
 library(rstudioapi)
 library(LEMpackHIV)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 ## LOAD ODE function
-source("R/01_Setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+#source("R/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 ## SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -24,7 +24,7 @@ sums.only        <- FALSE
 Discounting      <- 0.03
 combination.list <- readRDS("Combination/Combination.list.rds")
 ocis             <- readRDS(paste0("Combination/ProductionFunction-Frontier-", CITY, ".rds"))$ocis
-source("R/01_Setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("01_Setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 current.int = interventions[combination.list[[ocis]]]
 
 ## RUN the model ##

@@ -10,7 +10,7 @@ library(rstudioapi)
 library(LEMpackHIV)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-source("R/01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -22,7 +22,7 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-source("R/01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+source("01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 ## LOAD analysis scenario
 case         <- "SA"  # DM for deterministic, SA for sensitivity analysis
@@ -31,7 +31,7 @@ param.sets   <- 2000
 proximal.ind <- as.numeric(readRDS(paste0("Combination/PSA-ProximalStrategies-", CITY, ".rds")))
 
 ## LOAD all input parameters and comparators
-source("R/01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 ## Executing PSA analyses
 for (ss in 1:length(proximal.ind)){

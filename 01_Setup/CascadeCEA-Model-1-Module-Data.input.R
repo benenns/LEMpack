@@ -60,10 +60,10 @@ state.name = c("S1", "S2", "Sp", "Ia", "I1", "I2", "I3", "Iap", "Ip",
 vparameters = c(vparameters, as.data.frame(names.gp), as.data.frame(names18), as.data.frame(names.pwid), as.data.frame(names.msm), as.data.frame(names.e), as.data.frame(state.name))
 # Add string variables in vparameters
 
-source("R/01_Setup/CascadeCEA-Model-0-Group.number.R")
+source("01_Setup/CascadeCEA-Model-0-Group.number.R")
 
 ## Parametrization for parameters with multiple dimensions
-source("R/01_Setup/CascadeCEA-Model-0-Parameterization.R")
+source("01_Setup/CascadeCEA-Model-0-Parameterization.R")
 
 ## Weight vectors distinct for MIA (fewer targets) and SEA (adjustment for black), only used in calibration
 if (CITY != "SEA" & CITY != "MIA"){
@@ -84,7 +84,7 @@ obs.inc.all = subset(data.frame(read.xlsx("Data Files/Target.xlsx", sheet="inc.a
 obs.inc.msm = subset(data.frame(read.xlsx("Data Files/Target.xlsx", sheet="inc.msm.obs", colNames =T)), city == CITY)[ , -1]              #new incidence, MSM and range
 
 ## Derive model initials ##
-source("R/01_Setup/CascadeCEA-Model-0-Function-model.initial.R")
+source("01_Setup/CascadeCEA-Model-0-Function-model.initial.R")
 #### initial proportion of 42 groups;
 init  = model.initial(par = vparameters, diag18 = diag18.obs[1, ])  #42*19 initials
 inits = cbind(init, inc_bo=0, inc_bs=0, inc_g=0, diag=0, death=0)   #adding states to track # infections (by 3 routes of transmission), new diagnoses and deaths among PLHIV

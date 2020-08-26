@@ -11,7 +11,7 @@ library(rstudioapi)
 library(LEMpackHIV)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-source("R/01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 CITY <- select.list(all.cities, multiple = FALSE,
@@ -23,7 +23,7 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-source("R/01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+source("01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 #Load OCIS, if unavailable, execute Part 2 of: "CascadeCEA-Interventions-3-Analysis-ProductionFunction.R"
 ocis        <- readRDS(paste0("Combination/ProductionFunction-Frontier-", CITY, ".rds"))$ocis
@@ -37,7 +37,7 @@ case  = "DM"  # DM for deterministic, SA for sensitivity analysis
 int.scale = "ideal"  # This variable exists only for ideal scale
 
 ## LOAD all input parameters and comparators
-source("R/01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 
 ## RUN the deterministic model
@@ -64,7 +64,7 @@ int.scale = "ideal"  # This variable exists only for ideal scale
 param.sets  <- 2000
 
 ## LOAD all input parameters and comparators
-source("R/01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
+source("01_setup/CascadeCEA-Interventions-1-LoadParameterWorkspace-Combination.R")
 
 ## Executing PSA analyses
 outcome.ideal.SA.mx <- matrix(0, nrow = param.sets, ncol = 44)

@@ -18,7 +18,7 @@ par(mar=c(3.8,3.8,1,1), oma = c(1, 1, 1, 1))
 for (cc in 1:6){
   CITY <- CITY.list[cc]
 
-  source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+  source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
   combination.list <- readRDS("Combination/Combination.list.rds")
 

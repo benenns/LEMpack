@@ -61,7 +61,7 @@ saveRDS(PSA.sts[ , "index"], paste0("Combination/PSA-ProximalStrategies-", CITY,
 #############################################################################
 ####### Print the included interventions in the proximal combination ########
 #############################################################################
-source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 proximal <- PSA.sts[ , "index"]
 for (i in 1:length(frontier)){
   print(paste0("####COMBINATION-", proximal[i], ":"))

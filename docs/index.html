@@ -97,11 +97,11 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<div id="lempack-" class="section level1">
+<div id="lempackhiv-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#lempack-" class="anchor"></a>LEMpack <img src="reference/figures/logo.jpg" align="right" height="139">
+<a href="#lempackhiv-" class="anchor"></a>LEMpackHIV <img src="reference/figures/logo.jpg" align="right" height="139">
 </h1></div>
-<p><a href="https://github.com/HERU-LEM/LEMpackHIV"><code>LEMpack</code></a> package and github repository contains all model functions, code modules and data to run our dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle.</p>
+<p><a href="https://github.com/HERU-LEM/LEMpackHIV"><code>LEMpackHIV</code></a> package and github repository contains all model functions, code modules and input data to run our dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle.</p>
 </div>
 <div id="preliminaries" class="section level1">
 <h1 class="hasAnchor">
@@ -117,7 +117,7 @@
 <li>
 <a href="https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository">Clone github repository</a>
 <ul>
-<li>Cloning this github repository will give users access to all necessary code and data to run the model and conduct the analysis</li>
+<li>Cloning <a href="https://github.com/HERU-LEM/LEMpackHIV">this</a> github repository will give users access to all necessary code and data to run the model and conduct the analysis.</li>
 </ul>
 </li>
 </ul>
@@ -126,30 +126,24 @@
 <h1 class="hasAnchor">
 <a href="#usage-and-installation" class="anchor"></a>Usage and installation</h1>
 <ol>
-<li>Open R Studio and load project file:</li>
-</ol>
-<ul>
-<li>Load file: <em>LEMpackHIV/LEMpackHIV.Rproj</em>
-</li>
-</ul>
-<ol>
-<li>Download and install LEMpackHIV package from <a href="https://github.com">GitHub</a> with:</li>
+<li><p>Open R Studio and load project file <code>LEMpackHIV.Rproj</code> from the main folder of the cloned github repository.</p></li>
+<li><p>Download and install LEMpackHIV package from <a href="https://github.com">GitHub</a> with:</p></li>
 </ol>
 <!-- --><div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"HERU-LEM/LEMpackHIV"</span>)</span></code></pre></div>
 <div id="r-code-modules" class="section level2">
 <h2 class="hasAnchor">
 <a href="#r-code-modules" class="anchor"></a>R code modules</h2>
 <ol>
-<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup">Model setup</a> - Contains R scripts for core modules. These scripts are called by code in <em>R/02_Run_model</em> and <em>R/03_Analysis</em></p></li>
-<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model">Run model and generate outputs</a> - These scripts are used to run the model and produce outputs for single interventions and combinations, as well as deterministics and PSA runs.</p></li>
-<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis">Analysis</a> - These scripts use raw model outputs from <em>R/02_Run_model</em> into the primary analyses: CEA, incidence, cost breakdown, OCIS, production functions, and plots.</p></li>
+<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup">Model setup</a> - Contains R scripts for core modules. Users can modify these files as necessary (e.g. adjusting analysis time-horizon, intervention sustainment period, discount rate etc.), but do not need to run these scripts, as they will be called by modules in the next two steps.</p></li>
+<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model">Run model and generate outputs</a> - These scripts are used to run the model and produce raw outputs (costs, QALYs, HIV incidence) for single interventions and combinations (deterministic and PSA), which will be used in <em>R/03_Analysis</em>.</p></li>
+<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis">Analysis</a> - These scripts use raw model outputs from <em>R/02_Run_model</em> to conduct the primary analyses: cost-effectiveness analysis (CEA), HIV incidence reduction between different scenarios and status-quo, disaggregated cost breakdown by component (implementation, medical care, PrEP, ART, MOUD), determining optimal combination implementation strategy (OCIS), generating health production functions, and other visualizations of results.</p></li>
 </ol>
 </div>
 </div>
 <div id="background-material" class="section level1">
 <h1 class="hasAnchor">
 <a href="#background-material" class="anchor"></a>Background Material</h1>
-<p>For more detail on the evidence synthesis and model development, please see the following manuscripts:</p>
+<p>For more detail on the evidence synthesis, model development, and analysis, please see the following manuscripts:</p>
 <ul>
 <li><p>Krebs, E., Enns, B., Wang, L., Zang, X., Panagiotoglou, D., Del Rio, C., Dombrowski, J., Feaster, D. J., Golden, M., Granich, R., Marshall, B., Mehta, S. H., Metsch, L., Schackman, B. R., Strathdee, S. A., Nosyk, B., &amp; localized HIV modeling study group (2019). <a href="https://dx.plos.org/10.1371/journal.pone.0217559">“Developing a dynamic HIV transmission model for 6 U.S. cities: An evidence synthesis”</a>. PloS one, 14(5), e0217559. <a href="https://doi.org/10.1371/journal.pone.0217559" class="uri">https://doi.org/10.1371/journal.pone.0217559</a></p></li>
 <li><p>Zang, X., Krebs, E., Min, J. E., Pandya, A., Marshall, B., Schackman, B. R., Behrends, C. N., Feaster, D. J., Nosyk, B., &amp; Localized HIV Modeling Study Group (2020). <a href="https://journals.sagepub.com/doi/10.1177/0272989X19889356">“Development and Calibration of a Dynamic HIV Transmission Model for 6 US Cities”</a>. Medical decision making : an international journal of the Society for Medical Decision Making, 40(1), 3–16. <a href="https://doi.org/10.1177/0272989X19889356" class="uri">https://doi.org/10.1177/0272989X19889356</a></p></li>

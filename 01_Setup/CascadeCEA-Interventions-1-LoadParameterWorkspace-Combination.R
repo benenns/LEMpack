@@ -1,4 +1,4 @@
-source("R/01_Setup/CascadeCEA-Model-1-Module-Data.input.R")
+source("01_Setup/CascadeCEA-Model-1-Module-Data.input.R")
 
 ### GET CALIBRATED PARAMETER SETS
 if (case == "DM"){     #For the case of deterministic analysis based on the mean value of calibrationed parameters
@@ -16,7 +16,7 @@ if (case == "DM"){     #For the case of deterministic analysis based on the mean
     if (CITY == "BAL"){
       calpar$pe[5] = 0.77  # Calibrated values for this parameter is bimodally distributed in Baltimore
     }
-    source ("R/01_Setup/CascadeCEA-Model-0-Parameter.update.R")  # Update free parameters with the mean calibrated values
+    source ("01_Setup/CascadeCEA-Model-0-Parameter.update.R")  # Update free parameters with the mean calibrated values
     all.params <- vparameters
     rm(calib.params.ls, calib.params)
     saveRDS(all.params, paste0("Inputs/AllParams-Combination-DM-", CITY, ".rds"))

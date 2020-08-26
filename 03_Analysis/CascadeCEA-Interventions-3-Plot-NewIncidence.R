@@ -9,7 +9,7 @@ library(ggplot2)
 library(reshape2)
 library(LEMpackHIV)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
 # SELECT city ##
 # CITY <- select.list(all.cities, multiple = FALSE,

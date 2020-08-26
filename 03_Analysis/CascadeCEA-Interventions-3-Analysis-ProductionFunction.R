@@ -173,7 +173,7 @@ write.xlsx(frontier.matrix, file = paste0("Outputs/Production Function Table/Pro
 #####################################################################################
 ####### PART 3: Print the included interventions in the selected combination ########
 #####################################################################################
-source("R/01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
+source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 print(interventions[combination.list[[ocis]]])
 print(interventions[combination.list[[comparator]]])
 for (i in 1:length(frontier)){
