@@ -118,7 +118,7 @@
 <div id="derive-intervention-scale-up" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#derive-intervention-scale-up" class="anchor"></a>3.1 Derive intervention scale-up</h1>
-<p>In this component we derive the scale of delivery (or scale-up) of interventions, implemented proportionally across groups, for each time step. Some parameters and interventions only had evidence and input data stratified by race and sex (i.e. opt-out testing in ER) while others were stratified by race, sex and risk group (i.e. same-day ART initiation). Table 3.0 specifies how interventions were stratified; note that how an intervention was stratified is a result of the dimensionality provided among best available evidence as detailed in our previous manuscript <span class="citation">(Krebs et al. 2019)</span>. Use <code>set.scale.race.gender</code> and <code>set.scale.risk.race.gender</code> to derive scale-up for interventions. In these scripts, matrices for scale estimates (with upper and lower bounds) are created; they each have 19 rows (one for each model compartment/state) and 42 columns (one for each population strata).</p>
+<p>In this component we derive the scale of delivery (or scale-up) of interventions, implemented proportionally across groups, for each time step. Some parameters and interventions only had evidence and input data stratified by race and sex (i.e. opt-out testing in ER) while others were stratified by race, sex and risk group (i.e. same-day ART initiation). Table 3.0 specifies how interventions were stratified; note that how an intervention was stratified is a result of the dimensionality provided among best available evidence as detailed in our previous manuscript <span class="citation">(Krebs et al. 2020)</span>. Use <code>set.scale.race.gender</code> and <code>set.scale.risk.race.gender</code> to derive scale-up for interventions. In these scripts, matrices for scale estimates (with upper and lower bounds) are created; they each have 19 rows (one for each model compartment/state) and 42 columns (one for each population strata).</p>
 <p>Table 3.0: Stratification of interventions input data</p>
 <table class="table">
 <thead><tr class="header">
@@ -227,8 +227,8 @@
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
 <div id="refs" class="references hanging-indent">
-<div id="ref-evsynth">
-<p>Krebs, E., B. Enns, L. Wang, X. Zang, D. Panagiotoglou, C. Del Rio, J. Dombrowski, et al. 2019. “Developing a Dynamic Hiv Transmission Model for 6 U.s. Cities: An Evidence Synthesis.” Journal Article. <em>PLoS One</em> 14 (5): e0217559. <a href="https://doi.org/10.1371/journal.pone.0217559">https://doi.org/10.1371/journal.pone.0217559</a>.</p>
+<div id="ref-interventions">
+<p>Krebs, E., X. Zang, B. Enns, J. E. Min, C. N. Behrends, C. Del Rio, J. C. Dombrowski, et al. 2020. “The Impact of Localized Implementation: Determining the Cost-Effectiveness of Hiv Prevention and Care Interventions Across Six United States Cities.” Journal Article. <em>AIDS</em> 34 (3): 447–58. <a href="https://doi.org/10.1097/QAD.0000000000002455">https://doi.org/10.1097/QAD.0000000000002455</a>.</p>
 </div>
 <div id="ref-EBIcompendium">
 <p>Project, HIV/AIDS Prevention Research Synthesis. n.d. “Compendium of Evidence-Based Interventions and Best Practices for Hiv Prevention.” Report. <em>Centers for Disease Control and Prevention</em>. <a href="https://www.cdc.gov/hiv/research/interventionresearch/compendium/index.html">https://www.cdc.gov/hiv/research/interventionresearch/compendium/index.html</a>.</p>

@@ -31,10 +31,10 @@ Usage and installation
 ======================
 
 1.  Open R Studio and load project file `LEMpackHIV.Rproj` from the main
-    folder of the cloned github repository.
+    folder of the LEMpackHIV github repository.
 
 2.  Download and install LEMpackHIV package from
-    [GitHub](https://github.com) with:
+    [GitHub](https://github.com) using:
 
 <!-- -->
 
@@ -58,15 +58,15 @@ organized into three sections:
     -   These scripts are used to run the model and produce raw outputs
         (costs, QALYs, HIV incidence) for single interventions and
         combinations (deterministic and PSA), which will be used in
-        **R/03\_Analysis**.
+        subsequent analyses.
 3.  [Analysis](https://github.com/benenns/LEMpackTEST/tree/master/03_Analysis) -
     These scripts use raw model outputs from **R/02\_Run\_model** to
     conduct the primary analyses: cost-effectiveness analysis (CEA), HIV
-    incidence reduction between different scenarios and status-quo,
-    disaggregated cost breakdown by component (implementation, medical
-    care, PrEP, ART, MOUD), determining optimal combination
-    implementation strategy (OCIS), generating health production
-    functions, and other visualizations of results.
+    incidence reduction between different implementation scenarios and
+    the status-quo, disaggregated cost breakdown by component
+    (implementation, medical care, PrEP, ART, MOUD), determining optimal
+    combination implementation strategy (OCIS), generating health
+    production functions, and other visualizations of results.
 
 Background Material
 ===================

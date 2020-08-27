@@ -27,9 +27,9 @@ install.packages("devtools")
 
 # Usage and installation 
 
-i. Open R Studio and load project file `LEMpackHIV.Rproj` from the main folder of the cloned github repository. 
+i. Open R Studio and load project file `LEMpackHIV.Rproj` from the main folder of the LEMpackHIV github repository. 
 
-ii. Download and install LEMpackHIV package from [GitHub](https://github.com) with:
+ii. Download and install LEMpackHIV package from [GitHub](https://github.com) using:
 
 ```{r, eval=FALSE}
 devtools::install_github("HERU-LEM/LEMpackHIV")
@@ -43,10 +43,10 @@ i. [Model setup](https://github.com/benenns/LEMpackTEST/tree/master/01_Setup)
     - Contains R scripts for core modules. Users can modify these files as necessary (e.g. adjusting analysis time-horizon, intervention sustainment period, discount rate etc.), but do not need to run these scripts prior to running the model, as they will be called by modules in the next two steps.
   
 ii. [Run model and generate outputs](https://github.com/benenns/LEMpackTEST/tree/master/02_Run_model)
-    - These scripts are used to run the model and produce raw outputs (costs, QALYs, HIV incidence) for single interventions and combinations (deterministic and PSA), which will be used in **R/03_Analysis**.
+    - These scripts are used to run the model and produce raw outputs (costs, QALYs, HIV incidence) for single interventions and combinations (deterministic and PSA), which will be used in subsequent analyses.
   
 iii. [Analysis](https://github.com/benenns/LEMpackTEST/tree/master/03_Analysis)
-    - These scripts use raw model outputs from **R/02_Run_model** to conduct the primary analyses: cost-effectiveness analysis (CEA), HIV incidence reduction between different scenarios and status-quo, disaggregated cost breakdown by component (implementation, medical care, PrEP, ART, MOUD), determining optimal combination implementation strategy (OCIS), generating health production functions, and other visualizations of results.
+    - These scripts use raw model outputs from **R/02_Run_model** to conduct the primary analyses: cost-effectiveness analysis (CEA), HIV incidence reduction between different implementation scenarios and the status-quo, disaggregated cost breakdown by component (implementation, medical care, PrEP, ART, MOUD), determining optimal combination implementation strategy (OCIS), generating health production functions, and other visualizations of results.
 
 # Background Material
 
