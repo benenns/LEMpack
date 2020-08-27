@@ -95,6 +95,6 @@ Table 2.2: Description of ODE parameters and their `R` names
 | `oat.q`                              | OAT dropout rate                                                                                
 
 
-Note that opioid agonist treatment (OAT) was only available to all PWID and MSM-PWID. As such, the model ODE equations are grouped for MSM and Heterosexual HIV risk groups (non-PWID), PWID and MSM-PWID receiving OAT, and PWID and MSM-PWID non receiving OAT; corresponding R scripts are `ode.list`, `ode.list.OAT`, and `ode.list.offOAT` respectively, found in `LEMpackHIV` and the *R* directory. 
+Note that opioid agonist treatment (OAT) was only available to all PWID and MSM-PWID. As such, the model ODE equations are grouped for MSM and Heterosexual HIV risk groups (non-PWID), PWID and MSM-PWID receiving OAT, and PWID and MSM-PWID non receiving OAT; corresponding R scripts are `ode.list`, `ode.list.OAT`, and `ode.list.offOAT` respectively, found in `LEMpackHIV` and the [*R*](https://github.com/benenns/LEMpackTEST/tree/master/R) directory of the LEMpackHIV github repository. 
 
 # References {-}

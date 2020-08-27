@@ -43,23 +43,24 @@ Usage and installation
 R code modules
 --------------
 
+The remaining R scripts to run the model and conduct the analysis are
+organized into three sections:
+
 1.  [Model
-    setup](https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup) -
-    Contains R scripts for core modules. Users can modify these files as
-    necessary (e.g. adjusting analysis time-horizon, intervention
-    sustainment period, discount rate etc.), but do not need to run
-    these scripts, as they will be called by modules in the next two
-    steps.
-
+    setup](https://github.com/benenns/LEMpackTEST/tree/master/01_Setup)
+    -   Contains R scripts for core modules. Users can modify these
+        files as necessary (e.g. adjusting analysis time-horizon,
+        intervention sustainment period, discount rate etc.), but do not
+        need to run these scripts prior to running the model, as they
+        will be called by modules in the next two steps.
 2.  [Run model and generate
-    outputs](https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model) -
-    These scripts are used to run the model and produce raw outputs
-    (costs, QALYs, HIV incidence) for single interventions and
-    combinations (deterministic and PSA), which will be used in
-    *R/03\_Analysis*.
-
-3.  [Analysis](https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis) -
-    These scripts use raw model outputs from *R/02\_Run\_model* to
+    outputs](https://github.com/benenns/LEMpackTEST/tree/master/02_Run_model)
+    -   These scripts are used to run the model and produce raw outputs
+        (costs, QALYs, HIV incidence) for single interventions and
+        combinations (deterministic and PSA), which will be used in
+        **R/03\_Analysis**.
+3.  [Analysis](https://github.com/benenns/LEMpackTEST/tree/master/03_Analysis) -
+    These scripts use raw model outputs from **R/02\_Run\_model** to
     conduct the primary analyses: cost-effectiveness analysis (CEA), HIV
     incidence reduction between different scenarios and status-quo,
     disaggregated cost breakdown by component (implementation, medical

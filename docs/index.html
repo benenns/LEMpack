@@ -133,10 +133,22 @@
 <div id="r-code-modules" class="section level2">
 <h2 class="hasAnchor">
 <a href="#r-code-modules" class="anchor"></a>R code modules</h2>
+<p>The remaining R scripts to run the model and conduct the analysis are organized into three sections:</p>
 <ol>
-<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/01_Setup">Model setup</a> - Contains R scripts for core modules. Users can modify these files as necessary (e.g. adjusting analysis time-horizon, intervention sustainment period, discount rate etc.), but do not need to run these scripts, as they will be called by modules in the next two steps.</p></li>
-<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/02_Run_model">Run model and generate outputs</a> - These scripts are used to run the model and produce raw outputs (costs, QALYs, HIV incidence) for single interventions and combinations (deterministic and PSA), which will be used in <em>R/03_Analysis</em>.</p></li>
-<li><p><a href="https://github.com/benenns/LEMpackTEST/tree/master/R/03_Analysis">Analysis</a> - These scripts use raw model outputs from <em>R/02_Run_model</em> to conduct the primary analyses: cost-effectiveness analysis (CEA), HIV incidence reduction between different scenarios and status-quo, disaggregated cost breakdown by component (implementation, medical care, PrEP, ART, MOUD), determining optimal combination implementation strategy (OCIS), generating health production functions, and other visualizations of results.</p></li>
+<li>
+<a href="https://github.com/benenns/LEMpackTEST/tree/master/01_Setup">Model setup</a>
+<ul>
+<li>Contains R scripts for core modules. Users can modify these files as necessary (e.g. adjusting analysis time-horizon, intervention sustainment period, discount rate etc.), but do not need to run these scripts prior to running the model, as they will be called by modules in the next two steps.</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/benenns/LEMpackTEST/tree/master/02_Run_model">Run model and generate outputs</a>
+<ul>
+<li>These scripts are used to run the model and produce raw outputs (costs, QALYs, HIV incidence) for single interventions and combinations (deterministic and PSA), which will be used in <strong>R/03_Analysis</strong>.</li>
+</ul>
+</li>
+<li>
+<a href="https://github.com/benenns/LEMpackTEST/tree/master/03_Analysis">Analysis</a> - These scripts use raw model outputs from <strong>R/02_Run_model</strong> to conduct the primary analyses: cost-effectiveness analysis (CEA), HIV incidence reduction between different scenarios and status-quo, disaggregated cost breakdown by component (implementation, medical care, PrEP, ART, MOUD), determining optimal combination implementation strategy (OCIS), generating health production functions, and other visualizations of results.</li>
 </ol>
 </div>
 </div>

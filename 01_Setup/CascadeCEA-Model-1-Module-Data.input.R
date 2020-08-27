@@ -84,7 +84,7 @@ obs.inc.all = subset(data.frame(read.xlsx("Data Files/Target.xlsx", sheet="inc.a
 obs.inc.msm = subset(data.frame(read.xlsx("Data Files/Target.xlsx", sheet="inc.msm.obs", colNames =T)), city == CITY)[ , -1]              #new incidence, MSM and range
 
 ## Derive model initials ##
-source("01_Setup/CascadeCEA-Model-0-Function-model.initial.R")
+#source("01_Setup/CascadeCEA-Model-0-Function-model.initial.R")
 #### initial proportion of 42 groups;
 init  = model.initial(par = vparameters, diag18 = diag18.obs[1, ])  #42*19 initials
 inits = cbind(init, inc_bo=0, inc_bs=0, inc_g=0, diag=0, death=0)   #adding states to track # infections (by 3 routes of transmission), new diagnoses and deaths among PLHIV

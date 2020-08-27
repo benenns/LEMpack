@@ -24,7 +24,7 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-#source("ModelCoreModules/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+#source("ModelCoreModules/CascadeCEA-Model-0-Function-ode_model-Combination.R") # Function automatically loaded with LEMpackHIV
 
 ## LOAD analysis scenario
 case = "DM"  # DM for deterministic, SA for sensitivity analysis

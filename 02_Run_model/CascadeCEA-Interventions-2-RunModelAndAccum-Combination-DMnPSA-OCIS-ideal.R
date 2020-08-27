@@ -23,7 +23,7 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-source("01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+#source("01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 #Load OCIS, if unavailable, execute Part 2 of: "CascadeCEA-Interventions-3-Analysis-ProductionFunction.R"
 ocis        <- readRDS(paste0("Combination/ProductionFunction-Frontier-", CITY, ".rds"))$ocis

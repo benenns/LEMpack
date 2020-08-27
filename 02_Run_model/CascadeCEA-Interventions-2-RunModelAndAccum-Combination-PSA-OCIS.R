@@ -22,7 +22,7 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-source("01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
+#source("01_setup/CascadeCEA-Model-0-Function-ode_model-Combination.R")
 
 ## LOAD analysis scenario
 case = "SA"  # DM for deterministic, SA for sensitivity analysis
