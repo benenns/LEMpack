@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Localized Economic HIV Model">
-<meta property="og:description" content='This repository contains code and data to implement the Localized Economic Modeling (LEM) to re-produce the 
+<meta property="og:description" content='This repository contains code and data to implement the Localized Economic Modeling (LEM) to produce the 
   dynamic compartmental modeling results published in: Nosyk B, Zang X, Krebs E, Enns B, Min JE, Behrends CN, Del Rio C, Dombrowski JC, 
   Feaster DJ, Golden M, Marshall BD. "Ending the HIV epidemic in the USA: an economic modelling study in six cities." 
   The Lancet HIV. 2020 Mar 5.'>
@@ -130,31 +130,20 @@
 <li><p>Download and install LEMpackHIV package from <a href="https://github.com">GitHub</a> using:</p></li>
 </ol>
 <!-- --><div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"HERU-LEM/LEMpackHIV"</span>)</span></code></pre></div>
-<div id="r-code-modules" class="section level2">
-<h2 class="hasAnchor">
-<a href="#r-code-modules" class="anchor"></a>R code modules</h2>
+</div>
+<div id="r-code-modules" class="section level1">
+<h1 class="hasAnchor">
+<a href="#r-code-modules" class="anchor"></a>R code modules</h1>
 <p>The remaining R scripts to run the model and conduct the analysis are organized into three sections:</p>
 <ol>
-<li>
-<a href="https://github.com/benenns/LEMpackTEST/tree/master/01_Setup">Model setup</a>
-<ul>
-<li>Contains R scripts for core modules. Users can modify these files as necessary (e.g. adjusting analysis time-horizon, intervention sustainment period, discount rate etc.), but do not need to run these scripts prior to running the model, as they will be called by modules in the next two steps.</li>
-</ul>
-</li>
-<li>
-<a href="https://github.com/benenns/LEMpackTEST/tree/master/02_Run_model">Run model and generate outputs</a>
-<ul>
-<li>These scripts are used to run the model and produce raw outputs (costs, QALYs, HIV incidence) for single interventions and combinations (deterministic and PSA), which will be used in subsequent analyses.</li>
-</ul>
-</li>
-<li>
-<a href="https://github.com/benenns/LEMpackTEST/tree/master/03_Analysis">Analysis</a> - These scripts use raw model outputs from <strong>R/02_Run_model</strong> to conduct the primary analyses: cost-effectiveness analysis (CEA), HIV incidence reduction between different implementation scenarios and the status-quo, disaggregated cost breakdown by component (implementation, medical care, PrEP, ART, MOUD), determining optimal combination implementation strategy (OCIS), generating health production functions, and other visualizations of results.</li>
+<li><p><a href="https://github.com/HERU-LEM/LEMpackHIV/tree/master/01_Setup">Setup</a> contains R scripts for core modules. Users can modify these files as necessary (e.g. adjusting analysis time-horizon, intervention sustainment period, discount rate etc.), but do not need to run these scripts prior to running the model, as they will be called by modules in the next two steps.</p></li>
+<li><p><a href="https://github.com/HERU-LEM/LEMpackHIV/tree/master/02_Run_model">Run model</a> contains R scripts to run the model and produce raw outputs (costs, QALYs, HIV incidence) for single interventions and combinations (deterministic and PSA), which will be used in subsequent analyses.</p></li>
+<li><p><a href="https://github.com/HERU-LEM/LEMpackHIV/tree/master/03_Analysis">Analysis</a> contains R scripts to use raw model outputs generated in <strong>R/02_Run_model</strong> to conduct the primary analyses: cost-effectiveness analysis (CEA), HIV incidence reduction between different implementation scenarios and the status-quo, disaggregated cost breakdown by component (implementation, medical care, PrEP, ART, MOUD), determining optimal combination implementation strategy (OCIS), generating health production functions, and other visualizations of results.</p></li>
 </ol>
-</div>
 </div>
 <div id="background-material" class="section level1">
 <h1 class="hasAnchor">
-<a href="#background-material" class="anchor"></a>Background Material</h1>
+<a href="#background-material" class="anchor"></a>Background material</h1>
 <p>For more detail on the evidence synthesis, model development, and analysis, please see the following manuscripts:</p>
 <ul>
 <li><p>Krebs, E., Enns, B., Wang, L., Zang, X., Panagiotoglou, D., Del Rio, C., Dombrowski, J., Feaster, D. J., Golden, M., Granich, R., Marshall, B., Mehta, S. H., Metsch, L., Schackman, B. R., Strathdee, S. A., Nosyk, B., &amp; localized HIV modeling study group (2019). <a href="https://dx.plos.org/10.1371/journal.pone.0217559">“Developing a dynamic HIV transmission model for 6 U.S. cities: An evidence synthesis”</a>. PloS one, 14(5), e0217559. <a href="https://doi.org/10.1371/journal.pone.0217559" class="uri">https://doi.org/10.1371/journal.pone.0217559</a></p></li>

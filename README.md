@@ -41,34 +41,35 @@ Usage and installation
     devtools::install_github("HERU-LEM/LEMpackHIV")
 
 R code modules
---------------
+==============
 
 The remaining R scripts to run the model and conduct the analysis are
 organized into three sections:
 
-1.  [Model
-    setup](https://github.com/benenns/LEMpackTEST/tree/master/01_Setup)
-    -   Contains R scripts for core modules. Users can modify these
-        files as necessary (e.g. adjusting analysis time-horizon,
-        intervention sustainment period, discount rate etc.), but do not
-        need to run these scripts prior to running the model, as they
-        will be called by modules in the next two steps.
-2.  [Run model and generate
-    outputs](https://github.com/benenns/LEMpackTEST/tree/master/02_Run_model)
-    -   These scripts are used to run the model and produce raw outputs
-        (costs, QALYs, HIV incidence) for single interventions and
-        combinations (deterministic and PSA), which will be used in
-        subsequent analyses.
-3.  [Analysis](https://github.com/benenns/LEMpackTEST/tree/master/03_Analysis) -
-    These scripts use raw model outputs from **R/02\_Run\_model** to
-    conduct the primary analyses: cost-effectiveness analysis (CEA), HIV
-    incidence reduction between different implementation scenarios and
-    the status-quo, disaggregated cost breakdown by component
-    (implementation, medical care, PrEP, ART, MOUD), determining optimal
-    combination implementation strategy (OCIS), generating health
-    production functions, and other visualizations of results.
+1.  [Setup](https://github.com/HERU-LEM/LEMpackHIV/tree/master/01_Setup)
+    contains R scripts for core modules. Users can modify these files as
+    necessary (e.g. adjusting analysis time-horizon, intervention
+    sustainment period, discount rate etc.), but do not need to run
+    these scripts prior to running the model, as they will be called by
+    modules in the next two steps.
 
-Background Material
+2.  [Run
+    model](https://github.com/HERU-LEM/LEMpackHIV/tree/master/02_Run_model)
+    contains R scripts to run the model and produce raw outputs (costs,
+    QALYs, HIV incidence) for single interventions and combinations
+    (deterministic and PSA), which will be used in subsequent analyses.
+
+3.  [Analysis](https://github.com/HERU-LEM/LEMpackHIV/tree/master/03_Analysis)
+    contains R scripts to use raw model outputs generated in
+    **R/02\_Run\_model** to conduct the primary analyses:
+    cost-effectiveness analysis (CEA), HIV incidence reduction between
+    different implementation scenarios and the status-quo, disaggregated
+    cost breakdown by component (implementation, medical care, PrEP,
+    ART, MOUD), determining optimal combination implementation strategy
+    (OCIS), generating health production functions, and other
+    visualizations of results.
+
+Background material
 ===================
 
 For more detail on the evidence synthesis, model development, and

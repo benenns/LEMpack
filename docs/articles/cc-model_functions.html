@@ -105,11 +105,12 @@
     
     
 <p>This section describes the basic functions of the dynamic, compartmental HIV transmission model. For further details, see <span class="citation">(Zang et al. 2020; Krebs et al. 2020)</span>.</p>
+<p><span class="math inline">\(~\)</span></p>
 <div id="force-of-hiv-infection" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#force-of-hiv-infection" class="anchor"></a>2.0 Force of HIV infection</h1>
 <p>In this component, we estimate the Force of Infection (FoI), which is the rate at which susceptible individuals become infected in the population and is a function of many different parameters. A list of FoI parameters are provided in Table 2.1.</p>
-<p>Table 2.1: Description of FoI parameters with their <code>R</code> names</p>
+<p><strong>Table 2.1: Description of FoI parameters with their <code>R</code> names</strong></p>
 <table class="table">
 <thead><tr class="header">
 <th align="left"><strong>R name</strong></th>
@@ -183,12 +184,14 @@
 </tbody>
 </table>
 <p>Our model captures HIV transmission between susceptible and infected individuals via heterosexual contact, homosexual contact and needle-sharing. The effects of sexual mixing patterns (assortative and proportional partnership mixing) and sexual risk behavior (ie. condom use, number of partners) are also accounted for. Consistent with prior studies, we allowed men who have sex with men (MSM) to potentially have heterosexual contact with women. To calculate FoI, we determine a mixing matrix and calculate the mixing probability between subgroups. That is to say, the transmission between susceptible and infected individuals is represented as a matrix which considers the sufficient contact rate between members of susceptible compartments and members of infected compartments. Groups represent opposite sexes and are defined by race/ethnicity and sexual risk level (high or low). To avoid over-mixing between high- and low-risk populations (which may cause an overestimation of heterosexual transmission), the mixing probability between high-and low-risk individuals is restricted to 1% (proportionately) of partnerships formed.</p>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="nonlinear-ordinary-differential-equations-ode-functions" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#nonlinear-ordinary-differential-equations-ode-functions" class="anchor"></a>2.1 Nonlinear Ordinary Differential Equations (ODE functions)</h1>
 <p>We constructed a system of nonlinear ordinary differential equations (ODEs) to capture movement between 19 base model states for each of the 42 population groups considered in our model (refer to figures in <em>Introduction</em> section) . The complete model is thus comprised of 798 equations (42 population groups 19 states). A list of ODE parameters are provided in Table 2.2.</p>
-<p>Table 2.2: Description of ODE parameters and their <code>R</code> names</p>
+<p><span class="math inline">\(~\)</span></p>
+<p><strong>Table 2.2: Description of ODE parameters and their <code>R</code> names</strong></p>
 <table class="table">
 <colgroup>
 <col width="28%">
@@ -312,7 +315,9 @@
 </tr>
 </tbody>
 </table>
+<p><span class="math inline">\(~\)</span></p>
 <p>Note that opioid agonist treatment (OAT) was only available to all PWID and MSM-PWID. As such, the model ODE equations are grouped for MSM and Heterosexual HIV risk groups (non-PWID), PWID and MSM-PWID receiving OAT, and PWID and MSM-PWID non receiving OAT; corresponding R scripts are <code>ode.list</code>, <code>ode.list.OAT</code>, and <code>ode.list.offOAT</code> respectively, found in <code>LEMpackHIV</code> and the <a href="https://github.com/benenns/LEMpackTEST/tree/master/R"><em>R</em></a> directory of the LEMpackHIV github repository.</p>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">

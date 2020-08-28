@@ -108,13 +108,15 @@
 <h1 class="hasAnchor">
 <a href="#data-read-in" class="anchor"></a>1.0 Data read-in</h1>
 <p>As described in our evidence synthesis paper, we populated model parameters for each city by synthesizing evidence from 59 peer-reviewed publications and 24 public health and surveillance reports and executed primary analyses using 11 data sets <span class="citation">(Krebs et al. 2019)</span>. Where data were not available, we conducted extensive model validation and calibration to ensure that uncertain model parameters produced results that matched real-world outcomes. We identified parameters that required city-specific data and stratification by gender, risk group and race/ethnicity a priori and sought out databases for primary analysis to augment our evidence synthesis. We also derived information and values for the free parameters; “free parameters” are key uncertain parameters which are not predefined by the model and lead to the most significant uncertainty in target outcomes. The Morris method <span class="citation">(Morris 1991; Tian et al. 2016; Wu et al. 2013)</span> was used to select the most influential parameters for calibration, and the Nelder-Mead algorithm <span class="citation">(Helton and Davis 2003; Taylor et al. 2010)</span> was used to iteratively calibrate the model to generate 2,000 best-fitting parameter sets.</p>
-<p>Through this iterative calibration to specific targets/endpoints in each city - the number of diagnosed PLHIV at each year end (stratified by sex, race/ethnicity and risk group), the annual number of new HIV diagnoses (separately for the overall estimate, African/American (Black) population, and MSM), and the annual number of all-cause mortality deaths among PLHIV (separately for the overall estimate, African/American (Black) population, and MSM), free parameters and their weights were determined. Further details are provided in our published calibration manuscript <span class="citation">(Zang et al. 2020)</span>. All of this information is stored in <em>Evidence-Inputs-Master.xlsx</em>, <em>Evidence-Inputs-Master-Ideal.xlsx</em> and <em>cali_par_all.xlsx</em> found in the <em>Data Files</em> directory, and read-in using the <em>CascadeCEA-Model-1-Module-Data.input.R</em> script.</p>
+<p>Through this iterative calibration to specific targets/endpoints in each city - the number of diagnosed PLHIV at each year end (stratified by sex, race/ethnicity and risk group), the annual number of new HIV diagnoses (separately for the overall estimate, African/American (Black) population, and MSM), and the annual number of all-cause mortality deaths among PLHIV (separately for the overall estimate, African/American (Black) population, and MSM), free parameters and their weights were determined. Further details are provided in our calibration manuscript <span class="citation">(Zang et al. 2020)</span>. All of this information is stored in <em>Evidence-Inputs-Master.xlsx</em>, <em>Evidence-Inputs-Master-Ideal.xlsx</em> and <em>cali_par_all.xlsx</em> found in the <em>Data Files</em> directory, and read-in using the <em>CascadeCEA-Model-1-Module-Data.input.R</em> script.</p>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="create-grouping-indicators" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#create-grouping-indicators" class="anchor"></a>1.1 Create grouping indicators</h1>
 <p>In this component we generate grouping indicators for the 42 population groups; descriptions and R name for each are presented below in Table 1.This function is in the <em>CascadeCEA-Model-0-Group.number.R</em> script in the <em>R</em> directory.</p>
-<p>Table 1: Description of intial model parameters with their <code>R</code> name and values</p>
+<p><span class="math inline">\(~\)</span></p>
+<p><strong>Table 1: Description of intial model parameters with their <code>R</code> name and values</strong></p>
 <table class="table">
 <colgroup>
 <col width="33%">
@@ -323,21 +325,25 @@
 </tr>
 </tbody>
 </table>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="populate-cells-for-model-instantiation" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#populate-cells-for-model-instantiation" class="anchor"></a>1.2 Populate cells for model instantiation</h1>
 <p>In this component, we calculate initial cell sizes for all 42 population strata and 19 model states/compartments using the <code>model_initial</code> function.</p>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="parameterization" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#parameterization" class="anchor"></a>1.3 Parameterization</h1>
 <p>In this component, we set values for model paramaters with multiple dimensions using <em>CascadeCEA-Model-0-Parameterization.R</em> in the <em>R</em> directory. This includes loading population demographic parameters and parameters that require manipulation (either through calibration, or modification as a result of interventions). Cost-effectiveness analyses (CEA) parameters including QALY parameters, state-level costs, and intervention costs are also initialized in this step.</p>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="assign-free-parameter-values" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#assign-free-parameter-values" class="anchor"></a>1.4 Assign free parameter values</h1>
 <p>In this component, values for the free parameters are derived, calibrated and updated using <em>CascadeCEA-Model-0-Parameter.update.R</em> in the <em>R</em> directory. Note that this component (1.4 Assign free parameter values) only needs to be done once - when running the model for the first time.</p>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">

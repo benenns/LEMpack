@@ -108,18 +108,23 @@
 <h1 class="hasAnchor">
 <a href="#generate-possible-intervention-combinations" class="anchor"></a>3.0 Generate possible intervention combinations</h1>
 <p>In this section, we describe the method for creating all possible combinations of the 16 public health interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention <span class="citation">(Project, n.d.)</span> using the <code>scale.interventions.combination</code> function in <code>LEMpackHIV</code>. See Figure 3 below for the list of interventions and their respective categories (<strong>Protect, Diagnose, Treat</strong>). We excluded combinations that would not be practically implemented jointly, termed “mutually exclusive combinations” (e.g. two HIV testing interventions delivered in primary care).</p>
+<p><span class="math inline">\(~\)</span></p>
 <div class="figure">
-<img src="../figs/03_evidence_based_int.png" alt=""><p class="caption">Figure 3.0 Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention. </p>
+<img src="../figs/03_evidence_based_int.png" alt=""><p class="caption">Figure 3.0 Evidence based interventions selected from the the CDC’s Compendium of Evidence-Based Interventions and Best Practices for HIV Prevention </p>
 </div>
+<p><span class="math inline">\(~\)</span></p>
 <p>Next, we set intervention parameters using the <code>intervention.model.combination</code> function, and then use the <code>scale.interventions.combination</code> function to calculate the scale of delivery inputs at each time step. Both are included in <code>LEMpackHIV</code> and the code can be found in the <a href="https://github.com/HERU-LEM/LEMpackHIV/tree/master/R"><em>R</em></a> directory of the github repository. Recall that scale refers to the proportion of a target population that is provided with an intervention. For HIV prevention programs, scale of delivery was the annual rate of expanded access, or additional scale-up, estimated using the best-available program-specific evidence. In contrast, for HIV testing and care interventions, scale of delivery was defined as the product of setting specific reach and adoption for each intervention <em>i</em>, target population <em>j</em> and healthcare setting <em>k</em>, where reach is defined as the participation rate in a given intervention, conditional on the probability an individual will access services in setting <em>k</em> and the probability the individual will accept the intervention being delivered.</p>
 <p><span class="math display">\[Scale_{i,j} = reach_{j,k} \times adoption_{i,k}\]</span></p>
+<p><span class="math inline">\(~\)</span></p>
 <p>To set indicators of modifying parameters in ODE model we use the function <code>true.false.interventions.combination</code>.</p>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="derive-intervention-scale-up" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#derive-intervention-scale-up" class="anchor"></a>3.1 Derive intervention scale-up</h1>
-<p>In this component we derive the scale of delivery (or scale-up) of interventions, implemented proportionally across groups, for each time step. Some parameters and interventions only had evidence and input data stratified by race and sex (i.e. opt-out testing in ER) while others were stratified by race, sex and risk group (i.e. same-day ART initiation). Table 3.0 specifies how interventions were stratified; note that how an intervention was stratified is a result of the dimensionality provided among best available evidence as detailed in our previous manuscript <span class="citation">(Krebs et al. 2020)</span>. Use <code>set.scale.race.gender</code> and <code>set.scale.risk.race.gender</code> to derive scale-up for interventions. In these scripts, matrices for scale estimates (with upper and lower bounds) are created; they each have 19 rows (one for each model compartment/state) and 42 columns (one for each population strata).</p>
-<p>Table 3.0: Stratification of interventions input data</p>
+<p>In this component we derive the scale of delivery (or scale-up) of interventions, implemented proportionally across groups, for each time step. Some parameters and interventions only had evidence and input data stratified by race and sex (i.e. opt-out testing in ER) while others were stratified by race, sex and risk group (i.e. same-day ART initiation). Table 3.0 specifies how interventions were stratified; note that how an intervention was stratified is a result best available evidence as detailed in our previous manuscript <span class="citation">(Krebs et al. 2020)</span>. Use <code>set.scale.race.gender</code> and <code>set.scale.risk.race.gender</code> to derive scale-up for interventions. In these scripts, matrices for scale estimates (with upper and lower bounds) are created; they each have 19 rows (one for each model compartment/state) and 42 columns (one for each population strata).</p>
+<p><span class="math inline">\(~\)</span></p>
+<p><strong>Table 3.0: Stratification of interventions input data</strong></p>
 <table class="table">
 <thead><tr class="header">
 <th align="left"><strong>Stratified by</strong></th>
@@ -216,12 +221,14 @@
 </tr>
 </tbody>
 </table>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="model-outcomes" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#model-outcomes" class="anchor"></a>3.2 Model outcomes</h1>
 <p>In this component we run several R scripts that set up the production of model outcomes for output to excel. Model projected outcomes such as incremental and total costs (2018 USD) and QALYs gained are produced for each city, for the combinations of interventions, considering implementation and sustainment periods determined in Section 3.1.</p>
 <p>Point estimates, and upper and lower bounds for estimates are first organized in arrays using <code>accumulate.outcomes.combination</code>. The number of infections for a given year (annual incidence rate) and cumulatively over several time horizons (5, 10, 20 years) are calculated for each city using <code>time.period.infections</code>. Both sets of output results (costs and QALYs, and number of infections) can then be exported to excel using <em>CascadeCEA-Interventions-0-Output-write.excel.R</em>. Lastly, population lists and number of infections for each time step, cost-effectiveness analyses results etc. are calculated and aggregated using the <code>comb.eva.func.R</code> function.</p>
+<p><span class="math inline">\(~\)</span></p>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
