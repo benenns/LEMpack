@@ -9,7 +9,7 @@ library(zoo)
 library(tictoc)
 library(rmarkdown)
 library(stringr)
-library(LEMpackHIV)
+library(LEMHIVpack)
 
 # ## Required only when using plotly for graphs
 # library(plotly)
@@ -23,7 +23,7 @@ doFuture::registerDoFuture()
 cores <- detectCores()
 future::plan(cluster, workers = cores[1]-2)  ##number of cores, default: (PCcores - 2)
 
-# source("CascadeCEA-Interventions-1-LoadFunctions.R") library(LEMpackHIV) loads all model functions
+# source("CascadeCEA-Interventions-1-LoadFunctions.R") library(LEMHIVpack) loads all model functions
 
 ## GET EXPORT VECTOR OF NAMES FOR RUNNING PARALLEL
 source("01_Setup/CascadeCEA-Interventions-1-ParNamesExportIntModel.R")

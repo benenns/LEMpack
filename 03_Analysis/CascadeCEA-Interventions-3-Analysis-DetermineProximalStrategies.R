@@ -7,7 +7,7 @@
 ############################################################################################
 rm(list=ls())
 library(rstudioapi)
-library(LEMpackHIV)
+library(LEMHIVpack)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 all.cities <- c("ATL", "BAL", "LA", "MIA", "NYC", "SEA")
 

@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Localized Economic HIV Model • LEMpackHIV</title>
+<title>Localized Economic HIV Model • LEMHIVpack</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -33,7 +33,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">LEMpackHIV</a>
+        <a class="navbar-link" href="index.html">LEMHIVpack</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
@@ -97,11 +97,11 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<div id="lempackhiv-" class="section level1">
+<div id="lemhivpack-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#lempackhiv-" class="anchor"></a>LEMpackHIV <img src="reference/figures/logo.jpg" align="right" height="139">
+<a href="#lemhivpack-" class="anchor"></a>LEMHIVpack <img src="reference/figures/logo.jpg" align="right" height="139">
 </h1></div>
-<p><a href="https://github.com/HERU-LEM/LEMpackHIV"><code>LEMpackHIV</code></a> package and github repository contains all model functions, code modules and input data to run our dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle. The R package and coding framework was developed by the <a href="http://bccfe.ca/research/epidemiology-population-health/heru/about">Health Economic Research Unit</a> at the BC Centre for Excellence in HIV/AIDS, as part of the <a href="https://grantome.com/grant/NIH/R01-DA041747-02S1">“Localized economic modeling to optimize public health strategies for HIV treatment and prevention”</a> project. More details are provided in the references below as well as the <em>Articles</em> section of this site.</p>
+<p><a href="https://github.com/HERU-LEM/LEMHIVpack"><code>LEMHIVpack</code></a> package and github repository contains all model functions, code modules and input data to run our dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle. The R package and coding framework was developed by the <a href="http://bccfe.ca/research/epidemiology-population-health/heru/about">Health Economic Research Unit</a> at the BC Centre for Excellence in HIV/AIDS, as part of the <a href="https://grantome.com/grant/NIH/R01-DA041747-02S1">“Localized economic modeling to optimize public health strategies for HIV treatment and prevention”</a> project. More details are provided in the references below as well as the <em>Articles</em> section of this site.</p>
 </div>
 <div id="preliminaries" class="section level1">
 <h1 class="hasAnchor">
@@ -117,7 +117,7 @@
 <li>
 <a href="https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository">Clone github repository</a>
 <ul>
-<li>Cloning <a href="https://github.com/HERU-LEM/LEMpackHIV">this</a> github repository will give users access to all necessary code and data to run the model and conduct the analysis.</li>
+<li>Cloning <a href="https://github.com/HERU-LEM/LEMHIVpack">this</a> github repository will give users access to all necessary code and data to run the model and conduct the analysis.</li>
 </ul>
 </li>
 </ul>
@@ -126,19 +126,19 @@
 <h1 class="hasAnchor">
 <a href="#usage-and-installation" class="anchor"></a>Usage and installation</h1>
 <ol>
-<li><p>Open R Studio and load project file <code>LEMpackHIV.Rproj</code> from the main folder of the LEMpackHIV github repository.</p></li>
-<li><p>Download and install LEMpackHIV package from <a href="https://github.com">GitHub</a> using:</p></li>
+<li><p>Open R Studio and load project file <code>LEMHIVpack.Rproj</code> from the main folder of the LEMHIVpack github repository.</p></li>
+<li><p>Download and install LEMHIVpack package from <a href="https://github.com">GitHub</a> using:</p></li>
 </ol>
-<!-- --><div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"HERU-LEM/LEMpackHIV"</span>)</span></code></pre></div>
+<!-- --><div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"HERU-LEM/LEMHIVpack"</span>)</span></code></pre></div>
 </div>
 <div id="r-code-modules" class="section level1">
 <h1 class="hasAnchor">
 <a href="#r-code-modules" class="anchor"></a>R code modules</h1>
 <p>The remaining R scripts to run the model and conduct the analysis are organized into three sections:</p>
 <ol>
-<li><p><a href="https://github.com/HERU-LEM/LEMpackHIV/tree/master/01_Setup">Setup</a> contains R scripts for core modules. Users can modify these files as necessary (e.g. adjusting analysis time-horizon, intervention sustainment period, discount rate etc.), but do not need to run these scripts prior to running the model, as they will be called by modules in the next two steps.</p></li>
-<li><p><a href="https://github.com/HERU-LEM/LEMpackHIV/tree/master/02_Run_model">Run model</a> contains R scripts to run the model and produce raw outputs (costs, QALYs, HIV incidence) for single interventions and combinations (deterministic and PSA), which will be used in subsequent analyses.</p></li>
-<li><p><a href="https://github.com/HERU-LEM/LEMpackHIV/tree/master/03_Analysis">Analysis</a> contains R scripts to use raw model outputs generated in <strong>R/02_Run_model</strong> to conduct the primary analyses: cost-effectiveness analysis (CEA), HIV incidence reduction between different implementation scenarios and the status-quo, disaggregated cost breakdown by component (implementation, medical care, PrEP, ART, MOUD), determining optimal combination implementation strategy (OCIS), generating health production functions, and other visualizations of results.</p></li>
+<li><p><a href="https://github.com/HERU-LEM/LEMHIVpack/tree/master/01_Setup">Setup</a> contains R scripts for core modules. Users can modify these files as necessary (e.g. adjusting analysis time-horizon, intervention sustainment period, discount rate etc.), but do not need to run these scripts prior to running the model, as they will be called by modules in the next two steps.</p></li>
+<li><p><a href="https://github.com/HERU-LEM/LEMHIVpack/tree/master/02_Run_model">Run model</a> contains R scripts to run the model and produce raw outputs (costs, QALYs, HIV incidence) for single interventions and combinations (deterministic and PSA), which will be used in subsequent analyses.</p></li>
+<li><p><a href="https://github.com/HERU-LEM/LEMHIVpack/tree/master/03_Analysis">Analysis</a> contains R scripts to use raw model outputs generated in <strong>R/02_Run_model</strong> to conduct the primary analyses: cost-effectiveness analysis (CEA), HIV incidence reduction between different implementation scenarios and the status-quo, disaggregated cost breakdown by component (implementation, medical care, PrEP, ART, MOUD), determining optimal combination implementation strategy (OCIS), generating health production functions, and other visualizations of results.</p></li>
 </ol>
 </div>
 <div id="background-material" class="section level1">

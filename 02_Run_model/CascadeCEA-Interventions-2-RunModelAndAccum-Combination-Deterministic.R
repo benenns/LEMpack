@@ -9,7 +9,7 @@
 
 rm(list=ls())
 library(rstudioapi)
-library(LEMpackHIV)
+library(LEMHIVpack)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
@@ -24,7 +24,7 @@ CITY <- select.list(all.cities, multiple = FALSE,
 combination.list <- readRDS("Combination/Combination.list.rds")
 
 ## LOAD ODE function
-#source("ModelCoreModules/CascadeCEA-Model-0-Function-ode_model-Combination.R") # Function automatically loaded with LEMpackHIV
+#source("ModelCoreModules/CascadeCEA-Model-0-Function-ode_model-Combination.R") # Function automatically loaded with LEMHIVpack
 
 ## LOAD analysis scenario
 case = "DM"  # DM for deterministic, SA for sensitivity analysis

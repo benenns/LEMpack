@@ -1,10 +1,10 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-LEMpackHIV <img src='man/figures/logo.jpg' align="right" height="139" />
+LEMHIVpack <img src='man/figures/logo.jpg' align="right" height="139" />
 ========================================================================
 
-[`LEMpackHIV`](https://github.com/HERU-LEM/LEMpackHIV) package and
+[`LEMHIVpack`](https://github.com/HERU-LEM/LEMHIVpack) package and
 github repository contains all model functions, code modules and input
 data to run our dynamic compartmental simulation model for the localized
 HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC,
@@ -30,22 +30,22 @@ Preliminaries
 
 -   [Clone github
     repository](https://docs.github.com/en/enterprise/2.13/user/articles/cloning-a-repository)
-    -   Cloning [this](https://github.com/HERU-LEM/LEMpackHIV) github
+    -   Cloning [this](https://github.com/HERU-LEM/LEMHIVpack) github
         repository will give users access to all necessary code and data
         to run the model and conduct the analysis.
 
 Usage and installation
 ======================
 
-1.  Open R Studio and load project file `LEMpackHIV.Rproj` from the main
-    folder of the LEMpackHIV github repository.
+1.  Open R Studio and load project file `LEMHIVpack.Rproj` from the main
+    folder of the LEMHIVpack github repository.
 
-2.  Download and install LEMpackHIV package from
+2.  Download and install LEMHIVpack package from
     [GitHub](https://github.com) using:
 
 <!-- -->
 
-    devtools::install_github("HERU-LEM/LEMpackHIV")
+    devtools::install_github("HERU-LEM/LEMHIVpack")
 
 R code modules
 ==============
@@ -53,7 +53,7 @@ R code modules
 The remaining R scripts to run the model and conduct the analysis are
 organized into three sections:
 
-1.  [Setup](https://github.com/HERU-LEM/LEMpackHIV/tree/master/01_Setup)
+1.  [Setup](https://github.com/HERU-LEM/LEMHIVpack/tree/master/01_Setup)
     contains R scripts for core modules. Users can modify these files as
     necessary (e.g. adjusting analysis time-horizon, intervention
     sustainment period, discount rate etc.), but do not need to run
@@ -61,12 +61,12 @@ organized into three sections:
     modules in the next two steps.
 
 2.  [Run
-    model](https://github.com/HERU-LEM/LEMpackHIV/tree/master/02_Run_model)
+    model](https://github.com/HERU-LEM/LEMHIVpack/tree/master/02_Run_model)
     contains R scripts to run the model and produce raw outputs (costs,
     QALYs, HIV incidence) for single interventions and combinations
     (deterministic and PSA), which will be used in subsequent analyses.
 
-3.  [Analysis](https://github.com/HERU-LEM/LEMpackHIV/tree/master/03_Analysis)
+3.  [Analysis](https://github.com/HERU-LEM/LEMHIVpack/tree/master/03_Analysis)
     contains R scripts to use raw model outputs generated in
     **R/02\_Run\_model** to conduct the primary analyses:
     cost-effectiveness analysis (CEA), HIV incidence reduction between

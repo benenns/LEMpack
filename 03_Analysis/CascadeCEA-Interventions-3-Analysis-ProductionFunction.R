@@ -29,7 +29,7 @@
 rm(list=ls())
 library(rstudioapi)
 library(tictoc)
-library(LEMpackHIV)
+library(LEMHIVpack)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 all.cities <- c("ATL", "BAL", "LA", "MIA", "NYC", "SEA")
 maxWTP <- 200000        # any positive value or Inf

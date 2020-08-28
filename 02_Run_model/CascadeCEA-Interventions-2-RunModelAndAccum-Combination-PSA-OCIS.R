@@ -7,7 +7,7 @@
 #############################################################################
 rm(list=ls())
 library(rstudioapi)
-library(LEMpackHIV)
+library(LEMHIVpack)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 source("01_setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")

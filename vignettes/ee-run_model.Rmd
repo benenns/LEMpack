@@ -28,11 +28,11 @@ $~$
 # 4.0 Load model functions {-}
 
 
-The core model functions are automatically loaded when users install the `LEMpackHIV` R package, and load `library(LEMpackHIV)`:
+The core model functions are automatically loaded when users install the `LEMHIVpack` R package, and load `library(LEMHIVpack)`:
 
 ```{r, eval=FALSE}
-devtools::install_github("HERU-LEM/LEMpackHIV")
-library(LEMpackHIV)
+devtools::install_github("HERU-LEM/LEMHIVpack")
+library(LEMHIVpack)
 ```
 
 

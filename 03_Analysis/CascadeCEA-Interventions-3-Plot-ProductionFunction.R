@@ -6,7 +6,7 @@
 rm(list=ls())
 library(rstudioapi)
 library(Hmisc)
-library(LEMpackHIV)
+library(LEMHIVpack)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 CITY.list <- c("ATL", "BAL", "LA", "MIA", "NYC", "SEA")

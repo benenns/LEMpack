@@ -9,7 +9,7 @@ library(Hmisc)
 library(maptools)
 library(ggplot2)
 library(SIBER)
-library(LEMpackHIV)
+library(LEMHIVpack)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 

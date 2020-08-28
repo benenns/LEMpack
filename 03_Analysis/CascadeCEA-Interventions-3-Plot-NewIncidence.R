@@ -7,7 +7,7 @@ rm(list=ls())
 library(rstudioapi)
 library(ggplot2)
 library(reshape2)
-library(LEMpackHIV)
+library(LEMHIVpack)
 #setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source("01_Setup/CascadeCEA-Interventions-1-LoadBaselineWorkspace.R")
 
