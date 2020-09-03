@@ -12,10 +12,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-# LEMHIVpack <img src='man/figures/logo.jpg' align="right" height="139" />
+# LEMHIVpack 
+<!-- <img src='man/figures/logo.jpg' align="right" height="139" /> -->
 
 
-[`LEMHIVpack`](https://github.com/HERU-LEM/LEMHIVpack) package and github repository contains all model functions, code modules and input data to run our dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle. The R package and coding framework was developed by the [Health Economic Research Unit](http://bccfe.ca/research/epidemiology-population-health/heru/about) at the BC Centre for Excellence in HIV/AIDS, as part of the ["Localized economic modeling to optimize public health strategies for HIV treatment and prevention"](https://grantome.com/grant/NIH/R01-DA041747-02S1) project. More details are provided in the references below as well as the *Articles* section of this site.
+[`LEMHIVpack`](https://github.com/HERU-LEM/LEMHIVpack) package and github repository contains all model functions, code modules and input data to run our dynamic compartmental simulation model for the localized HIV microepidemics in Atlanta, Baltimore, Los Angeles, Miami, NYC, Seattle. Please see this [slide deck](https://drive.google.com/file/d/1nlkr-qv3nzUvypzGiQ9TD-h6rk-KsI4f/view), the *Articles* section of this site, as well as the references below for more details.
 
 # Preliminaries
 - Install [RStudio](https://www.rstudio.com/products/rstudio/download/)
